@@ -23,7 +23,7 @@ namespace WindsOfMagicRestore.Patches
 
         public static void Postfix(Agent caster, object abilityTemplate, int __result)
         {
-            AugmentBuffTracker.TryRegisterFromSpellSession(caster, abilityTemplate, __result);
+            AugmentBuffTracker.RegisterFromSpellSession(caster, abilityTemplate, __result);
         }
     }
 }

@@ -47,7 +47,7 @@ namespace WindsOfMagicRestore.Behaviors
             if (!AgentPartyHelper.IsMainPartyAgent(affectorAgent))
                 return;
 
-            if (!AugmentBuffTracker.HasActivePlayerAugmentBuff(affectorAgent))
+            if (!AugmentBuffTracker.HasActivePlayerBuffForAugmentKills(affectorAgent))
                 return;
 
             TorWindsApi.AddWinds(settings.GetWindsForAugmentKillTier(tier));

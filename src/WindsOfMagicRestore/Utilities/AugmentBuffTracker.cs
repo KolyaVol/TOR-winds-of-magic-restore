@@ -4,13 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using TaleWorlds.MountAndBlade;
+using WindsOfMagicRestore.Settings;
 
 namespace WindsOfMagicRestore.Utilities
 {
     internal static class AugmentBuffTracker
     {
-        private const int AugmentEffectType = 6;
-
         private static readonly Type? StatusEffectComponentType =
             Type.GetType("TOR_Core.BattleMechanics.StatusEffect.StatusEffectComponent, TOR_Core");
 
@@ -34,40 +33,39 @@ namespace WindsOfMagicRestore.Utilities
             .FirstOrDefault(m => m.Name == "GetComponent" && m.IsGenericMethodDefinition && m.GetGenericArguments().Length == 1);
 
         private static readonly HashSet<int> PlayerAugmentCastIds = new();
+        private static readonly HashSet<int> PlayerHealCastIds = new();
 
         public static void Reset()
         {
             PlayerAugmentCastIds.Clear();
+            PlayerHealCastIds.Clear();
         }
 
-        public static void RegisterPlayerAugmentCast(int castId)
-        {
-            if (castId >= 0)
-                PlayerAugmentCastIds.Add(castId);
-        }
-
-        public static bool TryRegisterFromSpellSession(Agent caster, object abilityTemplate, int castId)
+        public static void RegisterFromSpellSession(Agent caster, object abilityTemplate, int castId)
         {
             if (castId < 0 || caster != Agent.Main || abilityTemplate == null)
-                return false;
+                return;
 
-            var effectType = abilityTemplate.GetType().GetProperty("AbilityEffectType")?.GetValue(abilityTemplate);
-            if (effectType == null || Convert.ToInt32(effectType) != AugmentEffectType)
-                return false;
-
-            RegisterPlayerAugmentCast(castId);
-            return true;
+            var effectType = SpellEffectTypeHelper.GetAbilityEffectType(abilityTemplate);
+            if (effectType == SpellEffectTypeHelper.Augment)
+                PlayerAugmentCastIds.Add(castId);
+            else if (effectType == SpellEffectTypeHelper.Heal)
+                PlayerHealCastIds.Add(castId);
         }
 
-        public static bool HasActivePlayerAugmentBuff(Agent agent)
+        public static bool HasActivePlayerBuffForAugmentKills(Agent agent)
         {
-            if (agent == null || Agent.Main == null || PlayerAugmentCastIds.Count == 0)
+            if (agent == null || Agent.Main == null)
+                return false;
+
+            var countHealAsAugment = WindsOfMagicRestoreSettings.Instance?.CountHealSpellsAsAugment ?? false;
+            if (PlayerAugmentCastIds.Count == 0 && (!countHealAsAugment || PlayerHealCastIds.Count == 0))
                 return false;
 
             if (StatusEffectComponentType == null || CurrentEffectsField == null)
                 return false;
 
-            if (GetStatusEffectComponent == null || StatusEffectComponentType == null)
+            if (GetStatusEffectComponent == null)
                 return false;
 
             var component = GetStatusEffectComponent
@@ -89,11 +87,17 @@ namespace WindsOfMagicRestore.Utilities
                     continue;
 
                 var castId = (int)(CastIdProperty?.GetValue(effect) ?? -1);
-                if (castId < 0 || !PlayerAugmentCastIds.Contains(castId))
+                if (castId < 0)
                     continue;
 
                 var duration = (float)(CurrentDurationProperty?.GetValue(effect) ?? 0f);
-                if (duration > 0f)
+                if (duration <= 0f)
+                    continue;
+
+                if (PlayerAugmentCastIds.Contains(castId))
+                    return true;
+
+                if (countHealAsAugment && PlayerHealCastIds.Contains(castId))
                     return true;
             }
 

@@ -20,6 +20,7 @@ namespace WindsOfMagicRestore.Settings
         private float _windsPerAugmentKillTier6;
         private float _windsPerHealBlock = 1f;
         private float _healHpPerWind = 100f;
+        private bool _countHealSpellsAsAugment;
         private float _windsPerSecond = 0.05f;
         private float _windsOnDamageDealt;
         private float _windsPerCampaignTick;
@@ -144,6 +145,14 @@ namespace WindsOfMagicRestore.Settings
         {
             get => _healHpPerWind;
             set { if (_healHpPerWind != value) { _healHpPerWind = value; OnPropertyChanged(); } }
+        }
+
+        [SettingPropertyBool("Reward kills by healed troops", Order = 2, RequireRestart = false, HintText = "Off (default): you regain Winds when a heal spell ends, based on total HP healed above.\n\nOn: healed friendly units count as buffed for augment kill rewards — you regain Winds when they kill enemies (see Augment kill rewards). Heal-end rewards are turned off for heal spells so you do not get both.")]
+        [SettingPropertyGroup("Heal rewards")]
+        public bool CountHealSpellsAsAugment
+        {
+            get => _countHealSpellsAsAugment;
+            set { if (_countHealSpellsAsAugment != value) { _countHealSpellsAsAugment = value; OnPropertyChanged(); } }
         }
 
         [SettingPropertyFloatingInteger("Winds per second", 0f, 10f, "0.####", Order = 0, RequireRestart = false, HintText = "Passive in-battle Winds of Magic regen. Independent of healing.")]
