@@ -1,3 +1,4 @@
+using System.Reflection;
 using HarmonyLib;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.Library;
@@ -42,19 +43,34 @@ namespace WindsOfMagicRestore
             if (_patchesApplied)
                 return;
 
-            var target = FinalizeSessionPatch.TargetMethod();
-            if (target == null)
-            {
-                Debug.Print("[WindsOfMagicRestore] Could not find TOR_Core FinalizeSession; heal rewards disabled.");
-                return;
-            }
-
             var harmony = new Harmony(HarmonyId);
-            harmony.Patch(
-                target,
-                postfix: new HarmonyMethod(typeof(FinalizeSessionPatch), nameof(FinalizeSessionPatch.Postfix)));
+            var patchedAny = false;
 
-            _patchesApplied = true;
+            patchedAny |= TryPatch(
+                harmony,
+                FinalizeSessionPatch.TargetMethod(),
+                typeof(FinalizeSessionPatch),
+                nameof(FinalizeSessionPatch.Postfix));
+
+            patchedAny |= TryPatch(
+                harmony,
+                CreateSpellSessionPatch.TargetMethod(),
+                typeof(CreateSpellSessionPatch),
+                nameof(CreateSpellSessionPatch.Postfix));
+
+            if (!patchedAny)
+                Debug.Print("[WindsOfMagicRestore] Could not apply TOR_Core patches; heal and augment rewards may be disabled.");
+
+            _patchesApplied = patchedAny;
+        }
+
+        private static bool TryPatch(Harmony harmony, MethodInfo? target, System.Type patchType, string postfixName)
+        {
+            if (target == null)
+                return false;
+
+            harmony.Patch(target, postfix: new HarmonyMethod(patchType, postfixName));
+            return true;
         }
     }
 }

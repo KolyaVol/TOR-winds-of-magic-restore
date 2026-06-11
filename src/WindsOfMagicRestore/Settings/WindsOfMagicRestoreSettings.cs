@@ -12,6 +12,12 @@ namespace WindsOfMagicRestore.Settings
         private float _windsPerKillTier4;
         private float _windsPerKillTier5;
         private float _windsPerKillTier6;
+        private float _windsPerAugmentKillTier1 = 1f;
+        private float _windsPerAugmentKillTier2;
+        private float _windsPerAugmentKillTier3;
+        private float _windsPerAugmentKillTier4;
+        private float _windsPerAugmentKillTier5;
+        private float _windsPerAugmentKillTier6;
         private float _windsPerHealBlock = 1f;
         private float _healHpPerWind = 100f;
         private float _windsPerSecond = 0.05f;
@@ -76,8 +82,56 @@ namespace WindsOfMagicRestore.Settings
             set { if (_windsPerKillTier6 != value) { _windsPerKillTier6 = value; OnPropertyChanged(); } }
         }
 
+        [SettingPropertyFloatingInteger("Winds per augment kill (tier 1)", 0f, 100f, "0.##", Order = 0, RequireRestart = false, HintText = "Winds restored when a troop you buffed with an augment kills a tier 1 enemy.")]
+        [SettingPropertyGroup("Augment kill rewards", GroupOrder = 1)]
+        public float WindsPerAugmentKillTier1
+        {
+            get => _windsPerAugmentKillTier1;
+            set { if (_windsPerAugmentKillTier1 != value) { _windsPerAugmentKillTier1 = value; OnPropertyChanged(); } }
+        }
+
+        [SettingPropertyFloatingInteger("Winds per augment kill (tier 2)", 0f, 100f, "0.##", Order = 1, RequireRestart = false)]
+        [SettingPropertyGroup("Augment kill rewards")]
+        public float WindsPerAugmentKillTier2
+        {
+            get => _windsPerAugmentKillTier2;
+            set { if (_windsPerAugmentKillTier2 != value) { _windsPerAugmentKillTier2 = value; OnPropertyChanged(); } }
+        }
+
+        [SettingPropertyFloatingInteger("Winds per augment kill (tier 3)", 0f, 100f, "0.##", Order = 2, RequireRestart = false)]
+        [SettingPropertyGroup("Augment kill rewards")]
+        public float WindsPerAugmentKillTier3
+        {
+            get => _windsPerAugmentKillTier3;
+            set { if (_windsPerAugmentKillTier3 != value) { _windsPerAugmentKillTier3 = value; OnPropertyChanged(); } }
+        }
+
+        [SettingPropertyFloatingInteger("Winds per augment kill (tier 4)", 0f, 100f, "0.##", Order = 3, RequireRestart = false)]
+        [SettingPropertyGroup("Augment kill rewards")]
+        public float WindsPerAugmentKillTier4
+        {
+            get => _windsPerAugmentKillTier4;
+            set { if (_windsPerAugmentKillTier4 != value) { _windsPerAugmentKillTier4 = value; OnPropertyChanged(); } }
+        }
+
+        [SettingPropertyFloatingInteger("Winds per augment kill (tier 5)", 0f, 100f, "0.##", Order = 4, RequireRestart = false)]
+        [SettingPropertyGroup("Augment kill rewards")]
+        public float WindsPerAugmentKillTier5
+        {
+            get => _windsPerAugmentKillTier5;
+            set { if (_windsPerAugmentKillTier5 != value) { _windsPerAugmentKillTier5 = value; OnPropertyChanged(); } }
+        }
+
+        [SettingPropertyFloatingInteger("Winds per augment kill (tier 6)", 0f, 100f, "0.##", Order = 5, RequireRestart = false)]
+        [SettingPropertyGroup("Augment kill rewards")]
+        public float WindsPerAugmentKillTier6
+        {
+            get => _windsPerAugmentKillTier6;
+            set { if (_windsPerAugmentKillTier6 != value) { _windsPerAugmentKillTier6 = value; OnPropertyChanged(); } }
+        }
+
         [SettingPropertyFloatingInteger("Winds per heal block", 0f, 100f, "0.##", Order = 0, RequireRestart = false, HintText = "Winds granted when a heal spell ends. Default: 1 wind per block.")]
-        [SettingPropertyGroup("Heal rewards", GroupOrder = 1)]
+        [SettingPropertyGroup("Heal rewards", GroupOrder = 2)]
         public float WindsPerHealBlock
         {
             get => _windsPerHealBlock;
@@ -93,7 +147,7 @@ namespace WindsOfMagicRestore.Settings
         }
 
         [SettingPropertyFloatingInteger("Winds per second", 0f, 10f, "0.####", Order = 0, RequireRestart = false, HintText = "Passive in-battle Winds of Magic regen. Independent of healing.")]
-        [SettingPropertyGroup("Passive regen", GroupOrder = 2)]
+        [SettingPropertyGroup("Passive regen", GroupOrder = 3)]
         public float WindsPerSecond
         {
             get => _windsPerSecond;
@@ -101,7 +155,7 @@ namespace WindsOfMagicRestore.Settings
         }
 
         [SettingPropertyFloatingInteger("Winds on damage dealt", 0f, 100f, "0.##", Order = 0, RequireRestart = false, HintText = "Reserved for future use. Not active yet.")]
-        [SettingPropertyGroup("Future", GroupOrder = 3)]
+        [SettingPropertyGroup("Future", GroupOrder = 4)]
         public float WindsOnDamageDealt
         {
             get => _windsOnDamageDealt;
@@ -118,15 +172,46 @@ namespace WindsOfMagicRestore.Settings
 
         public float GetWindsForTier(int tier)
         {
+            return GetWindsForTier(
+                tier,
+                WindsPerKillTier1,
+                WindsPerKillTier2,
+                WindsPerKillTier3,
+                WindsPerKillTier4,
+                WindsPerKillTier5,
+                WindsPerKillTier6);
+        }
+
+        public float GetWindsForAugmentKillTier(int tier)
+        {
+            return GetWindsForTier(
+                tier,
+                WindsPerAugmentKillTier1,
+                WindsPerAugmentKillTier2,
+                WindsPerAugmentKillTier3,
+                WindsPerAugmentKillTier4,
+                WindsPerAugmentKillTier5,
+                WindsPerAugmentKillTier6);
+        }
+
+        private static float GetWindsForTier(
+            int tier,
+            float tier1,
+            float tier2,
+            float tier3,
+            float tier4,
+            float tier5,
+            float tier6)
+        {
             return tier switch
             {
-                1 => WindsPerKillTier1,
-                2 => WindsPerKillTier2,
-                3 => WindsPerKillTier3,
-                4 => WindsPerKillTier4,
-                5 => WindsPerKillTier5,
-                6 => WindsPerKillTier6,
-                _ => WindsPerKillTier1,
+                1 => tier1,
+                2 => tier2,
+                3 => tier3,
+                4 => tier4,
+                5 => tier5,
+                6 => tier6,
+                _ => tier1,
             };
         }
 

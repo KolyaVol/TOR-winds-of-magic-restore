@@ -8,6 +8,11 @@ namespace WindsOfMagicRestore.Behaviors
 {
     public class WindsRestoreBehavior : MissionLogic
     {
+        public override void AfterStart()
+        {
+            AugmentBuffTracker.Reset();
+        }
+
         public override void OnAgentRemoved(
             Agent affectedAgent,
             Agent affectorAgent,
@@ -17,13 +22,10 @@ namespace WindsOfMagicRestore.Behaviors
             if (agentState != AgentState.Killed)
                 return;
 
-            if (affectorAgent != Agent.Main)
+            if (Hero.MainHero == null || Agent.Main == null)
                 return;
 
-            if (Hero.MainHero == null)
-                return;
-
-            if (!affectedAgent.IsEnemyOf(affectorAgent))
+            if (affectorAgent == null || !affectedAgent.IsEnemyOf(affectorAgent))
                 return;
 
             var tier = (affectedAgent.Character as CharacterObject)?.Tier ?? 1;
@@ -32,8 +34,23 @@ namespace WindsOfMagicRestore.Behaviors
             else if (tier > 6)
                 tier = 6;
 
-            var amount = WindsOfMagicRestoreSettings.Instance?.GetWindsForTier(tier) ?? 1f;
-            TorWindsApi.AddWinds(amount);
+            var settings = WindsOfMagicRestoreSettings.Instance;
+            if (settings == null)
+                return;
+
+            if (affectorAgent == Agent.Main)
+            {
+                TorWindsApi.AddWinds(settings.GetWindsForTier(tier));
+                return;
+            }
+
+            if (!AgentPartyHelper.IsMainPartyAgent(affectorAgent))
+                return;
+
+            if (!AugmentBuffTracker.HasActivePlayerAugmentBuff(affectorAgent))
+                return;
+
+            TorWindsApi.AddWinds(settings.GetWindsForAugmentKillTier(tier));
         }
 
         public override void OnMissionTick(float dt)
