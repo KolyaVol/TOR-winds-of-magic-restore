@@ -15,6 +15,8 @@ namespace WindsOfMagicRestore.Utilities
                 new[] { typeof(Agent) },
                 null);
 
+        public static bool IsBelongsToMainPartyAvailable => BelongsToMainParty != null;
+
         public static bool IsMainPartyAgent(Agent agent)
         {
             if (agent == null)

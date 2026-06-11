@@ -51,6 +51,14 @@ namespace WindsOfMagicRestore.Utilities
         private static readonly HashSet<int> PlayerAugmentCastIds = new();
         private static readonly HashSet<int> PlayerHealCastIds = new();
 
+        public static bool IsStatusEffectComponentTypeResolved => StatusEffectComponentType != null;
+        public static bool IsStatusEffectTypeResolved => StatusEffectType != null;
+        public static bool IsCurrentEffectsFieldResolved => CurrentEffectsField != null;
+        public static bool IsApplierAgentAccessorResolved => ApplierAgentAccessor != null;
+        public static bool IsCastIdAccessorResolved => CastIdAccessor != null;
+        public static bool IsCurrentDurationAccessorResolved => CurrentDurationAccessor != null;
+        public static bool IsGetStatusEffectComponentResolved => GetStatusEffectComponent != null;
+
         public static void Reset()
         {
             PlayerAugmentCastIds.Clear();
