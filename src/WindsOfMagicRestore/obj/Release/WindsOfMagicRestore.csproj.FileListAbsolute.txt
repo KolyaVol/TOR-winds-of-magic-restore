@@ -1,0 +1,9 @@
+D:\projects\WindsOfMagic\build\WindsOfMagicRestore\bin\Win64_Shipping_Client\WindsOfMagicRestore.dll
+D:\projects\WindsOfMagic\build\WindsOfMagicRestore\bin\Win64_Shipping_Client\WindsOfMagicRestore.pdb
+D:\projects\WindsOfMagic\src\WindsOfMagicRestore\obj\Release\WindsOfMagicRestore.csproj.AssemblyReference.cache
+D:\projects\WindsOfMagic\src\WindsOfMagicRestore\obj\Release\WindsOfMagicRestore.GeneratedMSBuildEditorConfig.editorconfig
+D:\projects\WindsOfMagic\src\WindsOfMagicRestore\obj\Release\WindsOfMagicRestore.AssemblyInfoInputs.cache
+D:\projects\WindsOfMagic\src\WindsOfMagicRestore\obj\Release\WindsOfMagicRestore.AssemblyInfo.cs
+D:\projects\WindsOfMagic\src\WindsOfMagicRestore\obj\Release\WindsOfMagicRestore.csproj.CoreCompileInputs.cache
+D:\projects\WindsOfMagic\src\WindsOfMagicRestore\obj\Release\WindsOfMagicRestore.dll
+D:\projects\WindsOfMagic\src\WindsOfMagicRestore\obj\Release\WindsOfMagicRestore.pdb
