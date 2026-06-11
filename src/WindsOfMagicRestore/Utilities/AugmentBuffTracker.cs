@@ -19,14 +19,30 @@ namespace WindsOfMagicRestore.Utilities
         private static readonly FieldInfo? CurrentEffectsField =
             StatusEffectComponentType?.GetField("_currentEffects", BindingFlags.Instance | BindingFlags.NonPublic);
 
-        private static readonly PropertyInfo? ApplierAgentProperty =
-            StatusEffectType?.GetProperty("ApplierAgent");
+        private static readonly Func<object, object?>? ApplierAgentAccessor =
+            BuildMemberAccessor("ApplierAgent");
 
-        private static readonly PropertyInfo? CastIdProperty =
-            StatusEffectType?.GetProperty("CastId");
+        private static readonly Func<object, object?>? CastIdAccessor =
+            BuildMemberAccessor("CastId");
 
-        private static readonly PropertyInfo? CurrentDurationProperty =
-            StatusEffectType?.GetProperty("CurrentDuration");
+        private static readonly Func<object, object?>? CurrentDurationAccessor =
+            BuildMemberAccessor("CurrentDuration");
+
+        private static Func<object, object?>? BuildMemberAccessor(string memberName)
+        {
+            if (StatusEffectType == null)
+                return null;
+
+            var property = StatusEffectType.GetProperty(memberName, BindingFlags.Instance | BindingFlags.Public);
+            if (property != null)
+                return instance => property.GetValue(instance);
+
+            var field = StatusEffectType.GetField(memberName, BindingFlags.Instance | BindingFlags.Public);
+            if (field != null)
+                return instance => field.GetValue(instance);
+
+            return null;
+        }
 
         private static readonly MethodInfo? GetStatusEffectComponent = typeof(Agent)
             .GetMethods(BindingFlags.Public | BindingFlags.Instance)
@@ -83,14 +99,14 @@ namespace WindsOfMagicRestore.Utilities
                     continue;
 
                 var effect = entry.Key;
-                if (ApplierAgentProperty?.GetValue(effect) as Agent != Agent.Main)
+                if (ApplierAgentAccessor?.Invoke(effect) as Agent != Agent.Main)
                     continue;
 
-                var castId = (int)(CastIdProperty?.GetValue(effect) ?? -1);
+                var castId = (int)(CastIdAccessor?.Invoke(effect) ?? -1);
                 if (castId < 0)
                     continue;
 
-                var duration = (float)(CurrentDurationProperty?.GetValue(effect) ?? 0f);
+                var duration = (float)(CurrentDurationAccessor?.Invoke(effect) ?? 0f);
                 if (duration <= 0f)
                     continue;
 

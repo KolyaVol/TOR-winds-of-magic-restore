@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\projects\\WindsOfMagic\\src\\WindsOfMagicRestore\\WindsOfMagicRestore.csproj": {}
+    "d:\\projects\\WindsOfMagic\\src\\WindsOfMagicRestore\\WindsOfMagicRestore.csproj": {}
   },
   "projects": {
-    "D:\\projects\\WindsOfMagic\\src\\WindsOfMagicRestore\\WindsOfMagicRestore.csproj": {
+    "d:\\projects\\WindsOfMagic\\src\\WindsOfMagicRestore\\WindsOfMagicRestore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects\\WindsOfMagic\\src\\WindsOfMagicRestore\\WindsOfMagicRestore.csproj",
+        "projectUniqueName": "d:\\projects\\WindsOfMagic\\src\\WindsOfMagicRestore\\WindsOfMagicRestore.csproj",
         "projectName": "WindsOfMagicRestore",
-        "projectPath": "D:\\projects\\WindsOfMagic\\src\\WindsOfMagicRestore\\WindsOfMagicRestore.csproj",
+        "projectPath": "d:\\projects\\WindsOfMagic\\src\\WindsOfMagicRestore\\WindsOfMagicRestore.csproj",
         "packagesPath": "C:\\Users\\Kolya Vol\\.nuget\\packages\\",
-        "outputPath": "D:\\projects\\WindsOfMagic\\src\\WindsOfMagicRestore\\obj\\",
+        "outputPath": "d:\\projects\\WindsOfMagic\\src\\WindsOfMagicRestore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Kolya Vol\\AppData\\Roaming\\NuGet\\NuGet.Config"

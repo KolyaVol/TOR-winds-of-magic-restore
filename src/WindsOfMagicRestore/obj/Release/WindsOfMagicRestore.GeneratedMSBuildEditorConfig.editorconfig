@@ -1,6 +1,6 @@
 is_global = true
 build_property.RootNamespace = WindsOfMagicRestore
-build_property.ProjectDir = D:\projects\WindsOfMagic\src\WindsOfMagicRestore\
+build_property.ProjectDir = d:\projects\WindsOfMagic\src\WindsOfMagicRestore\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.CsWinRTUseWindowsUIXamlProjections = false
