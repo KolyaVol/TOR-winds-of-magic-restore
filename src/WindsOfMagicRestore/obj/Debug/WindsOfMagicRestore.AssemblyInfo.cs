@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WindsOfMagicRestore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b4fbafbff876da4cc8c7571feaa8c159cf27b950")]
 [assembly: System.Reflection.AssemblyProductAttribute("WindsOfMagicRestore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WindsOfMagicRestore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

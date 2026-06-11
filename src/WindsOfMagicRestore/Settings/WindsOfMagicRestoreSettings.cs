@@ -12,7 +12,9 @@ namespace WindsOfMagicRestore.Settings
         private float _windsPerKillTier4;
         private float _windsPerKillTier5;
         private float _windsPerKillTier6;
-        private float _windsOnHeal;
+        private float _windsPerHealBlock = 1f;
+        private float _healHpPerWind = 100f;
+        private float _windsPerSecond = 0.05f;
         private float _windsOnDamageDealt;
         private float _windsPerCampaignTick;
 
@@ -74,23 +76,39 @@ namespace WindsOfMagicRestore.Settings
             set { if (_windsPerKillTier6 != value) { _windsPerKillTier6 = value; OnPropertyChanged(); } }
         }
 
-        [SettingPropertyFloatingInteger("Winds on heal", 0f, 100f, "0.##", Order = 0, RequireRestart = false, HintText = "Reserved for future use. Not active yet.")]
-        [SettingPropertyGroup("Future", GroupOrder = 1)]
-        public float WindsOnHeal
+        [SettingPropertyFloatingInteger("Winds per heal block", 0f, 100f, "0.##", Order = 0, RequireRestart = false, HintText = "Winds granted when a heal spell ends. Default: 1 wind per block.")]
+        [SettingPropertyGroup("Heal rewards", GroupOrder = 1)]
+        public float WindsPerHealBlock
         {
-            get => _windsOnHeal;
-            set { if (_windsOnHeal != value) { _windsOnHeal = value; OnPropertyChanged(); } }
+            get => _windsPerHealBlock;
+            set { if (_windsPerHealBlock != value) { _windsPerHealBlock = value; OnPropertyChanged(); } }
         }
 
-        [SettingPropertyFloatingInteger("Winds on damage dealt", 0f, 100f, "0.##", Order = 1, RequireRestart = false, HintText = "Reserved for future use. Not active yet.")]
-        [SettingPropertyGroup("Future")]
+        [SettingPropertyFloatingInteger("HP healed per block", 1f, 10000f, "0.##", Order = 1, RequireRestart = false, HintText = "How much healing must be done in one spell session for one block. Default: 100 HP = 1 wind (with default block reward).")]
+        [SettingPropertyGroup("Heal rewards")]
+        public float HealHpPerWind
+        {
+            get => _healHpPerWind;
+            set { if (_healHpPerWind != value) { _healHpPerWind = value; OnPropertyChanged(); } }
+        }
+
+        [SettingPropertyFloatingInteger("Winds per second", 0f, 10f, "0.####", Order = 0, RequireRestart = false, HintText = "Passive in-battle Winds of Magic regen. Independent of healing.")]
+        [SettingPropertyGroup("Passive regen", GroupOrder = 2)]
+        public float WindsPerSecond
+        {
+            get => _windsPerSecond;
+            set { if (_windsPerSecond != value) { _windsPerSecond = value; OnPropertyChanged(); } }
+        }
+
+        [SettingPropertyFloatingInteger("Winds on damage dealt", 0f, 100f, "0.##", Order = 0, RequireRestart = false, HintText = "Reserved for future use. Not active yet.")]
+        [SettingPropertyGroup("Future", GroupOrder = 3)]
         public float WindsOnDamageDealt
         {
             get => _windsOnDamageDealt;
             set { if (_windsOnDamageDealt != value) { _windsOnDamageDealt = value; OnPropertyChanged(); } }
         }
 
-        [SettingPropertyFloatingInteger("Winds per campaign tick", 0f, 100f, "0.##", Order = 2, RequireRestart = false, HintText = "Reserved for future use. Not active yet.")]
+        [SettingPropertyFloatingInteger("Winds per campaign tick", 0f, 100f, "0.##", Order = 1, RequireRestart = false, HintText = "Reserved for future use. Not active yet.")]
         [SettingPropertyGroup("Future")]
         public float WindsPerCampaignTick
         {
@@ -110,6 +128,14 @@ namespace WindsOfMagicRestore.Settings
                 6 => WindsPerKillTier6,
                 _ => WindsPerKillTier1,
             };
+        }
+
+        public float GetWindsForHealing(int totalHpHealed)
+        {
+            if (totalHpHealed <= 0 || HealHpPerWind <= 0f || WindsPerHealBlock <= 0f)
+                return 0f;
+
+            return totalHpHealed / HealHpPerWind * WindsPerHealBlock;
         }
     }
 }

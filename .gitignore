@@ -1,4 +1,10 @@
-build/
-src/WindsOfMagicRestore/obj/
-src/WindsOfMagicRestore/bin/
-bin/
+build/
+
+src/WindsOfMagicRestore/obj/
+
+src/WindsOfMagicRestore/bin/
+
+bin/
+
+TOR_Core-development
+

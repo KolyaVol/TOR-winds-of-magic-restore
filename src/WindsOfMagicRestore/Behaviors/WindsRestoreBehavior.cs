@@ -1,26 +1,13 @@
-using System;
-using System.Reflection;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.Core;
-using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 using WindsOfMagicRestore.Settings;
+using WindsOfMagicRestore.Utilities;
 
 namespace WindsOfMagicRestore.Behaviors
 {
     public class WindsRestoreBehavior : MissionLogic
     {
-        private static readonly MethodInfo? AddWindsOfMagic = Type
-            .GetType("TOR_Core.Extensions.HeroExtensions, TOR_Core")
-            ?.GetMethod(
-                "AddWindsOfMagic",
-                BindingFlags.Public | BindingFlags.Static,
-                null,
-                new[] { typeof(Hero), typeof(float) },
-                null);
-
-        private static bool _torApiMissingLogged;
-
         public override void OnAgentRemoved(
             Agent affectedAgent,
             Agent affectorAgent,
@@ -39,16 +26,6 @@ namespace WindsOfMagicRestore.Behaviors
             if (!affectedAgent.IsEnemyOf(affectorAgent))
                 return;
 
-            if (AddWindsOfMagic == null)
-            {
-                if (!_torApiMissingLogged)
-                {
-                    _torApiMissingLogged = true;
-                    Debug.Print("[WindsOfMagicRestore] TOR_Core.Extensions.HeroExtensions.AddWindsOfMagic not found. Is TOR_Core loaded?");
-                }
-                return;
-            }
-
             var tier = (affectedAgent.Character as CharacterObject)?.Tier ?? 1;
             if (tier < 1)
                 tier = 1;
@@ -56,10 +33,22 @@ namespace WindsOfMagicRestore.Behaviors
                 tier = 6;
 
             var amount = WindsOfMagicRestoreSettings.Instance?.GetWindsForTier(tier) ?? 1f;
-            if (amount <= 0f)
+            TorWindsApi.AddWinds(amount);
+        }
+
+        public override void OnMissionTick(float dt)
+        {
+            if (Hero.MainHero == null || Agent.Main == null || !Agent.Main.IsActive())
                 return;
 
-            AddWindsOfMagic.Invoke(null, new object[] { Hero.MainHero, amount });
+            if (Mission.IsFriendlyMission || Mission.IsMissionEnding)
+                return;
+
+            var rate = WindsOfMagicRestoreSettings.Instance?.WindsPerSecond ?? 0f;
+            if (rate <= 0f)
+                return;
+
+            TorWindsApi.AddWinds(rate * dt);
         }
     }
 }

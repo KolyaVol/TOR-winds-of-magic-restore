@@ -7,3 +7,4 @@ D:\projects\WindsOfMagic\src\WindsOfMagicRestore\obj\Release\WindsOfMagicRestore
 D:\projects\WindsOfMagic\src\WindsOfMagicRestore\obj\Release\WindsOfMagicRestore.csproj.CoreCompileInputs.cache
 D:\projects\WindsOfMagic\src\WindsOfMagicRestore\obj\Release\WindsOfMagicRestore.dll
 D:\projects\WindsOfMagic\src\WindsOfMagicRestore\obj\Release\WindsOfMagicRestore.pdb
+D:\projects\WindsOfMagic\src\WindsOfMagicRestore\obj\Release\WindsOfMagicRestore.sourcelink.json
