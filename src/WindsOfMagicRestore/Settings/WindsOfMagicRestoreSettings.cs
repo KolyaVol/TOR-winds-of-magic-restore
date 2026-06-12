@@ -6,12 +6,16 @@ namespace WindsOfMagicRestore.Settings
 {
     public sealed class WindsOfMagicRestoreSettings : AttributeGlobalSettings<WindsOfMagicRestoreSettings>
     {
+        private float _windsPerKillAllTiers = 1f;
+        private bool _usePerTierKillRewards;
         private float _windsPerKillTier1 = 1f;
         private float _windsPerKillTier2;
         private float _windsPerKillTier3;
         private float _windsPerKillTier4;
         private float _windsPerKillTier5;
         private float _windsPerKillTier6;
+        private float _windsPerAugmentKillAllTiers = 1f;
+        private bool _usePerTierAugmentKillRewards;
         private float _windsPerAugmentKillTier1 = 1f;
         private float _windsPerAugmentKillTier2;
         private float _windsPerAugmentKillTier3;
@@ -35,103 +39,163 @@ namespace WindsOfMagicRestore.Settings
             _ = Instance;
         }
 
-        [SettingPropertyFloatingInteger("Winds per kill (tier 1)", 0f, 100f, "0.##", Order = 0, RequireRestart = false, HintText = "Winds restored when killing a tier 1 enemy.")]
+        [SettingPropertyBool("Different amount per tier", IsToggle = true, Order = 0, RequireRestart = false, HintText = "Set a separate reward for each enemy tier.")]
         [SettingPropertyGroup("Kill rewards", GroupOrder = 0)]
+        public bool UsePerTierKillRewards
+        {
+            get => _usePerTierKillRewards;
+            set
+            {
+                if (_usePerTierKillRewards == value)
+                    return;
+
+                _usePerTierKillRewards = value;
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(UseUniformKillReward));
+            }
+        }
+
+        public bool UseUniformKillReward
+        {
+            get => !_usePerTierKillRewards;
+            set => UsePerTierKillRewards = !value;
+        }
+
+        [SettingPropertyFloatingInteger("Winds per kill", 0f, 100f, "0.##", Order = 1, RequireRestart = false, HintText = "Same reward for every enemy tier.")]
+        [SettingPropertyGroup("Kill rewards/{UseUniformKillReward}")]
+        public float WindsPerKillAllTiers
+        {
+            get => _windsPerKillAllTiers;
+            set { if (_windsPerKillAllTiers != value) { _windsPerKillAllTiers = value; OnPropertyChanged(); } }
+        }
+
+        [SettingPropertyFloatingInteger("Tier 1", 0f, 100f, "0.##", Order = 0, RequireRestart = false)]
+        [SettingPropertyGroup("Kill rewards/{UsePerTierKillRewards}")]
         public float WindsPerKillTier1
         {
             get => _windsPerKillTier1;
             set { if (_windsPerKillTier1 != value) { _windsPerKillTier1 = value; OnPropertyChanged(); } }
         }
 
-        [SettingPropertyFloatingInteger("Winds per kill (tier 2)", 0f, 100f, "0.##", Order = 1, RequireRestart = false)]
-        [SettingPropertyGroup("Kill rewards")]
+        [SettingPropertyFloatingInteger("Tier 2", 0f, 100f, "0.##", Order = 1, RequireRestart = false)]
+        [SettingPropertyGroup("Kill rewards/{UsePerTierKillRewards}")]
         public float WindsPerKillTier2
         {
             get => _windsPerKillTier2;
             set { if (_windsPerKillTier2 != value) { _windsPerKillTier2 = value; OnPropertyChanged(); } }
         }
 
-        [SettingPropertyFloatingInteger("Winds per kill (tier 3)", 0f, 100f, "0.##", Order = 2, RequireRestart = false)]
-        [SettingPropertyGroup("Kill rewards")]
+        [SettingPropertyFloatingInteger("Tier 3", 0f, 100f, "0.##", Order = 2, RequireRestart = false)]
+        [SettingPropertyGroup("Kill rewards/{UsePerTierKillRewards}")]
         public float WindsPerKillTier3
         {
             get => _windsPerKillTier3;
             set { if (_windsPerKillTier3 != value) { _windsPerKillTier3 = value; OnPropertyChanged(); } }
         }
 
-        [SettingPropertyFloatingInteger("Winds per kill (tier 4)", 0f, 100f, "0.##", Order = 3, RequireRestart = false)]
-        [SettingPropertyGroup("Kill rewards")]
+        [SettingPropertyFloatingInteger("Tier 4", 0f, 100f, "0.##", Order = 3, RequireRestart = false)]
+        [SettingPropertyGroup("Kill rewards/{UsePerTierKillRewards}")]
         public float WindsPerKillTier4
         {
             get => _windsPerKillTier4;
             set { if (_windsPerKillTier4 != value) { _windsPerKillTier4 = value; OnPropertyChanged(); } }
         }
 
-        [SettingPropertyFloatingInteger("Winds per kill (tier 5)", 0f, 100f, "0.##", Order = 4, RequireRestart = false)]
-        [SettingPropertyGroup("Kill rewards")]
+        [SettingPropertyFloatingInteger("Tier 5", 0f, 100f, "0.##", Order = 4, RequireRestart = false)]
+        [SettingPropertyGroup("Kill rewards/{UsePerTierKillRewards}")]
         public float WindsPerKillTier5
         {
             get => _windsPerKillTier5;
             set { if (_windsPerKillTier5 != value) { _windsPerKillTier5 = value; OnPropertyChanged(); } }
         }
 
-        [SettingPropertyFloatingInteger("Winds per kill (tier 6)", 0f, 100f, "0.##", Order = 5, RequireRestart = false)]
-        [SettingPropertyGroup("Kill rewards")]
+        [SettingPropertyFloatingInteger("Tier 6", 0f, 100f, "0.##", Order = 5, RequireRestart = false)]
+        [SettingPropertyGroup("Kill rewards/{UsePerTierKillRewards}")]
         public float WindsPerKillTier6
         {
             get => _windsPerKillTier6;
             set { if (_windsPerKillTier6 != value) { _windsPerKillTier6 = value; OnPropertyChanged(); } }
         }
 
-        [SettingPropertyFloatingInteger("Winds per augment kill (tier 1)", 0f, 100f, "0.##", Order = 0, RequireRestart = false, HintText = "Winds restored when a troop you buffed with an augment kills a tier 1 enemy.")]
-        [SettingPropertyGroup("Augment kill rewards", GroupOrder = 1)]
+        [SettingPropertyBool("Different amount per tier", IsToggle = true, Order = 0, RequireRestart = false, HintText = "Set a separate reward for each enemy tier.")]
+        [SettingPropertyGroup("Buffed unit kills", GroupOrder = 1)]
+        public bool UsePerTierAugmentKillRewards
+        {
+            get => _usePerTierAugmentKillRewards;
+            set
+            {
+                if (_usePerTierAugmentKillRewards == value)
+                    return;
+
+                _usePerTierAugmentKillRewards = value;
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(UseUniformAugmentKillReward));
+            }
+        }
+
+        public bool UseUniformAugmentKillReward
+        {
+            get => !_usePerTierAugmentKillRewards;
+            set => UsePerTierAugmentKillRewards = !value;
+        }
+
+        [SettingPropertyFloatingInteger("Winds per kill", 0f, 100f, "0.##", Order = 1, RequireRestart = false, HintText = "Winds when a troop you buffed kills an enemy. Same reward for every tier.")]
+        [SettingPropertyGroup("Buffed unit kills/{UseUniformAugmentKillReward}")]
+        public float WindsPerAugmentKillAllTiers
+        {
+            get => _windsPerAugmentKillAllTiers;
+            set { if (_windsPerAugmentKillAllTiers != value) { _windsPerAugmentKillAllTiers = value; OnPropertyChanged(); } }
+        }
+
+        [SettingPropertyFloatingInteger("Tier 1", 0f, 100f, "0.##", Order = 0, RequireRestart = false)]
+        [SettingPropertyGroup("Buffed unit kills/{UsePerTierAugmentKillRewards}")]
         public float WindsPerAugmentKillTier1
         {
             get => _windsPerAugmentKillTier1;
             set { if (_windsPerAugmentKillTier1 != value) { _windsPerAugmentKillTier1 = value; OnPropertyChanged(); } }
         }
 
-        [SettingPropertyFloatingInteger("Winds per augment kill (tier 2)", 0f, 100f, "0.##", Order = 1, RequireRestart = false)]
-        [SettingPropertyGroup("Augment kill rewards")]
+        [SettingPropertyFloatingInteger("Tier 2", 0f, 100f, "0.##", Order = 1, RequireRestart = false)]
+        [SettingPropertyGroup("Buffed unit kills/{UsePerTierAugmentKillRewards}")]
         public float WindsPerAugmentKillTier2
         {
             get => _windsPerAugmentKillTier2;
             set { if (_windsPerAugmentKillTier2 != value) { _windsPerAugmentKillTier2 = value; OnPropertyChanged(); } }
         }
 
-        [SettingPropertyFloatingInteger("Winds per augment kill (tier 3)", 0f, 100f, "0.##", Order = 2, RequireRestart = false)]
-        [SettingPropertyGroup("Augment kill rewards")]
+        [SettingPropertyFloatingInteger("Tier 3", 0f, 100f, "0.##", Order = 2, RequireRestart = false)]
+        [SettingPropertyGroup("Buffed unit kills/{UsePerTierAugmentKillRewards}")]
         public float WindsPerAugmentKillTier3
         {
             get => _windsPerAugmentKillTier3;
             set { if (_windsPerAugmentKillTier3 != value) { _windsPerAugmentKillTier3 = value; OnPropertyChanged(); } }
         }
 
-        [SettingPropertyFloatingInteger("Winds per augment kill (tier 4)", 0f, 100f, "0.##", Order = 3, RequireRestart = false)]
-        [SettingPropertyGroup("Augment kill rewards")]
+        [SettingPropertyFloatingInteger("Tier 4", 0f, 100f, "0.##", Order = 3, RequireRestart = false)]
+        [SettingPropertyGroup("Buffed unit kills/{UsePerTierAugmentKillRewards}")]
         public float WindsPerAugmentKillTier4
         {
             get => _windsPerAugmentKillTier4;
             set { if (_windsPerAugmentKillTier4 != value) { _windsPerAugmentKillTier4 = value; OnPropertyChanged(); } }
         }
 
-        [SettingPropertyFloatingInteger("Winds per augment kill (tier 5)", 0f, 100f, "0.##", Order = 4, RequireRestart = false)]
-        [SettingPropertyGroup("Augment kill rewards")]
+        [SettingPropertyFloatingInteger("Tier 5", 0f, 100f, "0.##", Order = 4, RequireRestart = false)]
+        [SettingPropertyGroup("Buffed unit kills/{UsePerTierAugmentKillRewards}")]
         public float WindsPerAugmentKillTier5
         {
             get => _windsPerAugmentKillTier5;
             set { if (_windsPerAugmentKillTier5 != value) { _windsPerAugmentKillTier5 = value; OnPropertyChanged(); } }
         }
 
-        [SettingPropertyFloatingInteger("Winds per augment kill (tier 6)", 0f, 100f, "0.##", Order = 5, RequireRestart = false)]
-        [SettingPropertyGroup("Augment kill rewards")]
+        [SettingPropertyFloatingInteger("Tier 6", 0f, 100f, "0.##", Order = 5, RequireRestart = false)]
+        [SettingPropertyGroup("Buffed unit kills/{UsePerTierAugmentKillRewards}")]
         public float WindsPerAugmentKillTier6
         {
             get => _windsPerAugmentKillTier6;
             set { if (_windsPerAugmentKillTier6 != value) { _windsPerAugmentKillTier6 = value; OnPropertyChanged(); } }
         }
 
-        [SettingPropertyFloatingInteger("Winds per heal block", 0f, 100f, "0.##", Order = 0, RequireRestart = false, HintText = "Winds granted when a heal spell ends. Default: 1 wind per block.")]
+        [SettingPropertyFloatingInteger("Winds per heal block", 0f, 100f, "0.##", Order = 0, RequireRestart = false, HintText = "Winds per heal block when a heal spell ends.")]
         [SettingPropertyGroup("Heal rewards", GroupOrder = 2)]
         public float WindsPerHealBlock
         {
@@ -139,7 +203,7 @@ namespace WindsOfMagicRestore.Settings
             set { if (_windsPerHealBlock != value) { _windsPerHealBlock = value; OnPropertyChanged(); } }
         }
 
-        [SettingPropertyFloatingInteger("HP healed per block", 1f, 10000f, "0.##", Order = 1, RequireRestart = false, HintText = "How much healing must be done in one spell session for one block. Default: 100 HP = 1 wind (with default block reward).")]
+        [SettingPropertyFloatingInteger("HP per block", 1f, 10000f, "0.##", Order = 1, RequireRestart = false, HintText = "HP healed per block (default 100 HP = 1 wind).")]
         [SettingPropertyGroup("Heal rewards")]
         public float HealHpPerWind
         {
@@ -147,7 +211,7 @@ namespace WindsOfMagicRestore.Settings
             set { if (_healHpPerWind != value) { _healHpPerWind = value; OnPropertyChanged(); } }
         }
 
-        [SettingPropertyBool("Reward kills by healed troops", Order = 2, RequireRestart = false, HintText = "Off (default): you regain Winds when a heal spell ends, based on total HP healed above.\n\nOn: healed friendly units count as buffed for augment kill rewards — you regain Winds when they kill enemies (see Augment kill rewards). Heal-end rewards are turned off for heal spells so you do not get both.")]
+        [SettingPropertyBool("Heals count as augments", Order = 2, RequireRestart = false, HintText = "Healed troops also earn buffed-unit kill rewards. Heal-end rewards still apply.")]
         [SettingPropertyGroup("Heal rewards")]
         public bool CountHealSpellsAsAugment
         {
@@ -155,7 +219,7 @@ namespace WindsOfMagicRestore.Settings
             set { if (_countHealSpellsAsAugment != value) { _countHealSpellsAsAugment = value; OnPropertyChanged(); } }
         }
 
-        [SettingPropertyFloatingInteger("Winds per second", 0f, 10f, "0.####", Order = 0, RequireRestart = false, HintText = "Passive in-battle Winds of Magic regen. Independent of healing.")]
+        [SettingPropertyFloatingInteger("Winds per second", 0f, 10f, "0.####", Order = 0, RequireRestart = false, HintText = "Passive in-battle regen.")]
         [SettingPropertyGroup("Passive regen", GroupOrder = 3)]
         public float WindsPerSecond
         {
@@ -163,7 +227,7 @@ namespace WindsOfMagicRestore.Settings
             set { if (_windsPerSecond != value) { _windsPerSecond = value; OnPropertyChanged(); } }
         }
 
-        [SettingPropertyFloatingInteger("Winds on damage dealt", 0f, 100f, "0.##", Order = 0, RequireRestart = false, HintText = "Reserved for future use. Not active yet.")]
+        [SettingPropertyFloatingInteger("Winds on damage dealt", 0f, 100f, "0.##", Order = 0, RequireRestart = false, HintText = "Reserved. Not active yet.")]
         [SettingPropertyGroup("Future", GroupOrder = 4)]
         public float WindsOnDamageDealt
         {
@@ -171,7 +235,7 @@ namespace WindsOfMagicRestore.Settings
             set { if (_windsOnDamageDealt != value) { _windsOnDamageDealt = value; OnPropertyChanged(); } }
         }
 
-        [SettingPropertyFloatingInteger("Winds per campaign tick", 0f, 100f, "0.##", Order = 1, RequireRestart = false, HintText = "Reserved for future use. Not active yet.")]
+        [SettingPropertyFloatingInteger("Winds per campaign tick", 0f, 100f, "0.##", Order = 1, RequireRestart = false, HintText = "Reserved. Not active yet.")]
         [SettingPropertyGroup("Future")]
         public float WindsPerCampaignTick
         {
@@ -181,6 +245,9 @@ namespace WindsOfMagicRestore.Settings
 
         public float GetWindsForTier(int tier)
         {
+            if (!UsePerTierKillRewards)
+                return WindsPerKillAllTiers;
+
             return GetWindsForTier(
                 tier,
                 WindsPerKillTier1,
@@ -193,6 +260,9 @@ namespace WindsOfMagicRestore.Settings
 
         public float GetWindsForAugmentKillTier(int tier)
         {
+            if (!UsePerTierAugmentKillRewards)
+                return WindsPerAugmentKillAllTiers;
+
             return GetWindsForTier(
                 tier,
                 WindsPerAugmentKillTier1,

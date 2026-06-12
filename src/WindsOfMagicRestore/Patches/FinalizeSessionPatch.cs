@@ -19,9 +19,6 @@ namespace WindsOfMagicRestore.Patches
         private static readonly PropertyInfo? Caster =
             SessionType?.GetProperty("Caster");
 
-        private static readonly PropertyInfo? AbilityTemplate =
-            SessionType?.GetProperty("AbilityTemplate");
-
         public static MethodInfo? TargetMethod()
         {
             var logicType = Type.GetType("TOR_Core.AbilitySystem.AbilityManagerMissionLogic, TOR_Core");
@@ -46,10 +43,6 @@ namespace WindsOfMagicRestore.Patches
 
             var settings = WindsOfMagicRestoreSettings.Instance;
             if (settings == null)
-                return;
-
-            var abilityTemplate = AbilityTemplate?.GetValue(session);
-            if (settings.CountHealSpellsAsAugment && SpellEffectTypeHelper.IsHealType(abilityTemplate))
                 return;
 
             var amount = settings.GetWindsForHealing(healingDone);

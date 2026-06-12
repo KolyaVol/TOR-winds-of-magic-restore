@@ -58,6 +58,12 @@ namespace WindsOfMagicRestore
                 typeof(CreateSpellSessionPatch),
                 nameof(CreateSpellSessionPatch.Postfix));
 
+            patchedAny |= TryPatch(
+                harmony,
+                BookSpellKillPatch.TargetMethod(),
+                typeof(BookSpellKillPatch),
+                nameof(BookSpellKillPatch.Postfix));
+
             if (!patchedAny)
                 Debug.Print("[WindsOfMagicRestore] Could not apply TOR_Core patches; heal and augment rewards may be disabled.");
 

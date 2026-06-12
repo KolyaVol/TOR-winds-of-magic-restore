@@ -920,11 +920,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\projects\\WindsOfMagic\\src\\WindsOfMagicRestore\\WindsOfMagicRestore.csproj",
+      "projectUniqueName": "D:\\projects\\WindsOfMagic\\src\\WindsOfMagicRestore\\WindsOfMagicRestore.csproj",
       "projectName": "WindsOfMagicRestore",
-      "projectPath": "d:\\projects\\WindsOfMagic\\src\\WindsOfMagicRestore\\WindsOfMagicRestore.csproj",
+      "projectPath": "D:\\projects\\WindsOfMagic\\src\\WindsOfMagicRestore\\WindsOfMagicRestore.csproj",
       "packagesPath": "C:\\Users\\Kolya Vol\\.nuget\\packages\\",
-      "outputPath": "d:\\projects\\WindsOfMagic\\src\\WindsOfMagicRestore\\obj\\",
+      "outputPath": "D:\\projects\\WindsOfMagic\\src\\WindsOfMagicRestore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Kolya Vol\\AppData\\Roaming\\NuGet\\NuGet.Config"

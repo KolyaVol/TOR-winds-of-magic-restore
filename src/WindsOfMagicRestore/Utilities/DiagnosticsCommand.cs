@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Text;
+using TaleWorlds.CampaignSystem;
 using TaleWorlds.Library;
 using WindsOfMagicRestore.Patches;
 using WindsOfMagicRestore.Settings;
@@ -8,6 +9,16 @@ namespace WindsOfMagicRestore.Utilities
 {
     public static class DiagnosticsCommand
     {
+        [CommandLineFunctionality.CommandLineArgumentFunction("add", "wom")]
+        public static string AddWinds(List<string> args)
+        {
+            if (args == null || args.Count == 0 || !float.TryParse(args[0], out var amount))
+                return "Usage: wom.add <amount>";
+
+            TorWindsApi.AddWinds(amount);
+            return $"[Winds of Magic Restore] Added {amount} winds to {Hero.MainHero?.Name}.";
+        }
+
         [CommandLineFunctionality.CommandLineArgumentFunction("diagnostics", "wom")]
         public static string Diagnostics(List<string> args)
         {
@@ -18,6 +29,7 @@ namespace WindsOfMagicRestore.Utilities
             Append(sb, "BelongsToMainParty", AgentPartyHelper.IsBelongsToMainPartyAvailable);
             Append(sb, "CreateSpellSession patch target", CreateSpellSessionPatch.TargetMethod() != null);
             Append(sb, "FinalizeSession patch target", FinalizeSessionPatch.TargetMethod() != null);
+            Append(sb, "BookSpellKill patch target", BookSpellKillPatch.TargetMethod() != null);
             Append(sb, "StatusEffectComponent type", AugmentBuffTracker.IsStatusEffectComponentTypeResolved);
             Append(sb, "StatusEffect type", AugmentBuffTracker.IsStatusEffectTypeResolved);
             Append(sb, "StatusEffectComponent._currentEffects", AugmentBuffTracker.IsCurrentEffectsFieldResolved);

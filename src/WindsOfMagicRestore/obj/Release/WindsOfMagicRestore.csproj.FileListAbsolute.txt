@@ -8,3 +8,12 @@ D:\projects\WindsOfMagic\src\WindsOfMagicRestore\obj\Release\WindsOfMagicRestore
 D:\projects\WindsOfMagic\src\WindsOfMagicRestore\obj\Release\WindsOfMagicRestore.dll
 D:\projects\WindsOfMagic\src\WindsOfMagicRestore\obj\Release\WindsOfMagicRestore.pdb
 D:\projects\WindsOfMagic\src\WindsOfMagicRestore\obj\Release\WindsOfMagicRestore.sourcelink.json
+C:\Users\kolya\Downloads\TOR-winds-of-magic-restore-master\TOR-winds-of-magic-restore-master\build\WindsOfMagicRestore\bin\Win64_Shipping_Client\WindsOfMagicRestore.dll
+C:\Users\kolya\Downloads\TOR-winds-of-magic-restore-master\TOR-winds-of-magic-restore-master\build\WindsOfMagicRestore\bin\Win64_Shipping_Client\WindsOfMagicRestore.pdb
+C:\Users\kolya\Downloads\TOR-winds-of-magic-restore-master\TOR-winds-of-magic-restore-master\src\WindsOfMagicRestore\obj\Release\WindsOfMagicRestore.csproj.AssemblyReference.cache
+C:\Users\kolya\Downloads\TOR-winds-of-magic-restore-master\TOR-winds-of-magic-restore-master\src\WindsOfMagicRestore\obj\Release\WindsOfMagicRestore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kolya\Downloads\TOR-winds-of-magic-restore-master\TOR-winds-of-magic-restore-master\src\WindsOfMagicRestore\obj\Release\WindsOfMagicRestore.AssemblyInfoInputs.cache
+C:\Users\kolya\Downloads\TOR-winds-of-magic-restore-master\TOR-winds-of-magic-restore-master\src\WindsOfMagicRestore\obj\Release\WindsOfMagicRestore.AssemblyInfo.cs
+C:\Users\kolya\Downloads\TOR-winds-of-magic-restore-master\TOR-winds-of-magic-restore-master\src\WindsOfMagicRestore\obj\Release\WindsOfMagicRestore.csproj.CoreCompileInputs.cache
+C:\Users\kolya\Downloads\TOR-winds-of-magic-restore-master\TOR-winds-of-magic-restore-master\src\WindsOfMagicRestore\obj\Release\WindsOfMagicRestore.dll
+C:\Users\kolya\Downloads\TOR-winds-of-magic-restore-master\TOR-winds-of-magic-restore-master\src\WindsOfMagicRestore\obj\Release\WindsOfMagicRestore.pdb
