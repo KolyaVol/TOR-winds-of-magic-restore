@@ -30,6 +30,8 @@ namespace WindsOfMagicRestore.Utilities
             Append(sb, "CreateSpellSession patch target", CreateSpellSessionPatch.TargetMethod() != null);
             Append(sb, "FinalizeSession patch target", FinalizeSessionPatch.TargetMethod() != null);
             Append(sb, "BookSpellKill patch target", BookSpellKillPatch.TargetMethod() != null);
+            Append(sb, "BookSpellDamage patch target", BookSpellDamagePatch.TargetMethod() != null);
+            Append(sb, "ApplyGeneralDamageModifiers patch target", ApplyGeneralDamageModifiersPatch.TargetMethod() != null);
             Append(sb, "StatusEffectComponent type", AugmentBuffTracker.IsStatusEffectComponentTypeResolved);
             Append(sb, "StatusEffect type", AugmentBuffTracker.IsStatusEffectTypeResolved);
             Append(sb, "StatusEffectComponent._currentEffects", AugmentBuffTracker.IsCurrentEffectsFieldResolved);

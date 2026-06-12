@@ -26,7 +26,10 @@ namespace WindsOfMagicRestore.Settings
         private float _healHpPerWind = 100f;
         private bool _countHealSpellsAsAugment;
         private float _windsPerSecond = 0.05f;
-        private float _windsOnDamageDealt;
+        private float _windsPerMeleeDamageBlock;
+        private float _meleeDamageHpPerWind = 100f;
+        private float _windsPerSpellDamageBlock;
+        private float _spellDamageHpPerWind = 100f;
         private float _windsPerCampaignTick;
 
         public override string Id => "WindsOfMagicRestore_v1";
@@ -227,16 +230,40 @@ namespace WindsOfMagicRestore.Settings
             set { if (_windsPerSecond != value) { _windsPerSecond = value; OnPropertyChanged(); } }
         }
 
-        [SettingPropertyFloatingInteger("Winds on damage dealt", 0f, 100f, "0.##", Order = 0, RequireRestart = false, HintText = "Reserved. Not active yet.")]
-        [SettingPropertyGroup("Future", GroupOrder = 4)]
-        public float WindsOnDamageDealt
+        [SettingPropertyFloatingInteger("Winds per damage block", 0f, 100f, "0.##", Order = 0, RequireRestart = false, HintText = "Winds per melee or ranged damage block dealt by you.")]
+        [SettingPropertyGroup("Melee and ranged damage", GroupOrder = 4)]
+        public float WindsPerMeleeDamageBlock
         {
-            get => _windsOnDamageDealt;
-            set { if (_windsOnDamageDealt != value) { _windsOnDamageDealt = value; OnPropertyChanged(); } }
+            get => _windsPerMeleeDamageBlock;
+            set { if (_windsPerMeleeDamageBlock != value) { _windsPerMeleeDamageBlock = value; OnPropertyChanged(); } }
         }
 
-        [SettingPropertyFloatingInteger("Winds per campaign tick", 0f, 100f, "0.##", Order = 1, RequireRestart = false, HintText = "Reserved. Not active yet.")]
-        [SettingPropertyGroup("Future")]
+        [SettingPropertyFloatingInteger("HP per block", 1f, 10000f, "0.##", Order = 1, RequireRestart = false, HintText = "Enemy HP damaged per block (default 100 HP = 1 wind).")]
+        [SettingPropertyGroup("Melee and ranged damage")]
+        public float MeleeDamageHpPerWind
+        {
+            get => _meleeDamageHpPerWind;
+            set { if (_meleeDamageHpPerWind != value) { _meleeDamageHpPerWind = value; OnPropertyChanged(); } }
+        }
+
+        [SettingPropertyFloatingInteger("Winds per damage block", 0f, 100f, "0.##", Order = 0, RequireRestart = false, HintText = "Winds per spell damage block dealt by you.")]
+        [SettingPropertyGroup("Spell damage", GroupOrder = 5)]
+        public float WindsPerSpellDamageBlock
+        {
+            get => _windsPerSpellDamageBlock;
+            set { if (_windsPerSpellDamageBlock != value) { _windsPerSpellDamageBlock = value; OnPropertyChanged(); } }
+        }
+
+        [SettingPropertyFloatingInteger("HP per block", 1f, 10000f, "0.##", Order = 1, RequireRestart = false, HintText = "Enemy HP damaged per block (default 100 HP = 1 wind).")]
+        [SettingPropertyGroup("Spell damage")]
+        public float SpellDamageHpPerWind
+        {
+            get => _spellDamageHpPerWind;
+            set { if (_spellDamageHpPerWind != value) { _spellDamageHpPerWind = value; OnPropertyChanged(); } }
+        }
+
+        [SettingPropertyFloatingInteger("Winds per campaign tick", 0f, 100f, "0.##", Order = 0, RequireRestart = false, HintText = "Reserved. Not active yet.")]
+        [SettingPropertyGroup("Future", GroupOrder = 6)]
         public float WindsPerCampaignTick
         {
             get => _windsPerCampaignTick;
@@ -300,6 +327,24 @@ namespace WindsOfMagicRestore.Settings
                 return 0f;
 
             return totalHpHealed / HealHpPerWind * WindsPerHealBlock;
+        }
+
+        public float GetWindsForMeleeDamage(float damageDealt)
+        {
+            return GetWindsForDamage(damageDealt, MeleeDamageHpPerWind, WindsPerMeleeDamageBlock);
+        }
+
+        public float GetWindsForSpellDamage(int damageDealt)
+        {
+            return GetWindsForDamage(damageDealt, SpellDamageHpPerWind, WindsPerSpellDamageBlock);
+        }
+
+        private static float GetWindsForDamage(float damageDealt, float hpPerWind, float windsPerBlock)
+        {
+            if (damageDealt <= 0f || hpPerWind <= 0f || windsPerBlock <= 0f)
+                return 0f;
+
+            return damageDealt / hpPerWind * windsPerBlock;
         }
     }
 }
