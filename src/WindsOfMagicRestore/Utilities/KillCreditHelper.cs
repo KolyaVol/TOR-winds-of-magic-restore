@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using TaleWorlds.MountAndBlade;
 
 namespace WindsOfMagicRestore.Utilities
@@ -24,7 +23,7 @@ namespace WindsOfMagicRestore.Utilities
                     return agent;
             }
 
-            return candidates[0];
+            return null;
         }
 
         public static Agent? NormalizeAgent(Agent? agent)
@@ -105,8 +104,11 @@ namespace WindsOfMagicRestore.Utilities
             if (agent == null)
                 return;
 
-            if (candidates.Any(existing => existing.Index == agent.Index))
-                return;
+            for (var i = 0; i < candidates.Count; i++)
+            {
+                if (candidates[i].Index == agent.Index)
+                    return;
+            }
 
             candidates.Add(agent);
         }

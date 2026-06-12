@@ -32,7 +32,6 @@ namespace WindsOfMagicRestore.Settings
         private float _windsPerSpellDamageBlock;
         private float _spellDamageHpPerWind = 100f;
         private float _windsPerFriendlySpellDamageBlock;
-        private float _windsPerCampaignTick;
 
         public override string Id => "WindsOfMagicRestore_v1";
         public override string DisplayName => "Winds of Magic Restore";
@@ -248,7 +247,7 @@ namespace WindsOfMagicRestore.Settings
             set { if (_meleeDamageHpPerWind != value) { _meleeDamageHpPerWind = value; OnPropertyChanged(); } }
         }
 
-        [SettingPropertyFloatingInteger("Friendly winds per damage block", 0f, 100f, "0.##", Order = 2, RequireRestart = false, HintText = "Winds per melee or ranged damage block dealt to friendly units. (WHY??)")]
+        [SettingPropertyFloatingInteger("Friendly winds per damage block", 0f, 100f, "0.##", Order = 2, RequireRestart = false, HintText = "Winds per melee or ranged damage block dealt to friendly units.")]
         [SettingPropertyGroup("Melee and ranged damage")]
         public float WindsPerFriendlyMeleeDamageBlock
         {
@@ -272,20 +271,12 @@ namespace WindsOfMagicRestore.Settings
             set { if (_spellDamageHpPerWind != value) { _spellDamageHpPerWind = value; OnPropertyChanged(); } }
         }
 
-        [SettingPropertyFloatingInteger("Friendly winds per damage block", 0f, 100f, "0.##", Order = 2, RequireRestart = false, HintText = "Winds per spell damage block dealt to friendly units. (WHY??)")]
+        [SettingPropertyFloatingInteger("Friendly winds per damage block", 0f, 100f, "0.##", Order = 2, RequireRestart = false, HintText = "Winds per spell damage block dealt to friendly units.")]
         [SettingPropertyGroup("Spell damage")]
         public float WindsPerFriendlySpellDamageBlock
         {
             get => _windsPerFriendlySpellDamageBlock;
             set { if (_windsPerFriendlySpellDamageBlock != value) { _windsPerFriendlySpellDamageBlock = value; OnPropertyChanged(); } }
-        }
-
-        [SettingPropertyFloatingInteger("Winds per campaign tick", 0f, 100f, "0.##", Order = 0, RequireRestart = false, HintText = "Reserved. Not active yet.")]
-        [SettingPropertyGroup("Future", GroupOrder = 6)]
-        public float WindsPerCampaignTick
-        {
-            get => _windsPerCampaignTick;
-            set { if (_windsPerCampaignTick != value) { _windsPerCampaignTick = value; OnPropertyChanged(); } }
         }
 
         public float GetWindsForTier(int tier)

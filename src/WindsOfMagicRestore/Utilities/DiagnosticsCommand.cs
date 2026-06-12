@@ -32,16 +32,11 @@ namespace WindsOfMagicRestore.Utilities
             Append(sb, "BookSpellKill patch target", BookSpellKillPatch.TargetMethod() != null);
             Append(sb, "BookSpellDamage patch target", BookSpellDamagePatch.TargetMethod() != null);
             Append(sb, "ApplyGeneralDamageModifiers patch target", ApplyGeneralDamageModifiersPatch.TargetMethod() != null);
-            Append(sb, "StatusEffectComponent type", AugmentBuffTracker.IsStatusEffectComponentTypeResolved);
-            Append(sb, "StatusEffect type", AugmentBuffTracker.IsStatusEffectTypeResolved);
-            Append(sb, "StatusEffectComponent._currentEffects", AugmentBuffTracker.IsCurrentEffectsFieldResolved);
-            Append(sb, "StatusEffect.ApplierAgent", AugmentBuffTracker.IsApplierAgentAccessorResolved);
-            Append(sb, "StatusEffect.CastId", AugmentBuffTracker.IsCastIdAccessorResolved);
-            Append(sb, "StatusEffect.CurrentDuration", AugmentBuffTracker.IsCurrentDurationAccessorResolved);
-            Append(sb, "Agent.GetComponent<T>", AugmentBuffTracker.IsGetStatusEffectComponentResolved);
-
-            var settingsLoaded = WindsOfMagicRestoreSettings.Instance != null;
-            Append(sb, "MCM settings loaded", settingsLoaded);
+            Append(sb, "Augment buff tracking", AugmentBuffTracker.IsTrackingAvailable);
+            Append(sb, "AbilityManagerMissionLogic type", TorTypes.AbilityManagerMissionLogic != null);
+            Append(sb, "SpellCastSession type", TorTypes.SpellCastSession != null);
+            Append(sb, "StatusEffectComponent type", TorTypes.StatusEffectComponent != null);
+            Append(sb, "MCM settings loaded", WindsOfMagicRestoreSettings.Instance != null);
 
             sb.AppendLine("OK = resolved/working, MISSING = not found (feature disabled).");
             return sb.ToString();

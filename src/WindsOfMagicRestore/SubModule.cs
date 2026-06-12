@@ -1,3 +1,4 @@
+using System;
 using System.Reflection;
 using HarmonyLib;
 using TaleWorlds.CampaignSystem;
@@ -46,35 +47,11 @@ namespace WindsOfMagicRestore
             var harmony = new Harmony(HarmonyId);
             var patchedAny = false;
 
-            patchedAny |= TryPatch(
-                harmony,
-                FinalizeSessionPatch.TargetMethod(),
-                typeof(FinalizeSessionPatch),
-                nameof(FinalizeSessionPatch.Postfix));
-
-            patchedAny |= TryPatch(
-                harmony,
-                CreateSpellSessionPatch.TargetMethod(),
-                typeof(CreateSpellSessionPatch),
-                nameof(CreateSpellSessionPatch.Postfix));
-
-            patchedAny |= TryPatch(
-                harmony,
-                BookSpellKillPatch.TargetMethod(),
-                typeof(BookSpellKillPatch),
-                nameof(BookSpellKillPatch.Postfix));
-
-            patchedAny |= TryPatch(
-                harmony,
-                BookSpellDamagePatch.TargetMethod(),
-                typeof(BookSpellDamagePatch),
-                nameof(BookSpellDamagePatch.Postfix));
-
-            patchedAny |= TryPatch(
-                harmony,
-                ApplyGeneralDamageModifiersPatch.TargetMethod(),
-                typeof(ApplyGeneralDamageModifiersPatch),
-                nameof(ApplyGeneralDamageModifiersPatch.Postfix));
+            patchedAny |= TryPatch(harmony, FinalizeSessionPatch.TargetMethod(), typeof(FinalizeSessionPatch), nameof(FinalizeSessionPatch.Postfix));
+            patchedAny |= TryPatch(harmony, CreateSpellSessionPatch.TargetMethod(), typeof(CreateSpellSessionPatch), nameof(CreateSpellSessionPatch.Postfix));
+            patchedAny |= TryPatch(harmony, BookSpellKillPatch.TargetMethod(), typeof(BookSpellKillPatch), nameof(BookSpellKillPatch.Postfix));
+            patchedAny |= TryPatch(harmony, BookSpellDamagePatch.TargetMethod(), typeof(BookSpellDamagePatch), nameof(BookSpellDamagePatch.Postfix));
+            patchedAny |= TryPatch(harmony, ApplyGeneralDamageModifiersPatch.TargetMethod(), typeof(ApplyGeneralDamageModifiersPatch), nameof(ApplyGeneralDamageModifiersPatch.Postfix));
 
             if (!patchedAny)
                 Debug.Print("[WindsOfMagicRestore] Could not apply TOR_Core patches; heal and augment rewards may be disabled.");
@@ -82,13 +59,21 @@ namespace WindsOfMagicRestore
             _patchesApplied = patchedAny;
         }
 
-        private static bool TryPatch(Harmony harmony, MethodInfo? target, System.Type patchType, string postfixName)
+        private static bool TryPatch(Harmony harmony, MethodInfo? target, Type patchType, string postfixName)
         {
             if (target == null)
                 return false;
 
-            harmony.Patch(target, postfix: new HarmonyMethod(patchType, postfixName));
-            return true;
+            try
+            {
+                harmony.Patch(target, postfix: new HarmonyMethod(patchType, postfixName));
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Debug.Print($"[WindsOfMagicRestore] Failed to patch {target.DeclaringType?.Name}.{target.Name}: {ex.Message}");
+                return false;
+            }
         }
     }
 }

@@ -8,6 +8,16 @@ namespace WindsOfMagicRestore.Utilities
     {
         public static void TryGrantForCombatDamage(Agent victim, Agent? attacker, float damage)
         {
+            ModGuard.Run("CombatDamageReward", () => TryGrantForCombatDamageCore(victim, attacker, damage));
+        }
+
+        public static void TryGrantForSpellDamage(Agent victim, Agent? caster, int damage)
+        {
+            ModGuard.Run("SpellDamageReward", () => TryGrantForSpellDamageCore(victim, caster, damage));
+        }
+
+        private static void TryGrantForCombatDamageCore(Agent victim, Agent? attacker, float damage)
+        {
             if (damage <= 0f || victim == null || Hero.MainHero == null || Agent.Main == null)
                 return;
 
@@ -29,7 +39,7 @@ namespace WindsOfMagicRestore.Utilities
                 TorWindsApi.AddWinds(settings.GetWindsForFriendlyMeleeDamage(damage));
         }
 
-        public static void TryGrantForSpellDamage(Agent victim, Agent? caster, int damage)
+        private static void TryGrantForSpellDamageCore(Agent victim, Agent? caster, int damage)
         {
             if (damage <= 0 || victim == null || Hero.MainHero == null || Agent.Main == null)
                 return;

@@ -1,6 +1,4 @@
-using System;
 using System.Reflection;
-using HarmonyLib;
 using TaleWorlds.MountAndBlade;
 using WindsOfMagicRestore.Utilities;
 
@@ -8,37 +6,17 @@ namespace WindsOfMagicRestore.Patches
 {
     public static class ApplyGeneralDamageModifiersPatch
     {
-        private static readonly Type? DamageModelType =
-            Type.GetType("TOR_Core.Models.TORAgentApplyDamageModel, TOR_Core");
-
-        private static readonly Type? AttackInformationType =
-            Type.GetType("TaleWorlds.MountAndBlade.AttackInformation, TaleWorlds.MountAndBlade");
-
-        private static readonly PropertyInfo? AttackerAgentProperty =
-            AttackInformationType?.GetProperty("AttackerAgent");
-
-        private static readonly PropertyInfo? VictimAgentProperty =
-            AttackInformationType?.GetProperty("VictimAgent");
-
-        private static readonly PropertyInfo? IsAttackerAgentMountProperty =
-            AttackInformationType?.GetProperty("IsAttackerAgentMount");
-
-        private static readonly PropertyInfo? IsVictimAgentMountProperty =
-            AttackInformationType?.GetProperty("IsVictimAgentMount");
-
-        public static MethodInfo? TargetMethod()
-        {
-            return DamageModelType?.GetMethod(
-                "ApplyGeneralDamageModifiers",
-                BindingFlags.Public | BindingFlags.Instance,
-                null,
-                new[] { AttackInformationType, typeof(AttackCollisionData).MakeByRefType(), typeof(float) },
-                null);
-        }
+        public static MethodInfo? TargetMethod() => TorTypes.ApplyGeneralDamageModifiersMethod();
 
         public static void Postfix(object attackInformation, ref float __result)
         {
-            if (__result <= 0f || attackInformation == null)
+            var damage = __result;
+            ModGuard.Run("ApplyGeneralDamageModifiers", () => PostfixCore(attackInformation, damage));
+        }
+
+        private static void PostfixCore(object attackInformation, float damage)
+        {
+            if (damage <= 0f || attackInformation == null)
                 return;
 
             var attacker = ResolveAgent(attackInformation, isAttacker: true);
@@ -46,14 +24,17 @@ namespace WindsOfMagicRestore.Patches
             if (victim == null)
                 return;
 
-            DamageRewardService.TryGrantForCombatDamage(victim, attacker, __result);
+            DamageRewardService.TryGrantForCombatDamage(victim, attacker, damage);
         }
 
         private static Agent? ResolveAgent(object attackInformation, bool isAttacker)
         {
-            var agent = (isAttacker ? AttackerAgentProperty : VictimAgentProperty)?.GetValue(attackInformation) as Agent;
-            var isMount = (bool)((isAttacker ? IsAttackerAgentMountProperty : IsVictimAgentMountProperty)
-                ?.GetValue(attackInformation) ?? false);
+            var agent = (isAttacker ? TorTypes.AttackAttackerAgent : TorTypes.AttackVictimAgent)
+                ?.GetValue(attackInformation) as Agent;
+
+            var isMountValue = (isAttacker ? TorTypes.AttackIsAttackerMount : TorTypes.AttackIsVictimMount)
+                ?.GetValue(attackInformation);
+            var isMount = isMountValue is bool mountFlag && mountFlag;
 
             if (agent == null)
                 return null;

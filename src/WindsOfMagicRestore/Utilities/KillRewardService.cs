@@ -14,21 +14,27 @@ namespace WindsOfMagicRestore.Utilities
             KillingBlow blow,
             Mission mission)
         {
-            if (agentState != AgentState.Killed && agentState != AgentState.Unconscious)
-                return;
+            ModGuard.Run("AgentRemovalKillReward", () =>
+            {
+                if (agentState != AgentState.Killed && agentState != AgentState.Unconscious)
+                    return;
 
-            if (Hero.MainHero == null || Agent.Main == null)
-                return;
+                if (Hero.MainHero == null || Agent.Main == null)
+                    return;
 
-            TryGrantKill(victim, KillCreditHelper.ResolveKillerAgent(mission, affectorAgent, blow));
+                TryGrantKill(victim, KillCreditHelper.ResolveKillerAgent(mission, affectorAgent, blow));
+            });
         }
 
         public static void TryGrantForSpellKill(Agent victim, Agent? caster)
         {
-            if (Hero.MainHero == null || Agent.Main == null || victim == null)
-                return;
+            ModGuard.Run("SpellKillReward", () =>
+            {
+                if (Hero.MainHero == null || Agent.Main == null || victim == null)
+                    return;
 
-            TryGrantKill(victim, KillCreditHelper.NormalizeAgent(caster));
+                TryGrantKill(victim, KillCreditHelper.NormalizeAgent(caster));
+            });
         }
 
         private static void TryGrantKill(Agent victim, Agent? killer)
@@ -45,15 +51,11 @@ namespace WindsOfMagicRestore.Utilities
             if (killer == null || !KillCreditHelper.IsHostileVictim(victim, killer))
                 return false;
 
-            var tier = (victim.Character as CharacterObject)?.Tier ?? 1;
-            if (tier < 1)
-                tier = 1;
-            else if (tier > 6)
-                tier = 6;
-
             var settings = WindsOfMagicRestoreSettings.Instance;
             if (settings == null)
                 return false;
+
+            var tier = UnitTierHelper.ClampTier(victim);
 
             if (KillCreditHelper.IsMainHeroAgent(killer))
             {
