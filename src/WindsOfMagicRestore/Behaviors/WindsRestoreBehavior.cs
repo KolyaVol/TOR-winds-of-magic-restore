@@ -12,6 +12,7 @@ namespace WindsOfMagicRestore.Behaviors
         {
             AugmentBuffTracker.Reset();
             KillRewardTracker.Reset();
+            WindsRestoreMessages.Reset();
             ModDiagnostics.TryShowBattleWarning();
         }
 
@@ -31,6 +32,8 @@ namespace WindsOfMagicRestore.Behaviors
 
         public override void OnMissionTick(float dt)
         {
+            WindsRestoreMessages.Tick(Mission.CurrentTime);
+
             if (Hero.MainHero == null || Agent.Main == null || !Agent.Main.IsActive())
                 return;
 
@@ -42,6 +45,12 @@ namespace WindsOfMagicRestore.Behaviors
                 return;
 
             TorWindsApi.AddWinds(rate * dt);
+        }
+
+        protected override void OnEndMission()
+        {
+            WindsRestoreMessages.FlushRemaining(Mission.CurrentTime);
+            WindsRestoreMessages.Reset();
         }
     }
 }

@@ -16,12 +16,14 @@ namespace WindsOfMagicRestore.Utilities
                 if (TorTypes.AddWindsOfMagic != null)
                 {
                     TorTypes.AddWindsOfMagic.Invoke(null, new object[] { Hero.MainHero, amount });
+                    WindsRestoreMessages.Record(amount);
                     return;
                 }
 
                 if (TorTypes.AddCustomResource != null)
                 {
                     TorTypes.AddCustomResource.Invoke(null, new object[] { Hero.MainHero, "WindsOfMagic", amount });
+                    WindsRestoreMessages.Record(amount);
                     return;
                 }
 
