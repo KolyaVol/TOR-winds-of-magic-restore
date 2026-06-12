@@ -1,6 +1,8 @@
+using System;
 using MCM.Abstractions.Attributes;
 using MCM.Abstractions.Attributes.v2;
 using MCM.Abstractions.Base.Global;
+using WindsOfMagicRestore.Utilities;
 
 namespace WindsOfMagicRestore.Settings
 {
@@ -32,6 +34,7 @@ namespace WindsOfMagicRestore.Settings
         private float _windsPerSpellDamageBlock;
         private float _spellDamageHpPerWind = 100f;
         private float _windsPerFriendlySpellDamageBlock;
+        private bool _showBattleDiagnosticsWarning = true;
 
         public override string Id => "WindsOfMagicRestore_v1";
         public override string DisplayName => "Winds of Magic Restore";
@@ -277,6 +280,58 @@ namespace WindsOfMagicRestore.Settings
         {
             get => _windsPerFriendlySpellDamageBlock;
             set { if (_windsPerFriendlySpellDamageBlock != value) { _windsPerFriendlySpellDamageBlock = value; OnPropertyChanged(); } }
+        }
+
+        [SettingPropertyText(
+            "Compatibility status",
+            Order = 0,
+            RequireRestart = false,
+            HintText = "Live summary of TOR_Core hooks. Refreshes when you reopen this page.")]
+        [SettingPropertyGroup("Diagnostics", GroupOrder = 7)]
+        public string DiagnosticsStatus
+        {
+            get => ModDiagnostics.GetBriefSummary();
+            set { }
+        }
+
+        [SettingPropertyButton(
+            "Export diagnostics report",
+            Content = "Save to Documents",
+            Order = 1,
+            RequireRestart = false,
+            HintText = "Writes WindsOfMagicRestore_diagnostics.txt (full report, same as wom.diagnostics).")]
+        [SettingPropertyGroup("Diagnostics")]
+        public Action ExportDiagnostics => ModDiagnostics.ExportReportToFile;
+
+        [SettingPropertyText(
+            "Game log folder",
+            Order = 2,
+            RequireRestart = false,
+            HintText = "Startup and error logs are always written here — no cheat mode or console needed. Open the newest rgl_log_*.txt and search for WindsOfMagicRestore.")]
+        [SettingPropertyGroup("Diagnostics")]
+        public string GameLogFolder
+        {
+            get => ModDiagnostics.GetGameLogPath();
+            set { }
+        }
+
+        [SettingPropertyBool(
+            "Warn at battle start",
+            Order = 3,
+            RequireRestart = false,
+            HintText = "Show a one-time on-screen message when compatibility issues are detected.")]
+        [SettingPropertyGroup("Diagnostics")]
+        public bool ShowBattleDiagnosticsWarning
+        {
+            get => _showBattleDiagnosticsWarning;
+            set
+            {
+                if (_showBattleDiagnosticsWarning == value)
+                    return;
+
+                _showBattleDiagnosticsWarning = value;
+                OnPropertyChanged();
+            }
         }
 
         public float GetWindsForTier(int tier)

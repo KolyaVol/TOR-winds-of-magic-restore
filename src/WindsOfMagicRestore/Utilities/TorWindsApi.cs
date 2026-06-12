@@ -1,12 +1,9 @@
 using TaleWorlds.CampaignSystem;
-using TaleWorlds.Library;
 
 namespace WindsOfMagicRestore.Utilities
 {
     internal static class TorWindsApi
     {
-        private static bool _torApiMissingLogged;
-
         public static bool IsAvailable => TorTypes.AddWindsOfMagic != null || TorTypes.AddCustomResource != null;
 
         public static void AddWinds(float amount)
@@ -28,11 +25,10 @@ namespace WindsOfMagicRestore.Utilities
                     return;
                 }
 
-                if (!_torApiMissingLogged)
-                {
-                    _torApiMissingLogged = true;
-                    Debug.Print("[WindsOfMagicRestore] TOR wind gain API not found. Is TOR_Core loaded?");
-                }
+                ModLog.OnceWarn(
+                    "tor:winds-api",
+                    "TOR wind gain API not found (AddWindsOfMagic and AddCustomResource both missing). " +
+                    "No rewards can be granted — check TOR_Core version with wom.diagnostics.");
             });
         }
     }

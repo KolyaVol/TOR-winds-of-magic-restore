@@ -12,6 +12,7 @@ namespace WindsOfMagicRestore.Behaviors
         {
             AugmentBuffTracker.Reset();
             KillRewardTracker.Reset();
+            ModDiagnostics.TryShowBattleWarning();
         }
 
         public override void OnEarlyAgentRemoved(
