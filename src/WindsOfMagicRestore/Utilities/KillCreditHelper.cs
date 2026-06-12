@@ -71,6 +71,22 @@ namespace WindsOfMagicRestore.Utilities
                 && victim.Team.IsEnemyOf(killer.Team);
         }
 
+        public static bool IsFriendlyVictim(Agent victim, Agent attacker)
+        {
+            var normalizedAttacker = NormalizeAgent(attacker);
+            var normalizedVictim = NormalizeAgent(victim);
+            if (normalizedAttacker == null || normalizedVictim == null)
+                return false;
+
+            if (normalizedAttacker.Index == normalizedVictim.Index)
+                return false;
+
+            if (IsHostileVictim(normalizedVictim, normalizedAttacker))
+                return false;
+
+            return normalizedVictim.IsFriendOf(normalizedAttacker);
+        }
+
         private static List<Agent> CollectCandidates(Mission mission, Agent? affectorAgent, KillingBlow blow)
         {
             var candidates = new List<Agent>(2);

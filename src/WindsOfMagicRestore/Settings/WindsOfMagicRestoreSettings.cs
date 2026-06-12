@@ -28,8 +28,10 @@ namespace WindsOfMagicRestore.Settings
         private float _windsPerSecond = 0.05f;
         private float _windsPerMeleeDamageBlock;
         private float _meleeDamageHpPerWind = 100f;
+        private float _windsPerFriendlyMeleeDamageBlock;
         private float _windsPerSpellDamageBlock;
         private float _spellDamageHpPerWind = 100f;
+        private float _windsPerFriendlySpellDamageBlock;
         private float _windsPerCampaignTick;
 
         public override string Id => "WindsOfMagicRestore_v1";
@@ -246,6 +248,14 @@ namespace WindsOfMagicRestore.Settings
             set { if (_meleeDamageHpPerWind != value) { _meleeDamageHpPerWind = value; OnPropertyChanged(); } }
         }
 
+        [SettingPropertyFloatingInteger("Friendly winds per damage block", 0f, 100f, "0.##", Order = 2, RequireRestart = false, HintText = "Winds per melee or ranged damage block dealt to friendly units. (WHY??)")]
+        [SettingPropertyGroup("Melee and ranged damage")]
+        public float WindsPerFriendlyMeleeDamageBlock
+        {
+            get => _windsPerFriendlyMeleeDamageBlock;
+            set { if (_windsPerFriendlyMeleeDamageBlock != value) { _windsPerFriendlyMeleeDamageBlock = value; OnPropertyChanged(); } }
+        }
+
         [SettingPropertyFloatingInteger("Winds per damage block", 0f, 100f, "0.##", Order = 0, RequireRestart = false, HintText = "Winds per spell damage block dealt by you.")]
         [SettingPropertyGroup("Spell damage", GroupOrder = 5)]
         public float WindsPerSpellDamageBlock
@@ -260,6 +270,14 @@ namespace WindsOfMagicRestore.Settings
         {
             get => _spellDamageHpPerWind;
             set { if (_spellDamageHpPerWind != value) { _spellDamageHpPerWind = value; OnPropertyChanged(); } }
+        }
+
+        [SettingPropertyFloatingInteger("Friendly winds per damage block", 0f, 100f, "0.##", Order = 2, RequireRestart = false, HintText = "Winds per spell damage block dealt to friendly units. (WHY??)")]
+        [SettingPropertyGroup("Spell damage")]
+        public float WindsPerFriendlySpellDamageBlock
+        {
+            get => _windsPerFriendlySpellDamageBlock;
+            set { if (_windsPerFriendlySpellDamageBlock != value) { _windsPerFriendlySpellDamageBlock = value; OnPropertyChanged(); } }
         }
 
         [SettingPropertyFloatingInteger("Winds per campaign tick", 0f, 100f, "0.##", Order = 0, RequireRestart = false, HintText = "Reserved. Not active yet.")]
@@ -337,6 +355,16 @@ namespace WindsOfMagicRestore.Settings
         public float GetWindsForSpellDamage(int damageDealt)
         {
             return GetWindsForDamage(damageDealt, SpellDamageHpPerWind, WindsPerSpellDamageBlock);
+        }
+
+        public float GetWindsForFriendlyMeleeDamage(float damageDealt)
+        {
+            return GetWindsForDamage(damageDealt, MeleeDamageHpPerWind, WindsPerFriendlyMeleeDamageBlock);
+        }
+
+        public float GetWindsForFriendlySpellDamage(int damageDealt)
+        {
+            return GetWindsForDamage(damageDealt, SpellDamageHpPerWind, WindsPerFriendlySpellDamageBlock);
         }
 
         private static float GetWindsForDamage(float damageDealt, float hpPerWind, float windsPerBlock)

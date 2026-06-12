@@ -15,14 +15,18 @@ namespace WindsOfMagicRestore.Utilities
             if (attacker == null || !KillCreditHelper.IsMainHeroAgent(attacker))
                 return;
 
-            if (!KillCreditHelper.IsHostileVictim(victim, attacker))
-                return;
-
             var settings = WindsOfMagicRestoreSettings.Instance;
             if (settings == null)
                 return;
 
-            TorWindsApi.AddWinds(settings.GetWindsForMeleeDamage(damage));
+            if (KillCreditHelper.IsHostileVictim(victim, attacker))
+            {
+                TorWindsApi.AddWinds(settings.GetWindsForMeleeDamage(damage));
+                return;
+            }
+
+            if (KillCreditHelper.IsFriendlyVictim(victim, attacker))
+                TorWindsApi.AddWinds(settings.GetWindsForFriendlyMeleeDamage(damage));
         }
 
         public static void TryGrantForSpellDamage(Agent victim, Agent? caster, int damage)
@@ -34,14 +38,18 @@ namespace WindsOfMagicRestore.Utilities
             if (caster == null || !KillCreditHelper.IsMainHeroAgent(caster))
                 return;
 
-            if (!KillCreditHelper.IsHostileVictim(victim, caster))
-                return;
-
             var settings = WindsOfMagicRestoreSettings.Instance;
             if (settings == null)
                 return;
 
-            TorWindsApi.AddWinds(settings.GetWindsForSpellDamage(damage));
+            if (KillCreditHelper.IsHostileVictim(victim, caster))
+            {
+                TorWindsApi.AddWinds(settings.GetWindsForSpellDamage(damage));
+                return;
+            }
+
+            if (KillCreditHelper.IsFriendlyVictim(victim, caster))
+                TorWindsApi.AddWinds(settings.GetWindsForFriendlySpellDamage(damage));
         }
     }
 }
