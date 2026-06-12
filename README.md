@@ -21,7 +21,10 @@ A [Mount & Blade II: Bannerlord](https://www.taleworlds.com/) mod for the **The 
 - [What it does](#what-it-does)
   - [How rewards flow](#how-rewards-flow)
   - [Which kills count](#which-kills-count)
+  - [Which damage counts](#which-damage-counts)
+  - [On-screen feedback](#on-screen-feedback)
 - [Configuration](#configuration)
+  - [Damage reward formula](#damage-reward-formula)
 - [Project structure](#project-structure)
 - [Technical details](#technical-details)
 - [Troubleshooting](#troubleshooting)
@@ -161,6 +164,7 @@ Work through these in order:
    ```
    The winds bar should increase by 5. If this works, TOR integration is fine and any remaining issue is reward logic or settings.
 5. **Kill test** — Kill an enemy (melee or spell). With defaults you get **1.0** winds per kill (all tiers). Passive regen (`0.05`/sec) is a slower sanity check.
+6. **Damage test** (optional) — Set **Winds for 100 damage** to something visible like `10` under Melee and ranged damage or Spell damage, then hit an enemy. You should see winds tick up proportionally (see [Damage reward formula](#damage-reward-formula)).
 
 If something fails, see [Troubleshooting](#troubleshooting).
 
@@ -170,7 +174,7 @@ Requires the developer console (vanilla hotkey `~` when enabled, or a console mo
 
 | Command | What it does |
 | --- | --- |
-| `wom.diagnostics` | OK / MISSING report for TOR hooks, Harmony patch targets, and MCM. Run this first when rewards stop working. |
+| `wom.diagnostics` | Full OK / MISSING report for TOR hooks, Harmony patch targets, and MCM. Run this first when rewards stop working. |
 | `wom.add <amount>` | Adds winds directly (e.g. `wom.add 5`). Use to verify TOR wind gain works in the current battle. |
 
 There are **no hotkeys**. All reward amounts are configured in Mod Options.
@@ -182,8 +186,9 @@ There are **no hotkeys**. All reward amounts are configured in Mod Options.
 By default, Winds of Magic only recovers slowly, which can leave casters stranded mid-fight. This mod gives you several **independently configurable** ways to earn winds back during combat:
 
 - **Kill rewards** — winds when **you** get kill credit (melee, ranged, direct spell hits, bombardment zones, hex/DOT ticks).
-- **Augment kill rewards** — winds when a troop you **buffed** kills an enemy while the buff is active.
+- **Buffed unit kill rewards** — winds when a troop you **buffed** kills an enemy while the buff is active.
 - **Heal rewards** — winds when a heal spell ends, based on total HP restored.
+- **Damage rewards** — winds when **you** deal melee, ranged, or spell damage (scaled per 100 HP; see formula below).
 - **Passive regeneration** — steady per-second trickle during battle.
 
 All winds are granted to your main hero (`Hero.MainHero`).
@@ -192,16 +197,19 @@ All winds are granted to your main hero (`Hero.MainHero`).
 
 ```
 Battle starts
-  └─ tracking is reset
+  └─ tracking is reset; compatibility warning if hooks are missing
 
 You cast an augment / heal spell
   └─ cast is registered for buff tracking
+
+You deal damage (melee, ranged, or spell)
+  └─ proportional damage reward per hit
 
 You kill an enemy
   └─ tier-based kill reward
 
 A troop you buffed kills an enemy
-  └─ augment-kill reward (while buff is active)
+  └─ buffed-unit kill reward (while buff is active)
 
 A heal spell ends
   └─ reward based on total HP healed
@@ -218,10 +226,27 @@ Every battle tick
 | Direct spell damage | Yes |
 | Bombardment / area damage zones | Yes (via TOR spell sessions) |
 | Hex and other DOT status effects | Yes (including ticks after the cast ends) |
-| Friendly fire | No |
+| Friendly fire kills | No |
 | Kills with no player involvement | No |
 
 Kill credit uses TOR's `BookSpellKill` hook for spells plus agent-removal fallback for edge cases (e.g. late DOT ticks).
+
+### Which damage counts
+
+| Damage type | Supported | Notes |
+| --- | --- | --- |
+| Melee / ranged (your hits) | Yes | Via TOR `ApplyGeneralDamageModifiers` |
+| Spell damage (your casts) | Yes | Via TOR `BookSpellDamage` |
+| Damage to enemies | Yes | Uses **Winds for 100 damage** settings |
+| Friendly fire damage | Optional | Separate **Winds for friendly fire 100 damage** settings; default `0` (off) |
+| Party troop damage | No | Only the main hero's own hits count |
+| Self-damage | No | Hitting yourself does not grant winds |
+
+Damage rewards apply **per hit** (or per spell damage tick), not only on kill. Melee/ranged and spell damage use separate settings.
+
+### On-screen feedback
+
+When winds are granted in battle, the mod batches small gains and shows a blue message such as **+2.5 Winds of Magic restored** every few seconds. This covers kills, heals, damage, and passive regen.
 
 ---
 
@@ -233,24 +258,28 @@ Open **Options → Mod Options → Winds of Magic Restore** (MCM v5). Settings a
 
 | Setting | Default | Description |
 | --- | --- | --- |
-| **Winds per kill** | `1.0` | Same reward for every enemy tier (shown when per-tier mode is off). |
-| **Different amount per tier** | Off | Enable to set Tier 1–6 individually. |
-| Tier 1 … Tier 6 | `1.0` / `0` | Per-tier values (only when toggle is on). |
+| **Enable kill rewards** | On | Master toggle for kill-based winds. |
+| **Winds per kill** | `1.0` | Same reward for every enemy tier (when per-tier mode is off). |
+| **Set different winds gain for every tier** | Off | Enable to set Tier 1–9 individually. |
+| Tier 1 … Tier 9 | `1.0` / `0` | Per-tier values (only when toggle is on). |
 
-### Augment kill rewards
+### Buffed unit kills
 
 | Setting | Default | Description |
 | --- | --- | --- |
-| **Winds per augment kill** | `1.0` | Same reward for all tiers when per-tier mode is off. |
-| **Different amount per tier** | Off | Per-tier augment-kill values. |
+| **Enable buffed unit kill rewards** | On | Master toggle for augment/buff kill rewards. |
+| **Winds per kill** | `1.0` | Same reward for all tiers when per-tier mode is off. |
+| **Set different winds gain for every tier** | Off | Per-tier buffed-unit kill values (Tier 1–9). |
 
 ### Heal rewards
 
 | Setting | Default | Description |
 | --- | --- | --- |
-| **Winds per heal block** | `1.0` | Winds per heal block when a heal spell ends. |
-| **HP per block** | `100.0` | HP healed per block (100 HP = 1 wind at defaults). |
-| **Heals count as augments** | Off | Healed troops also qualify for augment-kill rewards. Heal-end rewards still apply. |
+| **Winds per selected amount HP** | `1.0` | Winds paid out when a heal spell ends. |
+| **HP block for winds** | `100.0` | HP healed per payout block (100 HP = 1 wind at defaults). |
+| **Heals count as augments** | Off | Healed troops also qualify for buffed-unit kill rewards. Heal-end rewards still apply. |
+
+Heal payout uses the same proportional idea as damage: `(HP healed ÷ HP block) × winds per block`. Example: 250 HP healed with defaults → `(250 ÷ 100) × 1.0` = **2.5** winds.
 
 ### Passive regen
 
@@ -258,14 +287,56 @@ Open **Options → Mod Options → Winds of Magic Restore** (MCM v5). Settings a
 | --- | --- | --- |
 | **Winds per second** | `0.05` | Passive in-battle regen. |
 
-### Reserved (not implemented yet)
+### Melee and ranged damage
 
-| Setting | Default |
+| Setting | Default | Description |
+| --- | --- | --- |
+| **Winds for 100 damage** | `0` | Winds restored per **100 HP** of melee or ranged damage **you** deal to enemies. Set above `0` to enable. |
+| **Winds for friendly fire 100 damage** | `0` | Same scale, but for damage dealt to **friendly** units. Off by default. |
+
+### Spell damage
+
+| Setting | Default | Description |
+| --- | --- | --- |
+| **Winds for 100 damage** | `0` | Winds restored per **100 HP** of spell damage **you** deal to enemies. Set above `0` to enable. |
+| **Winds for friendly fire 100 damage** | `0` | Same scale for friendly spell damage. Off by default. |
+
+### Diagnostics
+
+| Setting | Default | Description |
+| --- | --- | --- |
+| **Warn at battle start** | On | One-time on-screen warning if TOR hooks are missing. Full report: `wom.diagnostics` in the battle console. |
+
+### Damage reward formula
+
+Damage rewards scale **proportionally** with HP dealt. The block size is fixed at **100 HP** — the setting value is winds earned per 100 damage, not a flat payout per hit.
+
+```
+winds gained = (damage dealt ÷ 100) × winds for 100 damage
+```
+
+**Example:** You set **Winds for 100 damage** to `10` and deal **25** HP in one hit:
+
+```
+(25 ÷ 100) × 10 = 2.5 winds
+```
+
+More examples with **Winds for 100 damage = 10**:
+
+| Damage dealt | Winds gained |
 | --- | --- |
-| Winds on damage dealt | `0` |
-| Winds per campaign tick | `0` |
+| 25 HP | 2.5 |
+| 50 HP | 5.0 |
+| 100 HP | 10.0 |
+| 175 HP | 17.5 |
 
-**Settings tip:** If you enabled **Different amount per tier** and only set Tier 1, higher-tier enemies give **0** winds. For one value for all tiers, leave that toggle **off** and use **Winds per kill**.
+The same formula applies to spell damage and to friendly-fire damage settings (when those are above `0`). Partial amounts add up across many small hits — there is no rounding to whole winds until the game applies the gain.
+
+**Settings tips:**
+
+- If you enabled **Set different winds gain for every tier** and only set Tier 1, higher-tier enemies give **0** winds. For one value for all tiers, leave that toggle **off** and use **Winds per kill**.
+- Kill rewards and damage rewards **stack** — a killing blow can grant both the kill payout and winds for the damage on that hit.
+- Set damage settings to `0` to disable that reward type entirely.
 
 ---
 
@@ -281,14 +352,24 @@ Open **Options → Mod Options → Winds of Magic Restore** (MCM v5). Settings a
     ├── _Module\SubModule.xml
     ├── Behaviors\WindsRestoreBehavior.cs
     ├── Patches\
-    │   ├── BookSpellKillPatch.cs       # spell / DOT / area kill rewards
-    │   ├── CreateSpellSessionPatch.cs
-    │   └── FinalizeSessionPatch.cs
+    │   ├── ApplyGeneralDamageModifiersPatch.cs  # melee/ranged damage rewards
+    │   ├── BookSpellDamagePatch.cs              # spell damage rewards
+    │   ├── BookSpellKillPatch.cs                # spell / DOT / area kill rewards
+    │   ├── CreateSpellSessionPatch.cs           # augment/heal cast registration
+    │   └── FinalizeSessionPatch.cs              # heal-end rewards
     ├── Settings\WindsOfMagicRestoreSettings.cs
     └── Utilities\
+        ├── AugmentBuffTracker.cs
+        ├── DamageRewardService.cs
+        ├── DiagnosticsCommand.cs
         ├── KillCreditHelper.cs
         ├── KillRewardService.cs
+        ├── ModDiagnostics.cs
+        ├── SpellCastRegistry.cs
+        ├── SpellSessionResolver.cs
         ├── TorWindsApi.cs
+        ├── UnitTierHelper.cs
+        ├── WindsRestoreMessages.cs
         └── ...
 ```
 
@@ -301,6 +382,7 @@ Open **Options → Mod Options → Winds of Magic Restore** (MCM v5). Settings a
 | Target framework | .NET Framework 4.7.2 (`net472`) |
 | Game platform | `Win64_Shipping_Client` |
 | Harmony ID | `com.windsofmagic.restore` |
+| Harmony patches | 5 (`FinalizeSession`, `CreateSpellSession`, `BookSpellKill`, `BookSpellDamage`, `ApplyGeneralDamageModifiers`) |
 
 **NuGet dependencies:**
 
@@ -314,7 +396,8 @@ Open **Options → Mod Options → Winds of Magic Restore** (MCM v5). Settings a
 
 - `HeroExtensions.AddWindsOfMagic` / `AddCustomResource` — grant winds
 - `AgentExtensions.BelongsToMainParty` — party troop checks
-- `AbilityManagerMissionLogic` — `CreateSpellSession`, `FinalizeSession`, `BookSpellKill`
+- `AbilityManagerMissionLogic` — `CreateSpellSession`, `FinalizeSession`, `BookSpellKill`, `BookSpellDamage`
+- `TORAgentApplyDamageModel.ApplyGeneralDamageModifiers` — melee/ranged damage tracking
 - `SpellCastSession` — caster, healing totals
 - `StatusEffectComponent` / `StatusEffect` — augment/heal buff tracking
 
@@ -327,12 +410,14 @@ Open **Options → Mod Options → Winds of Magic Restore** (MCM v5). Settings a
 | Build fails | Install .NET SDK; run from repo root; try `dotnet restore` then rebuild. |
 | Mod missing in launcher | Copy full `build\WindsOfMagicRestore\` folder; check `SubModule.xml` is present. |
 | No Mod Options page | Enable **Bannerlord.MBOptionScreen** (MCM v5) above this mod. |
-| `wom.diagnostics` shows MISSING | TOR_Core likely updated; that hook needs a mod update. Kill rewards need `AddWindsOfMagic` + `BookSpellKill` OK. |
-| `wom.add` works, kills do not | Check **Winds per kill** is above 0. If per-tier mode is on, check the victim's tier. Confirm you are at **below max winds** (TOR caps gains). |
+| `wom.diagnostics` shows MISSING | TOR_Core likely updated; that hook needs a mod update. See which feature each patch powers in the report. |
+| `wom.add` works, kills do not | Check **Enable kill rewards** and **Winds per kill** > 0. If per-tier mode is on, check the victim's tier (1–9). Confirm you are **below max winds** (TOR caps gains). |
+| `wom.add` works, damage does not | Set **Winds for 100 damage** above `0`. Check `BookSpellDamage` (spells) or `ApplyGeneralDamageModifiers` (melee/ranged) is OK in diagnostics. Only **your** hits count. |
 | `wom.add` does not work | TOR_Core not loaded, wrong load order, or API changed — fix MISSING diagnostics first. |
 | Spell kills fail, melee works | Rebuild and reinstall; ensure `BookSpellKill patch target` is OK in diagnostics. |
-| Heal/augment rewards fail | `CreateSpellSession` / `FinalizeSession` or status-effect hooks MISSING — see log warning about TOR patches. |
+| Heal/buffed-unit rewards fail | `CreateSpellSession` / `FinalizeSession` or status-effect hooks MISSING — see log warning about TOR patches. |
+| Yellow warning at battle start | Compatibility issue detected. Run `wom.diagnostics` or disable **Warn at battle start** in Diagnostics settings. |
 | Changes after rebuild have no effect | Game was open during copy, or wrong `Modules` path — check DLL timestamp. |
-| Log warning about patches | `[WindsOfMagicRestore] Could not apply TOR_Core patches; heal and augment rewards may be disabled.` — kill rewards may still work if `BookSpellKill` patched. |
+| Log warning about patches | `[WindsOfMagicRestore] Could not apply TOR_Core patches; ...` — features tied to missing patches are disabled; others may still work. |
 
 Log file (if needed): `%USERPROFILE%\Documents\Mount and Blade II Bannerlord\logs\rgl_log_*.txt` — search for `WindsOfMagicRestore`.
