@@ -18,17 +18,23 @@ namespace WindsOfMagicRestore
 
         protected override void OnSubModuleLoad()
         {
+            ModTrace.Mark("OnSubModuleLoad:enter");
             base.OnSubModuleLoad();
-            ModDiagnostics.LogStartupReport();
-            WindsOfMagicRestoreSettings.Initialize();
-            TryApplyPatches();
+            ModGuard.Run("OnSubModuleLoad", WindsOfMagicRestoreSettings.Initialize);
+            ModTrace.Mark("OnSubModuleLoad:exit");
         }
 
         protected override void OnBeforeInitialModuleScreenSetAsRoot()
         {
+            ModTrace.Mark("OnBeforeInitialModuleScreenSetAsRoot:enter");
             base.OnBeforeInitialModuleScreenSetAsRoot();
-            WindsOfMagicRestoreSettings.Initialize();
-            TryApplyPatches();
+            ModGuard.Run("OnBeforeInitialModuleScreenSetAsRoot", () =>
+            {
+                WindsOfMagicRestoreSettings.Initialize();
+                ModDiagnostics.LogStartupReport();
+                TryApplyPatches();
+            });
+            ModTrace.Mark("OnBeforeInitialModuleScreenSetAsRoot:exit");
         }
 
         public override void OnMissionBehaviorInitialize(Mission mission)
@@ -46,6 +52,7 @@ namespace WindsOfMagicRestore
             if (_patchesApplied)
                 return;
 
+            ModTrace.Mark("patches:start");
             var harmony = new Harmony(HarmonyId);
             var applied = 0;
 
@@ -55,8 +62,9 @@ namespace WindsOfMagicRestore
             applied += TryPatch(harmony, "BookSpellDamage", BookSpellDamagePatch.TargetMethod(), typeof(BookSpellDamagePatch), nameof(BookSpellDamagePatch.Postfix)) ? 1 : 0;
             applied += TryPatch(harmony, "ApplyGeneralDamageModifiers", ApplyGeneralDamageModifiersPatch.TargetMethod(), typeof(ApplyGeneralDamageModifiersPatch), nameof(ApplyGeneralDamageModifiersPatch.Postfix)) ? 1 : 0;
 
-            ModDiagnostics.LogPatchResults(applied, PatchCount);
+            ModDiagnostics.LogPatchResults("harmony", applied, PatchCount);
             _patchesApplied = applied > 0;
+            ModTrace.Mark($"patches:done {applied}/{PatchCount}");
         }
 
         private static bool TryPatch(Harmony harmony, string patchName, MethodInfo? target, Type patchType, string postfixName)

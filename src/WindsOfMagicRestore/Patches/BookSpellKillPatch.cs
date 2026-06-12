@@ -15,7 +15,7 @@ namespace WindsOfMagicRestore.Patches
                 if (castId < 0 || victim == null || __instance == null)
                     return;
 
-                var caster = SpellSessionResolver.ResolveCaster(__instance, castId);
+                var caster = SpellSessionResolver.ResolveCaster(__instance, castId, victim);
                 KillRewardService.TryGrantForSpellKill(victim, caster);
             });
         }

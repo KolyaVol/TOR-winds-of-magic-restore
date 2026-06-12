@@ -32,15 +32,15 @@ namespace WindsOfMagicRestore.Utilities
                 ModLog.Warn(issue);
         }
 
-        public static void LogPatchResults(int applied, int total)
+        public static void LogPatchResults(string scope, int applied, int total)
         {
             if (applied == total)
             {
-                ModLog.Info($"Harmony patches applied: {applied}/{total}");
+                ModLog.Info($"Harmony {scope} patches applied: {applied}/{total}");
                 return;
             }
 
-            ModLog.Warn($"Harmony patches applied: {applied}/{total} — some in-battle rewards are disabled");
+            ModLog.Warn($"Harmony {scope} patches applied: {applied}/{total} — some in-battle rewards are disabled");
             ModLog.Warn("Open Mod Options → Winds of Magic Restore → Diagnostics, or check the game log file");
         }
 
@@ -134,7 +134,7 @@ namespace WindsOfMagicRestore.Utilities
 
                 "BookSpellDamage" => TorTypes.AbilityManagerMissionLogic == null
                     ? "TOR_Core ability logic type missing — spell damage rewards disabled."
-                    : $"Expected BookSpellDamage(int, Agent, int). Found: {DescribeBookSpellDamageSignatures()}",
+                    : $"Expected BookSpellDamage(int, Agent, int, ...). Found: {DescribeBookSpellDamageSignatures()}",
 
                 "ApplyGeneralDamageModifiers" => MissingHint(
                     TorTypes.TorAgentApplyDamageModel,

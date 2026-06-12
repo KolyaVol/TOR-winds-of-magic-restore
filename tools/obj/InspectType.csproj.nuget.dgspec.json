@@ -1,0 +1,66 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\kolya\\OneDrive\\Рабочий стол\\work\\projects\\TOR-winds-of-magic-restore\\tools\\InspectType.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\kolya\\OneDrive\\Рабочий стол\\work\\projects\\TOR-winds-of-magic-restore\\tools\\InspectType.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\kolya\\OneDrive\\Рабочий стол\\work\\projects\\TOR-winds-of-magic-restore\\tools\\InspectType.csproj",
+        "projectName": "InspectType",
+        "projectPath": "C:\\Users\\kolya\\OneDrive\\Рабочий стол\\work\\projects\\TOR-winds-of-magic-restore\\tools\\InspectType.csproj",
+        "packagesPath": "C:\\Users\\kolya\\AppData\\Local\\Temp\\cursor-sandbox-cache\\cc867938a2040bbe493120b7bc053903\\nuget",
+        "outputPath": "C:\\Users\\kolya\\OneDrive\\Рабочий стол\\work\\projects\\TOR-winds-of-magic-restore\\tools\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\kolya\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "framework": "net472",
+            "targetAlias": "net472",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.300"
+      },
+      "frameworks": {
+        "net472": {
+          "framework": "net472",
+          "targetAlias": "net472",
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

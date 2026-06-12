@@ -50,10 +50,10 @@ namespace WindsOfMagicRestore.Utilities
         public static readonly FieldInfo? StatusEffectCurrentEffectsField =
             StatusEffectComponent?.GetField("_currentEffects", BindingFlags.Instance | BindingFlags.NonPublic);
 
-        public static readonly PropertyInfo? AttackAttackerAgent = AttackInformation?.GetProperty("AttackerAgent");
-        public static readonly PropertyInfo? AttackVictimAgent = AttackInformation?.GetProperty("VictimAgent");
-        public static readonly PropertyInfo? AttackIsAttackerMount = AttackInformation?.GetProperty("IsAttackerAgentMount");
-        public static readonly PropertyInfo? AttackIsVictimMount = AttackInformation?.GetProperty("IsVictimAgentMount");
+        public static readonly FieldInfo? AttackAttackerAgent = AttackInformation?.GetField("AttackerAgent");
+        public static readonly FieldInfo? AttackVictimAgent = AttackInformation?.GetField("VictimAgent");
+        public static readonly FieldInfo? AttackIsAttackerMount = AttackInformation?.GetField("IsAttackerAgentMount");
+        public static readonly FieldInfo? AttackIsVictimMount = AttackInformation?.GetField("IsVictimAgentMount");
 
         public static MethodInfo? FinalizeSessionMethod()
         {
@@ -86,35 +86,15 @@ namespace WindsOfMagicRestore.Utilities
             if (AbilityManagerMissionLogic == null)
                 return null;
 
-            foreach (var method in AbilityManagerMissionLogic.GetMethods(BindingFlags.Public | BindingFlags.Instance))
-            {
-                if (method.Name != "BookSpellDamage")
-                    continue;
-
-                var parameters = method.GetParameters();
-                if (parameters.Length >= 3
-                    && parameters[0].ParameterType == typeof(int)
-                    && parameters[1].ParameterType == typeof(Agent)
-                    && parameters[2].ParameterType == typeof(int))
-                {
-                    return method;
-                }
-            }
-
-            return null;
+            return AccessTools.Method(AbilityManagerMissionLogic, "BookSpellDamage");
         }
 
         public static MethodInfo? ApplyGeneralDamageModifiersMethod()
         {
-            if (TorAgentApplyDamageModel == null || AttackInformation == null)
+            if (TorAgentApplyDamageModel == null)
                 return null;
 
-            return TorAgentApplyDamageModel.GetMethod(
-                "ApplyGeneralDamageModifiers",
-                BindingFlags.Public | BindingFlags.Instance,
-                null,
-                new[] { AttackInformation, typeof(AttackCollisionData).MakeByRefType(), typeof(float) },
-                null);
+            return AccessTools.DeclaredMethod(TorAgentApplyDamageModel, "ApplyGeneralDamageModifiers");
         }
 
         private static Type? ResolveTor(string typeName) => Type.GetType($"{typeName}, {TorAssembly}");

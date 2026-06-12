@@ -22,7 +22,7 @@ namespace WindsOfMagicRestore.Utilities
                 if (Hero.MainHero == null || Agent.Main == null)
                     return;
 
-                TryGrantKill(victim, KillCreditHelper.ResolveKillerAgent(mission, affectorAgent, blow));
+                TryGrantKill(victim, KillCreditHelper.ResolveKillerAgent(mission, victim, affectorAgent, blow));
             });
         }
 
@@ -59,7 +59,11 @@ namespace WindsOfMagicRestore.Utilities
 
             if (KillCreditHelper.IsMainHeroAgent(killer))
             {
-                TorWindsApi.AddWinds(settings.GetWindsForTier(tier));
+                var winds = settings.GetWindsForTier(tier);
+                if (winds <= 0f)
+                    return false;
+
+                TorWindsApi.AddWinds(winds);
                 return true;
             }
 
@@ -69,7 +73,11 @@ namespace WindsOfMagicRestore.Utilities
             if (!AugmentBuffTracker.HasActivePlayerBuffForAugmentKills(killer))
                 return false;
 
-            TorWindsApi.AddWinds(settings.GetWindsForAugmentKillTier(tier));
+            var augmentWinds = settings.GetWindsForAugmentKillTier(tier);
+            if (augmentWinds <= 0f)
+                return false;
+
+            TorWindsApi.AddWinds(augmentWinds);
             return true;
         }
     }

@@ -6,24 +6,37 @@ namespace WindsOfMagicRestore.Utilities
 {
     internal static class SpellSessionResolver
     {
-        public static Agent? ResolveCaster(object logic, int castId)
+        public static Agent? ResolveCaster(object logic, int castId, Agent? victim = null)
         {
-            return ModGuard.Run("ResolveCaster", () => ResolveCasterCore(logic, castId));
+            return ModGuard.Run("ResolveCaster", () => ResolveCasterCore(logic, castId, victim));
         }
 
-        private static Agent? ResolveCasterCore(object logic, int castId)
+        private static Agent? ResolveCasterCore(object logic, int castId, Agent? victim)
         {
             var session = ResolveSession(logic, castId);
-            if (session == null)
-                return null;
+            if (session != null)
+            {
+                var caster = KillCreditHelper.NormalizeAgent(TorTypes.SessionCaster?.GetValue(session) as Agent);
+                if (caster == null)
+                {
+                    var casterHero = TorTypes.SessionCasterHero?.GetValue(session) as Hero;
+                    if (casterHero == Hero.MainHero && Agent.Main != null)
+                        caster = Agent.Main;
+                }
 
-            var caster = KillCreditHelper.NormalizeAgent(TorTypes.SessionCaster?.GetValue(session) as Agent);
-            if (caster != null)
-                return caster;
+                if (caster != null)
+                {
+                    SpellCastRegistry.Register(castId, caster);
+                    return caster;
+                }
+            }
 
-            var casterHero = TorTypes.SessionCasterHero?.GetValue(session) as Hero;
-            if (casterHero == Hero.MainHero && Agent.Main != null)
-                return Agent.Main;
+            var registeredCaster = SpellCastRegistry.ResolveCaster(castId);
+            if (registeredCaster != null)
+                return registeredCaster;
+
+            if (victim != null)
+                return StatusEffectHelper.ResolveApplierAgent(victim, castId);
 
             return null;
         }

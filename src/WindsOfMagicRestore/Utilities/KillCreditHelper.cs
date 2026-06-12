@@ -5,11 +5,9 @@ namespace WindsOfMagicRestore.Utilities
 {
     internal static class KillCreditHelper
     {
-        public static Agent? ResolveKillerAgent(Mission mission, Agent? affectorAgent, KillingBlow blow)
+        public static Agent? ResolveKillerAgent(Mission mission, Agent victim, Agent? affectorAgent, KillingBlow blow)
         {
             var candidates = CollectCandidates(mission, affectorAgent, blow);
-            if (candidates.Count == 0)
-                return null;
 
             foreach (var agent in candidates)
             {
@@ -23,7 +21,7 @@ namespace WindsOfMagicRestore.Utilities
                     return agent;
             }
 
-            return null;
+            return StatusEffectHelper.ResolveApplierAgent(victim);
         }
 
         public static Agent? NormalizeAgent(Agent? agent)

@@ -8,15 +8,15 @@ namespace WindsOfMagicRestore.Patches
     {
         public static MethodInfo? TargetMethod() => TorTypes.BookSpellDamageMethod();
 
-        public static void Postfix(int castId, Agent victim, int damage, object __instance)
+        public static void Postfix(int castId, Agent victim, int damageDealt, object __instance)
         {
             ModGuard.Run("BookSpellDamage", () =>
             {
-                if (castId < 0 || victim == null || damage <= 0 || __instance == null)
+                if (castId < 0 || victim == null || damageDealt <= 0 || __instance == null)
                     return;
 
-                var caster = SpellSessionResolver.ResolveCaster(__instance, castId);
-                DamageRewardService.TryGrantForSpellDamage(victim, caster, damage);
+                var caster = SpellSessionResolver.ResolveCaster(__instance, castId, victim);
+                DamageRewardService.TryGrantForSpellDamage(victim, caster, damageDealt);
             });
         }
     }

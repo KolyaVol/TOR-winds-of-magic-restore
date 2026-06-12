@@ -1,0 +1,11 @@
+C:\Users\kolya\OneDrive\Рабочий стол\work\projects\TOR-winds-of-magic-restore\tools\bin\Debug\net472\InspectType.exe.config
+C:\Users\kolya\OneDrive\Рабочий стол\work\projects\TOR-winds-of-magic-restore\tools\bin\Debug\net472\InspectType.exe
+C:\Users\kolya\OneDrive\Рабочий стол\work\projects\TOR-winds-of-magic-restore\tools\bin\Debug\net472\InspectType.pdb
+C:\Users\kolya\OneDrive\Рабочий стол\work\projects\TOR-winds-of-magic-restore\tools\obj\Debug\net472\InspectType.csproj.AssemblyReference.cache
+C:\Users\kolya\OneDrive\Рабочий стол\work\projects\TOR-winds-of-magic-restore\tools\obj\Debug\net472\InspectType.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kolya\OneDrive\Рабочий стол\work\projects\TOR-winds-of-magic-restore\tools\obj\Debug\net472\InspectType.AssemblyInfoInputs.cache
+C:\Users\kolya\OneDrive\Рабочий стол\work\projects\TOR-winds-of-magic-restore\tools\obj\Debug\net472\InspectType.AssemblyInfo.cs
+C:\Users\kolya\OneDrive\Рабочий стол\work\projects\TOR-winds-of-magic-restore\tools\obj\Debug\net472\InspectType.csproj.CoreCompileInputs.cache
+C:\Users\kolya\OneDrive\Рабочий стол\work\projects\TOR-winds-of-magic-restore\tools\obj\Debug\net472\InspectType.sourcelink.json
+C:\Users\kolya\OneDrive\Рабочий стол\work\projects\TOR-winds-of-magic-restore\tools\obj\Debug\net472\InspectType.exe
+C:\Users\kolya\OneDrive\Рабочий стол\work\projects\TOR-winds-of-magic-restore\tools\obj\Debug\net472\InspectType.pdb

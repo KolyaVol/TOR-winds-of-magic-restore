@@ -12,6 +12,7 @@ namespace WindsOfMagicRestore.Behaviors
         {
             AugmentBuffTracker.Reset();
             KillRewardTracker.Reset();
+            SpellCastRegistry.Reset();
             WindsRestoreMessages.Reset();
             ModDiagnostics.TryShowBattleWarning();
         }

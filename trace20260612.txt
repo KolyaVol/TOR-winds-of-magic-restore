@@ -1,0 +1,588 @@
+[2026-06-12T08:26:27.3129501+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: AccessTools2.Method: Could not find method for type 'TaleWorlds.MountAndBlade.Module' and name 'FinalizeSubModules' and parameters ''
+[2026-06-12T08:26:27.3154643+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Loading implementations...
+[2026-06-12T08:26:27.3154643+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.0.dll
+[2026-06-12T08:26:27.3154643+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.1.dll
+[2026-06-12T08:26:27.3154643+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.2.dll
+[2026-06-12T08:26:27.3154643+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.3.dll
+[2026-06-12T08:26:27.3154643+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.0.dll
+[2026-06-12T08:26:27.3164611+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.1.dll
+[2026-06-12T08:26:27.3164611+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.2.dll
+[2026-06-12T08:26:27.3164611+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.3.dll
+[2026-06-12T08:26:27.3164611+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.4.dll
+[2026-06-12T08:26:27.3164611+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.5.dll
+[2026-06-12T08:26:27.3164611+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.6.dll
+[2026-06-12T08:26:27.3164611+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.10.dll
+[2026-06-12T08:26:27.3164611+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.11.dll
+[2026-06-12T08:26:27.3164611+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.12.dll
+[2026-06-12T08:26:27.3164611+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.4.dll
+[2026-06-12T08:26:27.3164611+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.5.dll
+[2026-06-12T08:26:27.3164611+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.6.dll
+[2026-06-12T08:26:27.3164611+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.7.dll
+[2026-06-12T08:26:27.3174611+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.8.dll
+[2026-06-12T08:26:27.3174611+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.9.dll
+[2026-06-12T08:26:27.3174611+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.10.dll
+[2026-06-12T08:26:27.3174611+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.11.dll
+[2026-06-12T08:26:27.3174611+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.12.dll
+[2026-06-12T08:26:27.3174611+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.13.dll
+[2026-06-12T08:26:27.3174611+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.14.dll
+[2026-06-12T08:26:27.3174611+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.15.dll
+[2026-06-12T08:26:27.3174611+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.4.dll
+[2026-06-12T08:26:27.3174611+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.5.dll
+[2026-06-12T08:26:27.3174611+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.6.dll
+[2026-06-12T08:26:27.3174611+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.7.dll
+[2026-06-12T08:26:27.3174611+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.8.dll
+[2026-06-12T08:26:27.3174611+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.9.dll
+[2026-06-12T08:26:27.3184618+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.4.0.dll
+[2026-06-12T08:26:27.3184618+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.4.1.dll
+[2026-06-12T08:26:27.3184618+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found one matching implementation.
+[2026-06-12T08:26:27.3184618+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Loading implementation Bannerlord.MBOptionScreen.v1.3.15.dll for game v1.3.15
+[2026-06-12T08:26:27.3184618+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: SubModule Bannerlord.BUTR.Shared.Utils.MBSubModuleBaseSimpleWrapper's default constructor could not be converted to a delegate! Assembly: Bannerlord.MBOptionScreen.v1.3.15, Version=5.11.4.0, Culture=neutral, PublicKeyToken=null
+[2026-06-12T08:26:27.3184618+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Finished loading implementations.
+[2026-06-12T08:26:27.3184618+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Register: BetterTime, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+[2026-06-12T08:26:27.3184618+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Register Types
+[2026-06-12T08:26:27.3184618+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Enabled
+[2026-06-12T08:26:27.3184618+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: AccessTools2.DeclaredMethod: Could not find method for type 'TaleWorlds.GauntletUI.WidgetInfo' and name 'Reload' and parameters ''
+[2026-06-12T08:26:27.4117739+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: 
+[2026-06-12T08:26:27.4117739+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: AccessTools2.Method: Could not find method for type 'TaleWorlds.CampaignSystem.CampaignBehaviors.CampaignBehaviorManager' and name 'OnGameLoaded' and parameters ''
+[2026-06-12T08:26:27.7319411+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: 
+[2026-06-12T08:26:27.7319411+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: MCM.UI - Register: Bannerlord.MBOptionScreen.v1.3.15, Version=5.11.4.0, Culture=neutral, PublicKeyToken=null
+[2026-06-12T08:26:27.7329383+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: 
+[2026-06-12T08:26:27.7329383+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: MCM.UI - Register Types
+[2026-06-12T08:26:27.7414527+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: 
+[2026-06-12T08:26:27.7414527+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: MCM.UI - Enabled
+[2026-06-12T08:33:39.9111935+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: AccessTools2.Method: Could not find method for type 'TaleWorlds.MountAndBlade.Module' and name 'FinalizeSubModules' and parameters ''
+[2026-06-12T08:33:39.9141956+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Loading implementations...
+[2026-06-12T08:33:39.9141956+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.0.dll
+[2026-06-12T08:33:39.9141956+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.1.dll
+[2026-06-12T08:33:39.9141956+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.2.dll
+[2026-06-12T08:33:39.9141956+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.3.dll
+[2026-06-12T08:33:39.9141956+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.0.dll
+[2026-06-12T08:33:39.9141956+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.1.dll
+[2026-06-12T08:33:39.9152027+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.2.dll
+[2026-06-12T08:33:39.9152027+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.3.dll
+[2026-06-12T08:33:39.9152027+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.4.dll
+[2026-06-12T08:33:39.9152027+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.5.dll
+[2026-06-12T08:33:39.9152027+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.6.dll
+[2026-06-12T08:33:39.9152027+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.10.dll
+[2026-06-12T08:33:39.9152027+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.11.dll
+[2026-06-12T08:33:39.9152027+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.12.dll
+[2026-06-12T08:33:39.9152027+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.4.dll
+[2026-06-12T08:33:39.9152027+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.5.dll
+[2026-06-12T08:33:39.9152027+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.6.dll
+[2026-06-12T08:33:39.9152027+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.7.dll
+[2026-06-12T08:33:39.9152027+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.8.dll
+[2026-06-12T08:33:39.9152027+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.9.dll
+[2026-06-12T08:33:39.9152027+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.10.dll
+[2026-06-12T08:33:39.9152027+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.11.dll
+[2026-06-12T08:33:39.9152027+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.12.dll
+[2026-06-12T08:33:39.9167060+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.13.dll
+[2026-06-12T08:33:39.9167060+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.14.dll
+[2026-06-12T08:33:39.9167060+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.15.dll
+[2026-06-12T08:33:39.9167060+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.4.dll
+[2026-06-12T08:33:39.9167060+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.5.dll
+[2026-06-12T08:33:39.9167060+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.6.dll
+[2026-06-12T08:33:39.9167060+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.7.dll
+[2026-06-12T08:33:39.9167060+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.8.dll
+[2026-06-12T08:33:39.9167060+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.9.dll
+[2026-06-12T08:33:39.9167060+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.4.0.dll
+[2026-06-12T08:33:39.9167060+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.4.1.dll
+[2026-06-12T08:33:39.9177108+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found one matching implementation.
+[2026-06-12T08:33:39.9177108+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Loading implementation Bannerlord.MBOptionScreen.v1.3.15.dll for game v1.3.15
+[2026-06-12T08:33:39.9177108+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: SubModule Bannerlord.BUTR.Shared.Utils.MBSubModuleBaseSimpleWrapper's default constructor could not be converted to a delegate! Assembly: Bannerlord.MBOptionScreen.v1.3.15, Version=5.11.4.0, Culture=neutral, PublicKeyToken=null
+[2026-06-12T08:33:39.9177108+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Finished loading implementations.
+[2026-06-12T08:33:39.9177108+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Register: BetterTime, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+[2026-06-12T08:33:39.9177108+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Register Types
+[2026-06-12T08:33:39.9177108+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Enabled
+[2026-06-12T08:33:39.9177108+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: AccessTools2.DeclaredMethod: Could not find method for type 'TaleWorlds.GauntletUI.WidgetInfo' and name 'Reload' and parameters ''
+[2026-06-12T08:33:40.0255268+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: 
+[2026-06-12T08:33:40.0265285+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: AccessTools2.Method: Could not find method for type 'TaleWorlds.CampaignSystem.CampaignBehaviors.CampaignBehaviorManager' and name 'OnGameLoaded' and parameters ''
+[2026-06-12T08:33:40.2109205+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: 
+[2026-06-12T08:33:40.2109205+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: MCM.UI - Register: Bannerlord.MBOptionScreen.v1.3.15, Version=5.11.4.0, Culture=neutral, PublicKeyToken=null
+[2026-06-12T08:33:40.2116552+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: 
+[2026-06-12T08:33:40.2116552+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: MCM.UI - Register Types
+[2026-06-12T08:33:40.2201655+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: 
+[2026-06-12T08:33:40.2201655+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: MCM.UI - Enabled
+[2026-06-12T08:53:02.9467147+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: AccessTools2.Method: Could not find method for type 'TaleWorlds.MountAndBlade.Module' and name 'FinalizeSubModules' and parameters ''
+[2026-06-12T08:53:02.9497140+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Loading implementations...
+[2026-06-12T08:53:02.9497140+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.0.dll
+[2026-06-12T08:53:02.9497140+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.1.dll
+[2026-06-12T08:53:02.9497140+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.2.dll
+[2026-06-12T08:53:02.9497140+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.3.dll
+[2026-06-12T08:53:02.9502455+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.0.dll
+[2026-06-12T08:53:02.9503396+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.1.dll
+[2026-06-12T08:53:02.9503396+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.2.dll
+[2026-06-12T08:53:02.9503396+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.3.dll
+[2026-06-12T08:53:02.9503396+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.4.dll
+[2026-06-12T08:53:02.9503396+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.5.dll
+[2026-06-12T08:53:02.9503396+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.6.dll
+[2026-06-12T08:53:02.9508480+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.10.dll
+[2026-06-12T08:53:02.9508480+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.11.dll
+[2026-06-12T08:53:02.9508480+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.12.dll
+[2026-06-12T08:53:02.9508480+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.4.dll
+[2026-06-12T08:53:02.9508480+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.5.dll
+[2026-06-12T08:53:02.9508480+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.6.dll
+[2026-06-12T08:53:02.9508480+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.7.dll
+[2026-06-12T08:53:02.9508480+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.8.dll
+[2026-06-12T08:53:02.9518520+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.9.dll
+[2026-06-12T08:53:02.9518520+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.10.dll
+[2026-06-12T08:53:02.9518520+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.11.dll
+[2026-06-12T08:53:02.9518520+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.12.dll
+[2026-06-12T08:53:02.9518520+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.13.dll
+[2026-06-12T08:53:02.9518520+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.14.dll
+[2026-06-12T08:53:02.9518520+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.15.dll
+[2026-06-12T08:53:02.9518520+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.4.dll
+[2026-06-12T08:53:02.9518520+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.5.dll
+[2026-06-12T08:53:02.9518520+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.6.dll
+[2026-06-12T08:53:02.9518520+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.7.dll
+[2026-06-12T08:53:02.9528567+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.8.dll
+[2026-06-12T08:53:02.9528567+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.9.dll
+[2026-06-12T08:53:02.9528567+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.4.0.dll
+[2026-06-12T08:53:02.9528567+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.4.1.dll
+[2026-06-12T08:53:02.9528567+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found one matching implementation.
+[2026-06-12T08:53:02.9528567+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Loading implementation Bannerlord.MBOptionScreen.v1.3.15.dll for game v1.3.15
+[2026-06-12T08:53:02.9528567+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: SubModule Bannerlord.BUTR.Shared.Utils.MBSubModuleBaseSimpleWrapper's default constructor could not be converted to a delegate! Assembly: Bannerlord.MBOptionScreen.v1.3.15, Version=5.11.4.0, Culture=neutral, PublicKeyToken=null
+[2026-06-12T08:53:02.9528567+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Finished loading implementations.
+[2026-06-12T08:53:02.9528567+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Register: BetterTime, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+[2026-06-12T08:53:02.9528567+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Register Types
+[2026-06-12T08:53:02.9528567+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Enabled
+[2026-06-12T08:53:02.9528567+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: AccessTools2.DeclaredMethod: Could not find method for type 'TaleWorlds.GauntletUI.WidgetInfo' and name 'Reload' and parameters ''
+[2026-06-12T08:53:03.0363951+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: 
+[2026-06-12T08:53:03.0363951+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: AccessTools2.Method: Could not find method for type 'TaleWorlds.CampaignSystem.CampaignBehaviors.CampaignBehaviorManager' and name 'OnGameLoaded' and parameters ''
+[2026-06-12T08:53:03.2526643+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: 
+[2026-06-12T08:53:03.2526643+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: MCM.UI - Register: Bannerlord.MBOptionScreen.v1.3.15, Version=5.11.4.0, Culture=neutral, PublicKeyToken=null
+[2026-06-12T08:53:03.2526643+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: 
+[2026-06-12T08:53:03.2526643+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: MCM.UI - Register Types
+[2026-06-12T08:53:03.2621739+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: 
+[2026-06-12T08:53:03.2621739+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: MCM.UI - Enabled
+[2026-06-12T08:53:43.3877183+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: AccessTools2.Method: Could not find method for type 'TaleWorlds.MountAndBlade.Module' and name 'FinalizeSubModules' and parameters ''
+[2026-06-12T08:53:43.3907184+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Loading implementations...
+[2026-06-12T08:53:43.3907184+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.0.dll
+[2026-06-12T08:53:43.3909738+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.1.dll
+[2026-06-12T08:53:43.3909738+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.2.dll
+[2026-06-12T08:53:43.3909738+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.3.dll
+[2026-06-12T08:53:43.3909738+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.0.dll
+[2026-06-12T08:53:43.3909738+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.1.dll
+[2026-06-12T08:53:43.3909738+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.2.dll
+[2026-06-12T08:53:43.3909738+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.3.dll
+[2026-06-12T08:53:43.3909738+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.4.dll
+[2026-06-12T08:53:43.3909738+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.5.dll
+[2026-06-12T08:53:43.3909738+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.6.dll
+[2026-06-12T08:53:43.3909738+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.10.dll
+[2026-06-12T08:53:43.3909738+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.11.dll
+[2026-06-12T08:53:43.3919787+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.12.dll
+[2026-06-12T08:53:43.3919787+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.4.dll
+[2026-06-12T08:53:43.3919787+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.5.dll
+[2026-06-12T08:53:43.3919787+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.6.dll
+[2026-06-12T08:53:43.3919787+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.7.dll
+[2026-06-12T08:53:43.3919787+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.8.dll
+[2026-06-12T08:53:43.3919787+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.9.dll
+[2026-06-12T08:53:43.3919787+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.10.dll
+[2026-06-12T08:53:43.3919787+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.11.dll
+[2026-06-12T08:53:43.3919787+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.12.dll
+[2026-06-12T08:53:43.3919787+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.13.dll
+[2026-06-12T08:53:43.3919787+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.14.dll
+[2026-06-12T08:53:43.3929778+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.15.dll
+[2026-06-12T08:53:43.3929778+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.4.dll
+[2026-06-12T08:53:43.3929778+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.5.dll
+[2026-06-12T08:53:43.3929778+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.6.dll
+[2026-06-12T08:53:43.3929778+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.7.dll
+[2026-06-12T08:53:43.3929778+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.8.dll
+[2026-06-12T08:53:43.3929778+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.9.dll
+[2026-06-12T08:53:43.3929778+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.4.0.dll
+[2026-06-12T08:53:43.3929778+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.4.1.dll
+[2026-06-12T08:53:43.3929778+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found one matching implementation.
+[2026-06-12T08:53:43.3929778+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Loading implementation Bannerlord.MBOptionScreen.v1.3.15.dll for game v1.3.15
+[2026-06-12T08:53:43.3929778+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: SubModule Bannerlord.BUTR.Shared.Utils.MBSubModuleBaseSimpleWrapper's default constructor could not be converted to a delegate! Assembly: Bannerlord.MBOptionScreen.v1.3.15, Version=5.11.4.0, Culture=neutral, PublicKeyToken=null
+[2026-06-12T08:53:43.3929778+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Finished loading implementations.
+[2026-06-12T08:53:43.3929778+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Register: BetterTime, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+[2026-06-12T08:53:43.3929778+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Register Types
+[2026-06-12T08:53:43.3929778+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Enabled
+[2026-06-12T08:53:43.3944817+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: AccessTools2.DeclaredMethod: Could not find method for type 'TaleWorlds.GauntletUI.WidgetInfo' and name 'Reload' and parameters ''
+[2026-06-12T08:53:43.5035682+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: 
+[2026-06-12T08:53:43.5035682+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: AccessTools2.Method: Could not find method for type 'TaleWorlds.CampaignSystem.CampaignBehaviors.CampaignBehaviorManager' and name 'OnGameLoaded' and parameters ''
+[2026-06-12T08:53:43.6932235+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: 
+[2026-06-12T08:53:43.6932235+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: MCM.UI - Register: Bannerlord.MBOptionScreen.v1.3.15, Version=5.11.4.0, Culture=neutral, PublicKeyToken=null
+[2026-06-12T08:53:43.6932235+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: 
+[2026-06-12T08:53:43.6932235+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: MCM.UI - Register Types
+[2026-06-12T08:53:43.7027398+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: 
+[2026-06-12T08:53:43.7027398+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: MCM.UI - Enabled
+[2026-06-12T16:40:45.0375502+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: AccessTools2.Method: Could not find method for type 'TaleWorlds.MountAndBlade.Module' and name 'FinalizeSubModules' and parameters ''
+[2026-06-12T16:40:45.0405536+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Loading implementations...
+[2026-06-12T16:40:45.0405536+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.0.dll
+[2026-06-12T16:40:45.0405536+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.1.dll
+[2026-06-12T16:40:45.0415546+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.2.dll
+[2026-06-12T16:40:45.0415546+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.3.dll
+[2026-06-12T16:40:45.0415546+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.0.dll
+[2026-06-12T16:40:45.0415546+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.1.dll
+[2026-06-12T16:40:45.0415546+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.2.dll
+[2026-06-12T16:40:45.0415546+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.3.dll
+[2026-06-12T16:40:45.0415546+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.4.dll
+[2026-06-12T16:40:45.0415546+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.5.dll
+[2026-06-12T16:40:45.0415546+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.6.dll
+[2026-06-12T16:40:45.0415546+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.10.dll
+[2026-06-12T16:40:45.0415546+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.11.dll
+[2026-06-12T16:40:45.0415546+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.12.dll
+[2026-06-12T16:40:45.0425557+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.4.dll
+[2026-06-12T16:40:45.0425557+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.5.dll
+[2026-06-12T16:40:45.0425557+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.6.dll
+[2026-06-12T16:40:45.0425557+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.7.dll
+[2026-06-12T16:40:45.0425557+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.8.dll
+[2026-06-12T16:40:45.0425557+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.9.dll
+[2026-06-12T16:40:45.0425557+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.10.dll
+[2026-06-12T16:40:45.0425557+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.11.dll
+[2026-06-12T16:40:45.0425557+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.12.dll
+[2026-06-12T16:40:45.0425557+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.13.dll
+[2026-06-12T16:40:45.0425557+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.14.dll
+[2026-06-12T16:40:45.0425557+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.15.dll
+[2026-06-12T16:40:45.0425557+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.4.dll
+[2026-06-12T16:40:45.0425557+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.5.dll
+[2026-06-12T16:40:45.0435536+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.6.dll
+[2026-06-12T16:40:45.0435536+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.7.dll
+[2026-06-12T16:40:45.0435536+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.8.dll
+[2026-06-12T16:40:45.0435536+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.9.dll
+[2026-06-12T16:40:45.0435536+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.4.0.dll
+[2026-06-12T16:40:45.0435536+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.4.1.dll
+[2026-06-12T16:40:45.0435536+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found one matching implementation.
+[2026-06-12T16:40:45.0435536+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Loading implementation Bannerlord.MBOptionScreen.v1.3.15.dll for game v1.3.15
+[2026-06-12T16:40:45.0435536+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: SubModule Bannerlord.BUTR.Shared.Utils.MBSubModuleBaseSimpleWrapper's default constructor could not be converted to a delegate! Assembly: Bannerlord.MBOptionScreen.v1.3.15, Version=5.11.4.0, Culture=neutral, PublicKeyToken=null
+[2026-06-12T16:40:45.0435536+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Finished loading implementations.
+[2026-06-12T16:40:45.0435536+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Register: BetterTime, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+[2026-06-12T16:40:45.0435536+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Register Types
+[2026-06-12T16:40:45.0435536+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Enabled
+[2026-06-12T16:40:45.0435536+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: AccessTools2.DeclaredMethod: Could not find method for type 'TaleWorlds.GauntletUI.WidgetInfo' and name 'Reload' and parameters ''
+[2026-06-12T16:40:45.1530392+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: 
+[2026-06-12T16:40:45.1530392+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: AccessTools2.Method: Could not find method for type 'TaleWorlds.CampaignSystem.CampaignBehaviors.CampaignBehaviorManager' and name 'OnGameLoaded' and parameters ''
+[2026-06-12T16:41:24.2997852+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: AccessTools2.Method: Could not find method for type 'TaleWorlds.MountAndBlade.Module' and name 'FinalizeSubModules' and parameters ''
+[2026-06-12T16:41:24.3027855+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Loading implementations...
+[2026-06-12T16:41:24.3027855+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.0.dll
+[2026-06-12T16:41:24.3027855+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.1.dll
+[2026-06-12T16:41:24.3027855+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.2.dll
+[2026-06-12T16:41:24.3027855+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.3.dll
+[2026-06-12T16:41:24.3027855+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.0.dll
+[2026-06-12T16:41:24.3027855+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.1.dll
+[2026-06-12T16:41:24.3027855+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.2.dll
+[2026-06-12T16:41:24.3027855+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.3.dll
+[2026-06-12T16:41:24.3027855+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.4.dll
+[2026-06-12T16:41:24.3027855+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.5.dll
+[2026-06-12T16:41:24.3037823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.6.dll
+[2026-06-12T16:41:24.3037823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.10.dll
+[2026-06-12T16:41:24.3037823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.11.dll
+[2026-06-12T16:41:24.3037823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.12.dll
+[2026-06-12T16:41:24.3037823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.4.dll
+[2026-06-12T16:41:24.3037823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.5.dll
+[2026-06-12T16:41:24.3037823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.6.dll
+[2026-06-12T16:41:24.3037823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.7.dll
+[2026-06-12T16:41:24.3037823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.8.dll
+[2026-06-12T16:41:24.3037823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.9.dll
+[2026-06-12T16:41:24.3037823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.10.dll
+[2026-06-12T16:41:24.3037823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.11.dll
+[2026-06-12T16:41:24.3037823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.12.dll
+[2026-06-12T16:41:24.3047823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.13.dll
+[2026-06-12T16:41:24.3047823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.14.dll
+[2026-06-12T16:41:24.3047823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.15.dll
+[2026-06-12T16:41:24.3047823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.4.dll
+[2026-06-12T16:41:24.3047823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.5.dll
+[2026-06-12T16:41:24.3047823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.6.dll
+[2026-06-12T16:41:24.3047823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.7.dll
+[2026-06-12T16:41:24.3047823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.8.dll
+[2026-06-12T16:41:24.3047823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.9.dll
+[2026-06-12T16:41:24.3047823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.4.0.dll
+[2026-06-12T16:41:24.3047823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.4.1.dll
+[2026-06-12T16:41:24.3047823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found one matching implementation.
+[2026-06-12T16:41:24.3047823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Loading implementation Bannerlord.MBOptionScreen.v1.3.15.dll for game v1.3.15
+[2026-06-12T16:41:24.3047823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: SubModule Bannerlord.BUTR.Shared.Utils.MBSubModuleBaseSimpleWrapper's default constructor could not be converted to a delegate! Assembly: Bannerlord.MBOptionScreen.v1.3.15, Version=5.11.4.0, Culture=neutral, PublicKeyToken=null
+[2026-06-12T16:41:24.3047823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Finished loading implementations.
+[2026-06-12T16:41:24.3057823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Register: BetterTime, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+[2026-06-12T16:41:24.3057823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Register Types
+[2026-06-12T16:41:24.3057823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Enabled
+[2026-06-12T16:41:24.3057823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: AccessTools2.DeclaredMethod: Could not find method for type 'TaleWorlds.GauntletUI.WidgetInfo' and name 'Reload' and parameters ''
+[2026-06-12T16:41:24.3855104+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: 
+[2026-06-12T16:41:24.3855104+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: AccessTools2.Method: Could not find method for type 'TaleWorlds.CampaignSystem.CampaignBehaviors.CampaignBehaviorManager' and name 'OnGameLoaded' and parameters ''
+[2026-06-12T16:43:52.4717678+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: AccessTools2.Method: Could not find method for type 'TaleWorlds.MountAndBlade.Module' and name 'FinalizeSubModules' and parameters ''
+[2026-06-12T16:43:52.4737673+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Loading implementations...
+[2026-06-12T16:43:52.4737673+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.0.dll
+[2026-06-12T16:43:52.4751983+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.1.dll
+[2026-06-12T16:43:52.4751983+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.2.dll
+[2026-06-12T16:43:52.4751983+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.3.dll
+[2026-06-12T16:43:52.4751983+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.0.dll
+[2026-06-12T16:43:52.4751983+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.1.dll
+[2026-06-12T16:43:52.4751983+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.2.dll
+[2026-06-12T16:43:52.4751983+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.3.dll
+[2026-06-12T16:43:52.4751983+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.4.dll
+[2026-06-12T16:43:52.4751983+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.5.dll
+[2026-06-12T16:43:52.4751983+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.6.dll
+[2026-06-12T16:43:52.4751983+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.10.dll
+[2026-06-12T16:43:52.4751983+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.11.dll
+[2026-06-12T16:43:52.4761936+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.12.dll
+[2026-06-12T16:43:52.4761936+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.4.dll
+[2026-06-12T16:43:52.4761936+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.5.dll
+[2026-06-12T16:43:52.4761936+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.6.dll
+[2026-06-12T16:43:52.4761936+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.7.dll
+[2026-06-12T16:43:52.4761936+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.8.dll
+[2026-06-12T16:43:52.4761936+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.9.dll
+[2026-06-12T16:43:52.4761936+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.10.dll
+[2026-06-12T16:43:52.4761936+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.11.dll
+[2026-06-12T16:43:52.4761936+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.12.dll
+[2026-06-12T16:43:52.4761936+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.13.dll
+[2026-06-12T16:43:52.4761936+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.14.dll
+[2026-06-12T16:43:52.4761936+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.15.dll
+[2026-06-12T16:43:52.4771933+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.4.dll
+[2026-06-12T16:43:52.4771933+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.5.dll
+[2026-06-12T16:43:52.4771933+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.6.dll
+[2026-06-12T16:43:52.4771933+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.7.dll
+[2026-06-12T16:43:52.4771933+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.8.dll
+[2026-06-12T16:43:52.4771933+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.9.dll
+[2026-06-12T16:43:52.4771933+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.4.0.dll
+[2026-06-12T16:43:52.4771933+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.4.1.dll
+[2026-06-12T16:43:52.4771933+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found one matching implementation.
+[2026-06-12T16:43:52.4771933+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Loading implementation Bannerlord.MBOptionScreen.v1.3.15.dll for game v1.3.15
+[2026-06-12T16:43:52.4771933+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: SubModule Bannerlord.BUTR.Shared.Utils.MBSubModuleBaseSimpleWrapper's default constructor could not be converted to a delegate! Assembly: Bannerlord.MBOptionScreen.v1.3.15, Version=5.11.4.0, Culture=neutral, PublicKeyToken=null
+[2026-06-12T16:43:52.4771933+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Finished loading implementations.
+[2026-06-12T16:43:52.4781934+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Register: BetterTime, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+[2026-06-12T16:43:52.4781934+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Register Types
+[2026-06-12T16:43:52.4781934+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Enabled
+[2026-06-12T16:43:52.4781934+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: AccessTools2.DeclaredMethod: Could not find method for type 'TaleWorlds.GauntletUI.WidgetInfo' and name 'Reload' and parameters ''
+[2026-06-12T16:43:52.5493866+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: 
+[2026-06-12T16:43:52.5493866+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: AccessTools2.Method: Could not find method for type 'TaleWorlds.CampaignSystem.CampaignBehaviors.CampaignBehaviorManager' and name 'OnGameLoaded' and parameters ''
+[2026-06-12T16:44:33.4529092+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: AccessTools2.Method: Could not find method for type 'TaleWorlds.MountAndBlade.Module' and name 'FinalizeSubModules' and parameters ''
+[2026-06-12T16:44:33.4549088+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Loading implementations...
+[2026-06-12T16:44:33.4549088+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.0.dll
+[2026-06-12T16:44:33.4559086+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.1.dll
+[2026-06-12T16:44:33.4559086+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.2.dll
+[2026-06-12T16:44:33.4559086+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.3.dll
+[2026-06-12T16:44:33.4559086+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.0.dll
+[2026-06-12T16:44:33.4559086+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.1.dll
+[2026-06-12T16:44:33.4559086+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.2.dll
+[2026-06-12T16:44:33.4559086+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.3.dll
+[2026-06-12T16:44:33.4559086+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.4.dll
+[2026-06-12T16:44:33.4559086+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.5.dll
+[2026-06-12T16:44:33.4559086+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.6.dll
+[2026-06-12T16:44:33.4569078+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.10.dll
+[2026-06-12T16:44:33.4569078+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.11.dll
+[2026-06-12T16:44:33.4569078+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.12.dll
+[2026-06-12T16:44:33.4569078+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.4.dll
+[2026-06-12T16:44:33.4569078+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.5.dll
+[2026-06-12T16:44:33.4569078+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.6.dll
+[2026-06-12T16:44:33.4569078+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.7.dll
+[2026-06-12T16:44:33.4569078+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.8.dll
+[2026-06-12T16:44:33.4569078+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.9.dll
+[2026-06-12T16:44:33.4569078+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.10.dll
+[2026-06-12T16:44:33.4569078+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.11.dll
+[2026-06-12T16:44:33.4569078+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.12.dll
+[2026-06-12T16:44:33.4579731+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.13.dll
+[2026-06-12T16:44:33.4579731+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.14.dll
+[2026-06-12T16:44:33.4579731+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.15.dll
+[2026-06-12T16:44:33.4579731+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.4.dll
+[2026-06-12T16:44:33.4579731+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.5.dll
+[2026-06-12T16:44:33.4579731+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.6.dll
+[2026-06-12T16:44:33.4579731+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.7.dll
+[2026-06-12T16:44:33.4579731+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.8.dll
+[2026-06-12T16:44:33.4579731+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.9.dll
+[2026-06-12T16:44:33.4588301+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.4.0.dll
+[2026-06-12T16:44:33.4588301+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.4.1.dll
+[2026-06-12T16:44:33.4588301+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found one matching implementation.
+[2026-06-12T16:44:33.4588301+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Loading implementation Bannerlord.MBOptionScreen.v1.3.15.dll for game v1.3.15
+[2026-06-12T16:44:33.4588301+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: SubModule Bannerlord.BUTR.Shared.Utils.MBSubModuleBaseSimpleWrapper's default constructor could not be converted to a delegate! Assembly: Bannerlord.MBOptionScreen.v1.3.15, Version=5.11.4.0, Culture=neutral, PublicKeyToken=null
+[2026-06-12T16:44:33.4588301+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Finished loading implementations.
+[2026-06-12T16:44:33.4588301+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Register: BetterTime, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+[2026-06-12T16:44:33.4588301+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Register Types
+[2026-06-12T16:44:33.4588301+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Enabled
+[2026-06-12T16:44:33.4588301+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: AccessTools2.DeclaredMethod: Could not find method for type 'TaleWorlds.GauntletUI.WidgetInfo' and name 'Reload' and parameters ''
+[2026-06-12T16:44:33.5333970+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: 
+[2026-06-12T16:44:33.5333970+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: AccessTools2.Method: Could not find method for type 'TaleWorlds.CampaignSystem.CampaignBehaviors.CampaignBehaviorManager' and name 'OnGameLoaded' and parameters ''
+[2026-06-12T16:44:33.7151668+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: 
+[2026-06-12T16:44:33.7151668+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: MCM.UI - Register: Bannerlord.MBOptionScreen.v1.3.15, Version=5.11.4.0, Culture=neutral, PublicKeyToken=null
+[2026-06-12T16:44:33.7151668+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: 
+[2026-06-12T16:44:33.7151668+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: MCM.UI - Register Types
+[2026-06-12T16:44:33.7246730+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: 
+[2026-06-12T16:44:33.7246730+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: MCM.UI - Enabled
+[2026-06-12T16:45:19.7857819+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: AccessTools2.Method: Could not find method for type 'TaleWorlds.MountAndBlade.Module' and name 'FinalizeSubModules' and parameters ''
+[2026-06-12T16:45:19.7887810+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Loading implementations...
+[2026-06-12T16:45:19.7887810+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.0.dll
+[2026-06-12T16:45:19.7887810+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.1.dll
+[2026-06-12T16:45:19.7887810+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.2.dll
+[2026-06-12T16:45:19.7897819+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.3.dll
+[2026-06-12T16:45:19.7897819+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.0.dll
+[2026-06-12T16:45:19.7897819+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.1.dll
+[2026-06-12T16:45:19.7897819+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.2.dll
+[2026-06-12T16:45:19.7897819+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.3.dll
+[2026-06-12T16:45:19.7897819+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.4.dll
+[2026-06-12T16:45:19.7897819+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.5.dll
+[2026-06-12T16:45:19.7897819+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.6.dll
+[2026-06-12T16:45:19.7897819+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.10.dll
+[2026-06-12T16:45:19.7897819+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.11.dll
+[2026-06-12T16:45:19.7897819+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.12.dll
+[2026-06-12T16:45:19.7907814+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.4.dll
+[2026-06-12T16:45:19.7907814+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.5.dll
+[2026-06-12T16:45:19.7907814+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.6.dll
+[2026-06-12T16:45:19.7907814+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.7.dll
+[2026-06-12T16:45:19.7907814+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.8.dll
+[2026-06-12T16:45:19.7907814+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.9.dll
+[2026-06-12T16:45:19.7907814+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.10.dll
+[2026-06-12T16:45:19.7907814+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.11.dll
+[2026-06-12T16:45:19.7907814+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.12.dll
+[2026-06-12T16:45:19.7907814+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.13.dll
+[2026-06-12T16:45:19.7907814+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.14.dll
+[2026-06-12T16:45:19.7907814+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.15.dll
+[2026-06-12T16:45:19.7917823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.4.dll
+[2026-06-12T16:45:19.7917823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.5.dll
+[2026-06-12T16:45:19.7917823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.6.dll
+[2026-06-12T16:45:19.7917823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.7.dll
+[2026-06-12T16:45:19.7917823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.8.dll
+[2026-06-12T16:45:19.7917823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.9.dll
+[2026-06-12T16:45:19.7917823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.4.0.dll
+[2026-06-12T16:45:19.7917823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.4.1.dll
+[2026-06-12T16:45:19.7917823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found one matching implementation.
+[2026-06-12T16:45:19.7917823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Loading implementation Bannerlord.MBOptionScreen.v1.3.15.dll for game v1.3.15
+[2026-06-12T16:45:19.7917823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: SubModule Bannerlord.BUTR.Shared.Utils.MBSubModuleBaseSimpleWrapper's default constructor could not be converted to a delegate! Assembly: Bannerlord.MBOptionScreen.v1.3.15, Version=5.11.4.0, Culture=neutral, PublicKeyToken=null
+[2026-06-12T16:45:19.7917823+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Finished loading implementations.
+[2026-06-12T16:45:19.7927819+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Register: BetterTime, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+[2026-06-12T16:45:19.7927819+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Register Types
+[2026-06-12T16:45:19.7927819+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Enabled
+[2026-06-12T16:45:19.7927819+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: AccessTools2.DeclaredMethod: Could not find method for type 'TaleWorlds.GauntletUI.WidgetInfo' and name 'Reload' and parameters ''
+[2026-06-12T16:45:19.8713592+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: 
+[2026-06-12T16:45:19.8713592+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: AccessTools2.Method: Could not find method for type 'TaleWorlds.CampaignSystem.CampaignBehaviors.CampaignBehaviorManager' and name 'OnGameLoaded' and parameters ''
+[2026-06-12T16:45:20.0535606+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: 
+[2026-06-12T16:45:20.0535606+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: MCM.UI - Register: Bannerlord.MBOptionScreen.v1.3.15, Version=5.11.4.0, Culture=neutral, PublicKeyToken=null
+[2026-06-12T16:45:20.0535606+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: 
+[2026-06-12T16:45:20.0535606+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: MCM.UI - Register Types
+[2026-06-12T16:45:20.0620744+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: 
+[2026-06-12T16:45:20.0620744+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: MCM.UI - Enabled
+[2026-06-12T16:55:35.9761724+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: AccessTools2.Method: Could not find method for type 'TaleWorlds.MountAndBlade.Module' and name 'FinalizeSubModules' and parameters ''
+[2026-06-12T16:55:35.9786813+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Loading implementations...
+[2026-06-12T16:55:35.9786813+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.0.dll
+[2026-06-12T16:55:35.9786813+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.1.dll
+[2026-06-12T16:55:35.9786813+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.2.dll
+[2026-06-12T16:55:35.9786813+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.3.dll
+[2026-06-12T16:55:35.9786813+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.0.dll
+[2026-06-12T16:55:35.9796797+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.1.dll
+[2026-06-12T16:55:35.9796797+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.2.dll
+[2026-06-12T16:55:35.9796797+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.3.dll
+[2026-06-12T16:55:35.9796797+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.4.dll
+[2026-06-12T16:55:35.9796797+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.5.dll
+[2026-06-12T16:55:35.9796797+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.6.dll
+[2026-06-12T16:55:35.9796797+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.10.dll
+[2026-06-12T16:55:35.9796797+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.11.dll
+[2026-06-12T16:55:35.9796797+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.12.dll
+[2026-06-12T16:55:35.9796797+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.4.dll
+[2026-06-12T16:55:35.9806797+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.5.dll
+[2026-06-12T16:55:35.9806797+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.6.dll
+[2026-06-12T16:55:35.9806797+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.7.dll
+[2026-06-12T16:55:35.9806797+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.8.dll
+[2026-06-12T16:55:35.9806797+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.9.dll
+[2026-06-12T16:55:35.9806797+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.10.dll
+[2026-06-12T16:55:35.9806797+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.11.dll
+[2026-06-12T16:55:35.9806797+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.12.dll
+[2026-06-12T16:55:35.9806797+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.13.dll
+[2026-06-12T16:55:35.9816791+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.14.dll
+[2026-06-12T16:55:35.9816791+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.15.dll
+[2026-06-12T16:55:35.9816791+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.4.dll
+[2026-06-12T16:55:35.9816791+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.5.dll
+[2026-06-12T16:55:35.9816791+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.6.dll
+[2026-06-12T16:55:35.9816791+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.7.dll
+[2026-06-12T16:55:35.9816791+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.8.dll
+[2026-06-12T16:55:35.9816791+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.9.dll
+[2026-06-12T16:55:35.9816791+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.4.0.dll
+[2026-06-12T16:55:35.9816791+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.4.1.dll
+[2026-06-12T16:55:35.9816791+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found one matching implementation.
+[2026-06-12T16:55:35.9826789+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Loading implementation Bannerlord.MBOptionScreen.v1.3.15.dll for game v1.3.15
+[2026-06-12T16:55:35.9826789+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: SubModule Bannerlord.BUTR.Shared.Utils.MBSubModuleBaseSimpleWrapper's default constructor could not be converted to a delegate! Assembly: Bannerlord.MBOptionScreen.v1.3.15, Version=5.11.4.0, Culture=neutral, PublicKeyToken=null
+[2026-06-12T16:55:35.9826789+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Finished loading implementations.
+[2026-06-12T16:55:35.9826789+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Register: BetterTime, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+[2026-06-12T16:55:35.9826789+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Register Types
+[2026-06-12T16:55:35.9826789+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Enabled
+[2026-06-12T16:55:35.9826789+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: AccessTools2.DeclaredMethod: Could not find method for type 'TaleWorlds.GauntletUI.WidgetInfo' and name 'Reload' and parameters ''
+[2026-06-12T16:55:36.0577378+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: 
+[2026-06-12T16:55:36.0577378+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: AccessTools2.Method: Could not find method for type 'TaleWorlds.CampaignSystem.CampaignBehaviors.CampaignBehaviorManager' and name 'OnGameLoaded' and parameters ''
+[2026-06-12T16:56:13.9521117+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: AccessTools2.Method: Could not find method for type 'TaleWorlds.MountAndBlade.Module' and name 'FinalizeSubModules' and parameters ''
+[2026-06-12T16:56:13.9551152+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Loading implementations...
+[2026-06-12T16:56:13.9551152+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.0.dll
+[2026-06-12T16:56:13.9551152+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.1.dll
+[2026-06-12T16:56:13.9551152+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.2.dll
+[2026-06-12T16:56:13.9551152+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.3.dll
+[2026-06-12T16:56:13.9551152+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.0.dll
+[2026-06-12T16:56:13.9551152+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.1.dll
+[2026-06-12T16:56:13.9551152+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.2.dll
+[2026-06-12T16:56:13.9551152+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.3.dll
+[2026-06-12T16:56:13.9551152+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.4.dll
+[2026-06-12T16:56:13.9561098+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.5.dll
+[2026-06-12T16:56:13.9561098+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.6.dll
+[2026-06-12T16:56:13.9561098+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.10.dll
+[2026-06-12T16:56:13.9561098+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.11.dll
+[2026-06-12T16:56:13.9561098+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.12.dll
+[2026-06-12T16:56:13.9561098+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.4.dll
+[2026-06-12T16:56:13.9561098+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.5.dll
+[2026-06-12T16:56:13.9561098+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.6.dll
+[2026-06-12T16:56:13.9561098+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.7.dll
+[2026-06-12T16:56:13.9561098+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.8.dll
+[2026-06-12T16:56:13.9561098+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.9.dll
+[2026-06-12T16:56:13.9561098+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.10.dll
+[2026-06-12T16:56:13.9571097+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.11.dll
+[2026-06-12T16:56:13.9571097+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.12.dll
+[2026-06-12T16:56:13.9571097+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.13.dll
+[2026-06-12T16:56:13.9571097+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.14.dll
+[2026-06-12T16:56:13.9571097+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.15.dll
+[2026-06-12T16:56:13.9571097+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.4.dll
+[2026-06-12T16:56:13.9571097+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.5.dll
+[2026-06-12T16:56:13.9571097+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.6.dll
+[2026-06-12T16:56:13.9571097+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.7.dll
+[2026-06-12T16:56:13.9571097+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.8.dll
+[2026-06-12T16:56:13.9571097+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.9.dll
+[2026-06-12T16:56:13.9581099+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.4.0.dll
+[2026-06-12T16:56:13.9581099+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.4.1.dll
+[2026-06-12T16:56:13.9581099+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found one matching implementation.
+[2026-06-12T16:56:13.9581099+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Loading implementation Bannerlord.MBOptionScreen.v1.3.15.dll for game v1.3.15
+[2026-06-12T16:56:13.9581099+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: SubModule Bannerlord.BUTR.Shared.Utils.MBSubModuleBaseSimpleWrapper's default constructor could not be converted to a delegate! Assembly: Bannerlord.MBOptionScreen.v1.3.15, Version=5.11.4.0, Culture=neutral, PublicKeyToken=null
+[2026-06-12T16:56:13.9581099+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Finished loading implementations.
+[2026-06-12T16:56:13.9581099+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Register: BetterTime, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+[2026-06-12T16:56:13.9581099+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Register Types
+[2026-06-12T16:56:13.9581099+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Enabled
+[2026-06-12T16:56:13.9581099+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: AccessTools2.DeclaredMethod: Could not find method for type 'TaleWorlds.GauntletUI.WidgetInfo' and name 'Reload' and parameters ''
+[2026-06-12T16:56:14.0364642+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: 
+[2026-06-12T16:56:14.0364642+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: AccessTools2.Method: Could not find method for type 'TaleWorlds.CampaignSystem.CampaignBehaviors.CampaignBehaviorManager' and name 'OnGameLoaded' and parameters ''
+[2026-06-12T16:57:33.6032620+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: AccessTools2.Method: Could not find method for type 'TaleWorlds.MountAndBlade.Module' and name 'FinalizeSubModules' and parameters ''
+[2026-06-12T16:57:33.6060202+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Loading implementations...
+[2026-06-12T16:57:33.6060202+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.0.dll
+[2026-06-12T16:57:33.6060202+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.1.dll
+[2026-06-12T16:57:33.6060202+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.2.dll
+[2026-06-12T16:57:33.6060202+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.0.3.dll
+[2026-06-12T16:57:33.6060202+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.0.dll
+[2026-06-12T16:57:33.6060202+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.1.dll
+[2026-06-12T16:57:33.6060202+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.2.dll
+[2026-06-12T16:57:33.6060202+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.3.dll
+[2026-06-12T16:57:33.6060202+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.4.dll
+[2026-06-12T16:57:33.6060202+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.5.dll
+[2026-06-12T16:57:33.6060202+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.1.6.dll
+[2026-06-12T16:57:33.6070200+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.10.dll
+[2026-06-12T16:57:33.6070200+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.11.dll
+[2026-06-12T16:57:33.6070200+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.12.dll
+[2026-06-12T16:57:33.6070200+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.4.dll
+[2026-06-12T16:57:33.6070200+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.5.dll
+[2026-06-12T16:57:33.6070200+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.6.dll
+[2026-06-12T16:57:33.6070200+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.7.dll
+[2026-06-12T16:57:33.6070200+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.8.dll
+[2026-06-12T16:57:33.6070200+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.2.9.dll
+[2026-06-12T16:57:33.6070200+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.10.dll
+[2026-06-12T16:57:33.6070200+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.11.dll
+[2026-06-12T16:57:33.6070200+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.12.dll
+[2026-06-12T16:57:33.6070200+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.13.dll
+[2026-06-12T16:57:33.6070200+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.14.dll
+[2026-06-12T16:57:33.6070200+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.15.dll
+[2026-06-12T16:57:33.6080192+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.4.dll
+[2026-06-12T16:57:33.6080192+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.5.dll
+[2026-06-12T16:57:33.6080192+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.6.dll
+[2026-06-12T16:57:33.6080192+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.7.dll
+[2026-06-12T16:57:33.6080192+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.8.dll
+[2026-06-12T16:57:33.6080192+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.3.9.dll
+[2026-06-12T16:57:33.6080192+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.4.0.dll
+[2026-06-12T16:57:33.6080192+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found implementation: Bannerlord.MBOptionScreen.v1.4.1.dll
+[2026-06-12T16:57:33.6080192+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Found one matching implementation.
+[2026-06-12T16:57:33.6080192+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Loading implementation Bannerlord.MBOptionScreen.v1.3.15.dll for game v1.3.15
+[2026-06-12T16:57:33.6080192+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: SubModule Bannerlord.BUTR.Shared.Utils.MBSubModuleBaseSimpleWrapper's default constructor could not be converted to a delegate! Assembly: Bannerlord.MBOptionScreen.v1.3.15, Version=5.11.4.0, Culture=neutral, PublicKeyToken=null
+[2026-06-12T16:57:33.6080192+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: Finished loading implementations.
+[2026-06-12T16:57:33.6080192+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Register: BetterTime, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+[2026-06-12T16:57:33.6080192+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Register Types
+[2026-06-12T16:57:33.6080192+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: BetterTime - Enabled
+[2026-06-12T16:57:33.6080192+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: AccessTools2.DeclaredMethod: Could not find method for type 'TaleWorlds.GauntletUI.WidgetInfo' and name 'Reload' and parameters ''
+[2026-06-12T16:57:33.6855766+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [ERR]: 
+[2026-06-12T16:57:33.6855766+03:00] [System.Diagnostics.Logger.LoggerTraceListener] [INF]: AccessTools2.Method: Could not find method for type 'TaleWorlds.CampaignSystem.CampaignBehaviors.CampaignBehaviorManager' and name 'OnGameLoaded' and parameters ''

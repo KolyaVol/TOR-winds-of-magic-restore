@@ -11,7 +11,10 @@ namespace WindsOfMagicRestore.Patches
         public static void Postfix(Agent caster, object abilityTemplate, int __result)
         {
             ModGuard.Run("CreateSpellSession", () =>
-                AugmentBuffTracker.RegisterFromSpellSession(caster, abilityTemplate, __result));
+            {
+                SpellCastRegistry.Register(__result, caster);
+                AugmentBuffTracker.RegisterFromSpellSession(caster, abilityTemplate, __result);
+            });
         }
     }
 }

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "d:\\projects\\WindsOfMagic\\src\\WindsOfMagicRestore\\WindsOfMagicRestore.csproj": {}
+    "C:\\Users\\kolya\\OneDrive\\Рабочий стол\\work\\projects\\TOR-winds-of-magic-restore\\src\\WindsOfMagicRestore\\WindsOfMagicRestore.csproj": {}
   },
   "projects": {
-    "d:\\projects\\WindsOfMagic\\src\\WindsOfMagicRestore\\WindsOfMagicRestore.csproj": {
+    "C:\\Users\\kolya\\OneDrive\\Рабочий стол\\work\\projects\\TOR-winds-of-magic-restore\\src\\WindsOfMagicRestore\\WindsOfMagicRestore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\projects\\WindsOfMagic\\src\\WindsOfMagicRestore\\WindsOfMagicRestore.csproj",
+        "projectUniqueName": "C:\\Users\\kolya\\OneDrive\\Рабочий стол\\work\\projects\\TOR-winds-of-magic-restore\\src\\WindsOfMagicRestore\\WindsOfMagicRestore.csproj",
         "projectName": "WindsOfMagicRestore",
-        "projectPath": "d:\\projects\\WindsOfMagic\\src\\WindsOfMagicRestore\\WindsOfMagicRestore.csproj",
-        "packagesPath": "C:\\Users\\Kolya Vol\\.nuget\\packages\\",
-        "outputPath": "d:\\projects\\WindsOfMagic\\src\\WindsOfMagicRestore\\obj\\",
+        "projectPath": "C:\\Users\\kolya\\OneDrive\\Рабочий стол\\work\\projects\\TOR-winds-of-magic-restore\\src\\WindsOfMagicRestore\\WindsOfMagicRestore.csproj",
+        "packagesPath": "C:\\Users\\kolya\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kolya\\OneDrive\\Рабочий стол\\work\\projects\\TOR-winds-of-magic-restore\\src\\WindsOfMagicRestore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Kolya Vol\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\kolya\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net472"
