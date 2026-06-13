@@ -164,7 +164,7 @@ Work through these in order:
    ```
    The winds bar should increase by 5. If this works, TOR integration is fine and any remaining issue is reward logic or settings.
 5. **Kill test** — Kill an enemy (melee or spell). With defaults you get **1.0** winds per kill (all tiers). Passive regen (`0.05`/sec) is a slower sanity check.
-6. **Damage test** (optional) — Set **Winds for 100 damage** to something visible like `10` under Melee and ranged damage or Spell damage, then hit an enemy. You should see winds tick up proportionally (see [Damage reward formula](#damage-reward-formula)).
+6. **Damage test** (optional) — Set **Winds per 100 HP dealt** to something visible like `10` under Melee and ranged damage or Spell damage, then hit an enemy. You should see winds tick up proportionally (see [Damage reward formula](#damage-reward-formula)).
 
 If something fails, see [Troubleshooting](#troubleshooting).
 
@@ -185,13 +185,13 @@ There are **no hotkeys**. All reward amounts are configured in Mod Options.
 
 By default, Winds of Magic only recovers slowly, which can leave casters stranded mid-fight. This mod gives you several **independently configurable** ways to earn winds back during combat:
 
-- **Kill rewards** — winds when **you** get kill credit (melee, ranged, direct spell hits, bombardment zones, hex/DOT ticks).
+- **Kill rewards** — winds when **you** or a **party companion** gets kill credit (melee, ranged, direct spell hits, bombardment zones, hex/DOT ticks).
 - **Buffed unit kill rewards** — winds when a troop you **buffed** kills an enemy while the buff is active.
-- **Heal rewards** — winds when a heal spell ends, based on total HP restored.
-- **Damage rewards** — winds when **you** deal melee, ranged, or spell damage (scaled per 100 HP; see formula below).
+- **Heal rewards** — winds when a heal spell ends (yours or a companion's), based on total HP restored.
+- **Damage rewards** — winds when **you** or a **party companion** deals melee, ranged, or spell damage (scaled per 100 HP; see formula below).
 - **Passive regeneration** — steady per-second trickle during battle.
 
-All winds are granted to your main hero (`Hero.MainHero`).
+Your main hero always receives winds from your own actions. Companion rewards use **separate MCM values** and can be sent to the main hero only, to the companion only, or given in full to both.
 
 ### How rewards flow
 
@@ -222,10 +222,12 @@ Every battle tick
 
 | Kill type | Supported |
 | --- | --- |
-| Melee / ranged | Yes |
-| Direct spell damage | Yes |
+| Melee / ranged (you or companion) | Yes |
+| Direct spell damage (you or companion) | Yes |
 | Bombardment / area damage zones | Yes (via TOR spell sessions) |
 | Hex and other DOT status effects | Yes (including ticks after the cast ends) |
+| Party companion kills | Yes | Separate companion kill settings |
+| Regular party troop kills | No (buffed-unit kill rewards only) |
 | Friendly fire kills | No |
 | Kills with no player involvement | No |
 
@@ -236,10 +238,12 @@ Kill credit uses TOR's `BookSpellKill` hook for spells plus agent-removal fallba
 | Damage type | Supported | Notes |
 | --- | --- | --- |
 | Melee / ranged (your hits) | Yes | Via TOR `ApplyGeneralDamageModifiers` |
+| Melee / ranged (companion hits) | Yes | Separate companion damage settings |
 | Spell damage (your casts) | Yes | Via TOR `BookSpellDamage` |
-| Damage to enemies | Yes | Uses **Winds for 100 damage** settings |
-| Friendly fire damage | Optional | Separate **Winds for friendly fire 100 damage** settings; default `0` (off) |
-| Party troop damage | No | Only the main hero's own hits count |
+| Spell damage (companion casts) | Yes | Separate companion damage settings |
+| Damage to enemies | Yes | Uses **Winds per 100 HP dealt** settings |
+| Friendly fire damage | Optional | Separate **Friendly fire winds per 100 HP** settings; default `0` (off) |
+| Regular party troop damage | No | Only main hero and party companions count |
 | Self-damage | No | Hitting yourself does not grant winds |
 
 Damage rewards apply **per hit** (or per spell damage tick), not only on kill. Melee/ranged and spell damage use separate settings.
@@ -291,15 +295,58 @@ Heal payout uses the same proportional idea as damage: `(HP healed ÷ HP block) 
 
 | Setting | Default | Description |
 | --- | --- | --- |
-| **Winds for 100 damage** | `0` | Winds restored per **100 HP** of melee or ranged damage **you** deal to enemies. Set above `0` to enable. |
-| **Winds for friendly fire 100 damage** | `0` | Same scale, but for damage dealt to **friendly** units. Off by default. |
+| **Winds per 100 HP dealt** | `0` | Winds restored per **100 HP** of melee or ranged damage **you** deal to enemies. Set above `0` to enable. |
+| **Friendly fire winds per 100 HP** | `0` | Same scale, but for damage dealt to **friendly** units. Off by default. |
 
 ### Spell damage
 
 | Setting | Default | Description |
 | --- | --- | --- |
-| **Winds for 100 damage** | `0` | Winds restored per **100 HP** of spell damage **you** deal to enemies. Set above `0` to enable. |
-| **Winds for friendly fire 100 damage** | `0` | Same scale for friendly spell damage. Off by default. |
+| **Winds per 100 HP dealt** | `0` | Winds restored per **100 HP** of spell damage **you** deal to enemies. Set above `0` to enable. |
+| **Friendly fire winds per 100 HP** | `0` | Same scale for friendly spell damage. Off by default. |
+
+### Companion kill rewards
+
+| Setting | Default | Description |
+| --- | --- | --- |
+| **Enable companion kill rewards** | On | Master toggle for companion kill-based winds. |
+| **Restore winds to** | Main hero | Who receives companion kill winds (see below). |
+| **Winds per kill** | `1.0` | Companion kill reward for all tiers when per-tier mode is off. |
+| **Set different winds gain for every tier** | Off | Per-tier companion kill values (Tier 1–9). |
+
+### Companion heal rewards
+
+| Setting | Default | Description |
+| --- | --- | --- |
+| **Enable companion heal rewards** | On | Grant winds when a companion's heal spell ends. |
+| **Restore winds to** | Main hero | Who receives companion heal winds. |
+| **Winds per selected amount HP** | `1.0` | Companion heal payout block multiplier. |
+| **HP block for winds** | `100.0` | HP healed per companion wind payout block. |
+
+### Companion melee and ranged damage
+
+| Setting | Default | Description |
+| --- | --- | --- |
+| **Restore winds to** | Main hero | Who receives companion melee/ranged damage winds. Also applies to companion spell damage. |
+| **Winds per 100 HP dealt** | `0` | Companion winds per 100 HP of melee/ranged damage. Set above `0` to enable. |
+| **Friendly fire winds per 100 HP** | `0` | Same scale for companion melee/ranged friendly fire. |
+
+### Companion spell damage
+
+| Setting | Default | Description |
+| --- | --- | --- |
+| **Winds per 100 HP dealt** | `0` | Companion winds per 100 HP of spell damage dealt. |
+| **Friendly fire winds per 100 HP** | `0` | Same scale for companion spell friendly fire. |
+
+Restore target uses the dropdown under **Companion melee and ranged damage** for all companion damage types.
+
+#### Companion restore targets
+
+| Option | Behavior |
+| --- | --- |
+| **Main hero** | Full reward goes to the main hero only. |
+| **Self** | Full reward goes to the companion only. |
+| **Both** | Main hero and companion each receive the full configured amount. |
 
 ### Diagnostics
 
@@ -312,16 +359,16 @@ Heal payout uses the same proportional idea as damage: `(HP healed ÷ HP block) 
 Damage rewards scale **proportionally** with HP dealt. The block size is fixed at **100 HP** — the setting value is winds earned per 100 damage, not a flat payout per hit.
 
 ```
-winds gained = (damage dealt ÷ 100) × winds for 100 damage
+winds gained = (damage dealt ÷ 100) × winds per 100 HP dealt
 ```
 
-**Example:** You set **Winds for 100 damage** to `10` and deal **25** HP in one hit:
+**Example:** You set **Winds per 100 HP dealt** to `10` and deal **25** HP in one hit:
 
 ```
 (25 ÷ 100) × 10 = 2.5 winds
 ```
 
-More examples with **Winds for 100 damage = 10**:
+More examples with **Winds per 100 HP dealt = 10**:
 
 | Damage dealt | Winds gained |
 | --- | --- |
@@ -360,6 +407,8 @@ The same formula applies to spell damage and to friendly-fire damage settings (w
     ├── Settings\WindsOfMagicRestoreSettings.cs
     └── Utilities\
         ├── AugmentBuffTracker.cs
+        ├── CompanionHelper.cs
+        ├── CompanionWindsGrantService.cs
         ├── DamageRewardService.cs
         ├── DiagnosticsCommand.cs
         ├── KillCreditHelper.cs
@@ -412,7 +461,7 @@ The same formula applies to spell damage and to friendly-fire damage settings (w
 | No Mod Options page | Enable **Bannerlord.MBOptionScreen** (MCM v5) above this mod. |
 | `wom.diagnostics` shows MISSING | TOR_Core likely updated; that hook needs a mod update. See which feature each patch powers in the report. |
 | `wom.add` works, kills do not | Check **Enable kill rewards** and **Winds per kill** > 0. If per-tier mode is on, check the victim's tier (1–9). Confirm you are **below max winds** (TOR caps gains). |
-| `wom.add` works, damage does not | Set **Winds for 100 damage** above `0`. Check `BookSpellDamage` (spells) or `ApplyGeneralDamageModifiers` (melee/ranged) is OK in diagnostics. Only **your** hits count. |
+| `wom.add` works, damage does not | Set **Winds per 100 HP dealt** above `0`. Check `BookSpellDamage` (spells) or `ApplyGeneralDamageModifiers` (melee/ranged) is OK in diagnostics. Only **your** hits count. |
 | `wom.add` does not work | TOR_Core not loaded, wrong load order, or API changed — fix MISSING diagnostics first. |
 | Spell kills fail, melee works | Rebuild and reinstall; ensure `BookSpellKill patch target` is OK in diagnostics. |
 | Heal/buffed-unit rewards fail | `CreateSpellSession` / `FinalizeSession` or status-effect hooks MISSING — see log warning about TOR patches. |

@@ -8,21 +8,26 @@ namespace WindsOfMagicRestore.Utilities
 
         public static void AddWinds(float amount)
         {
-            if (amount <= 0f || Hero.MainHero == null)
+            AddWinds(Hero.MainHero, amount);
+        }
+
+        public static void AddWinds(Hero? hero, float amount)
+        {
+            if (amount <= 0f || hero == null)
                 return;
 
             ModGuard.Run("AddWinds", () =>
             {
                 if (TorTypes.AddWindsOfMagic != null)
                 {
-                    TorTypes.AddWindsOfMagic.Invoke(null, new object[] { Hero.MainHero, amount });
+                    TorTypes.AddWindsOfMagic.Invoke(null, new object[] { hero, amount });
                     WindsRestoreMessages.Record(amount);
                     return;
                 }
 
                 if (TorTypes.AddCustomResource != null)
                 {
-                    TorTypes.AddCustomResource.Invoke(null, new object[] { Hero.MainHero, "WindsOfMagic", amount });
+                    TorTypes.AddCustomResource.Invoke(null, new object[] { hero, "WindsOfMagic", amount });
                     WindsRestoreMessages.Record(amount);
                     return;
                 }

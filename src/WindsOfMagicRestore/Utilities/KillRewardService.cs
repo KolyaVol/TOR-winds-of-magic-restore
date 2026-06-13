@@ -67,6 +67,16 @@ namespace WindsOfMagicRestore.Utilities
                 return true;
             }
 
+            if (CompanionHelper.IsCompanionAgent(killer))
+            {
+                var winds = settings.GetCompanionWindsForTier(tier);
+                if (winds <= 0f)
+                    return false;
+
+                CompanionWindsGrantService.Grant(winds, killer, settings.GetCompanionKillRestoreMode());
+                return true;
+            }
+
             if (!AgentPartyHelper.IsMainPartyAgent(killer))
                 return false;
 

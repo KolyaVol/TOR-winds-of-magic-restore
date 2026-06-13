@@ -24,15 +24,22 @@ namespace WindsOfMagicRestore.Patches
             if (healingDone <= 0)
                 return;
 
-            var caster = TorTypes.SessionCaster?.GetValue(session) as Agent;
-            if (caster != Agent.Main)
-                return;
-
             var settings = WindsOfMagicRestoreSettings.Instance;
             if (settings == null)
                 return;
 
-            TorWindsApi.AddWinds(settings.GetWindsForHealing(healingDone));
+            var caster = TorTypes.SessionCaster?.GetValue(session) as Agent;
+            if (KillCreditHelper.IsMainHeroAgent(caster))
+            {
+                TorWindsApi.AddWinds(settings.GetWindsForHealing(healingDone));
+                return;
+            }
+
+            if (!CompanionHelper.IsCompanionAgent(caster))
+                return;
+
+            var companionWinds = settings.GetCompanionWindsForHealing(healingDone);
+            CompanionWindsGrantService.Grant(companionWinds, caster, settings.GetCompanionHealRestoreMode());
         }
     }
 }

@@ -20,8 +20,7 @@ namespace WindsOfMagicRestore.Utilities
                 if (caster == null)
                 {
                     var casterHero = TorTypes.SessionCasterHero?.GetValue(session) as Hero;
-                    if (casterHero == Hero.MainHero && Agent.Main != null)
-                        caster = Agent.Main;
+                    caster = CompanionHelper.ResolveAgentForHero(casterHero);
                 }
 
                 if (caster != null)

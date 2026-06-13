@@ -22,21 +22,35 @@ namespace WindsOfMagicRestore.Utilities
                 return;
 
             attacker = KillCreditHelper.NormalizeAgent(attacker);
-            if (attacker == null || !KillCreditHelper.IsMainHeroAgent(attacker))
+            if (attacker == null)
                 return;
 
             var settings = WindsOfMagicRestoreSettings.Instance;
             if (settings == null)
                 return;
 
-            if (KillCreditHelper.IsHostileVictim(victim, attacker))
+            if (KillCreditHelper.IsMainHeroAgent(attacker))
             {
-                TorWindsApi.AddWinds(settings.GetWindsForMeleeDamage(damage));
+                if (KillCreditHelper.IsHostileVictim(victim, attacker))
+                    TorWindsApi.AddWinds(settings.GetWindsForMeleeDamage(damage));
+                else if (KillCreditHelper.IsFriendlyVictim(victim, attacker))
+                    TorWindsApi.AddWinds(settings.GetWindsForFriendlyMeleeDamage(damage));
+
                 return;
             }
 
-            if (KillCreditHelper.IsFriendlyVictim(victim, attacker))
-                TorWindsApi.AddWinds(settings.GetWindsForFriendlyMeleeDamage(damage));
+            if (!CompanionHelper.IsCompanionAgent(attacker))
+                return;
+
+            float winds;
+            if (KillCreditHelper.IsHostileVictim(victim, attacker))
+                winds = settings.GetCompanionWindsForMeleeDamage(damage);
+            else if (KillCreditHelper.IsFriendlyVictim(victim, attacker))
+                winds = settings.GetCompanionWindsForFriendlyMeleeDamage(damage);
+            else
+                return;
+
+            CompanionWindsGrantService.Grant(winds, attacker, settings.GetCompanionDamageRestoreMode());
         }
 
         private static void TryGrantForSpellDamageCore(Agent victim, Agent? caster, int damage)
@@ -45,21 +59,35 @@ namespace WindsOfMagicRestore.Utilities
                 return;
 
             caster = KillCreditHelper.NormalizeAgent(caster);
-            if (caster == null || !KillCreditHelper.IsMainHeroAgent(caster))
+            if (caster == null)
                 return;
 
             var settings = WindsOfMagicRestoreSettings.Instance;
             if (settings == null)
                 return;
 
-            if (KillCreditHelper.IsHostileVictim(victim, caster))
+            if (KillCreditHelper.IsMainHeroAgent(caster))
             {
-                TorWindsApi.AddWinds(settings.GetWindsForSpellDamage(damage));
+                if (KillCreditHelper.IsHostileVictim(victim, caster))
+                    TorWindsApi.AddWinds(settings.GetWindsForSpellDamage(damage));
+                else if (KillCreditHelper.IsFriendlyVictim(victim, caster))
+                    TorWindsApi.AddWinds(settings.GetWindsForFriendlySpellDamage(damage));
+
                 return;
             }
 
-            if (KillCreditHelper.IsFriendlyVictim(victim, caster))
-                TorWindsApi.AddWinds(settings.GetWindsForFriendlySpellDamage(damage));
+            if (!CompanionHelper.IsCompanionAgent(caster))
+                return;
+
+            float winds;
+            if (KillCreditHelper.IsHostileVictim(victim, caster))
+                winds = settings.GetCompanionWindsForSpellDamage(damage);
+            else if (KillCreditHelper.IsFriendlyVictim(victim, caster))
+                winds = settings.GetCompanionWindsForFriendlySpellDamage(damage);
+            else
+                return;
+
+            CompanionWindsGrantService.Grant(winds, caster, settings.GetCompanionDamageRestoreMode());
         }
     }
 }
