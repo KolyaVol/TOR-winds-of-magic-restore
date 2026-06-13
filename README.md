@@ -175,6 +175,7 @@ Requires the developer console (vanilla hotkey `~` when enabled, or a console mo
 | Command | What it does |
 | --- | --- |
 | `wom.diagnostics` | Full OK / MISSING report for TOR hooks, Harmony patch targets, and MCM. Run this first when rewards stop working. |
+| `wom.export` | Saves the same report to `Documents\Mount and Blade II Bannerlord\WindsOfMagicRestore_diagnostics.txt`. |
 | `wom.add <amount>` | Adds winds directly (e.g. `wom.add 5`). Use to verify TOR wind gain works in the current battle. |
 
 There are **no hotkeys**. All reward amounts are configured in Mod Options.
@@ -352,7 +353,7 @@ Restore target uses the dropdown under **Companion melee and ranged damage** for
 
 | Setting | Default | Description |
 | --- | --- | --- |
-| **Warn at battle start** | On | One-time on-screen warning if TOR hooks are missing. Full report: `wom.diagnostics` in the battle console. |
+| **Warn at battle start** | On | One-time on-screen warning if TOR hooks are missing. Full report: `wom.diagnostics` or `wom.export` in the battle console. |
 
 ### Damage reward formula
 
@@ -404,22 +405,38 @@ The same formula applies to spell damage and to friendly-fire damage settings (w
     │   ├── BookSpellKillPatch.cs                # spell / DOT / area kill rewards
     │   ├── CreateSpellSessionPatch.cs           # augment/heal cast registration
     │   └── FinalizeSessionPatch.cs              # heal-end rewards
-    ├── Settings\WindsOfMagicRestoreSettings.cs
-    └── Utilities\
-        ├── AugmentBuffTracker.cs
-        ├── CompanionHelper.cs
-        ├── CompanionWindsGrantService.cs
-        ├── DamageRewardService.cs
-        ├── DiagnosticsCommand.cs
-        ├── KillCreditHelper.cs
-        ├── KillRewardService.cs
+    ├── Settings\
+    │   ├── WindsOfMagicRestoreSettings.cs       # MCM UI
+    │   ├── WindsOfMagicRestoreSettings.Rewards.cs
+    │   ├── CompanionWindsRecipientMode.cs
+    │   └── CompanionWindsRecipientOption.cs
+    ├── Domain\                                  # reward logic
+    │   ├── KillRewardService.cs
+    │   ├── DamageRewardService.cs
+    │   ├── HealRewardService.cs
+    │   └── CompanionWindsGrantService.cs
+    ├── Battle\                                  # agent/party identification
+    │   ├── KillCreditHelper.cs
+    │   ├── CompanionHelper.cs
+    │   ├── AgentPartyHelper.cs
+    │   └── UnitTierHelper.cs
+    ├── Integration\                             # TOR reflection & spell plumbing
+    │   ├── TorTypes.cs
+    │   ├── TorWindsApi.cs
+    │   ├── SpellCastRegistry.cs
+    │   ├── SpellSessionResolver.cs
+    │   ├── StatusEffectReflection.cs
+    │   ├── StatusEffectHelper.cs
+    │   ├── AugmentBuffTracker.cs
+    │   └── SpellEffectTypeHelper.cs
+    └── Infrastructure\                          # logging, diagnostics, UI feedback
+        ├── ModLog.cs
+        ├── ModGuard.cs
+        ├── ModTrace.cs
         ├── ModDiagnostics.cs
-        ├── SpellCastRegistry.cs
-        ├── SpellSessionResolver.cs
-        ├── TorWindsApi.cs
-        ├── UnitTierHelper.cs
+        ├── DiagnosticsCommand.cs
         ├── WindsRestoreMessages.cs
-        └── ...
+        └── KillRewardTracker.cs
 ```
 
 ---
