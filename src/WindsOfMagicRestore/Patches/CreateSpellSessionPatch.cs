@@ -1,6 +1,6 @@
 using System.Reflection;
 using TaleWorlds.MountAndBlade;
-using WindsOfMagicRestore.Utilities;
+using WindsOfMagicRestore.Integration;
 
 namespace WindsOfMagicRestore.Patches
 {
@@ -10,11 +10,8 @@ namespace WindsOfMagicRestore.Patches
 
         public static void Postfix(Agent caster, object abilityTemplate, int __result)
         {
-            ModGuard.Run("CreateSpellSession", () =>
-            {
-                SpellCastRegistry.Register(__result, caster);
-                AugmentBuffTracker.RegisterFromSpellSession(caster, abilityTemplate, __result);
-            });
+            SpellCastRegistry.Register(__result, caster);
+            AugmentBuffTracker.RegisterFromSpellSession(caster, abilityTemplate, __result);
         }
     }
 }

@@ -1,6 +1,7 @@
 using TaleWorlds.CampaignSystem;
+using WindsOfMagicRestore.Infrastructure;
 
-namespace WindsOfMagicRestore.Utilities
+namespace WindsOfMagicRestore.Integration
 {
     internal static class TorWindsApi
     {

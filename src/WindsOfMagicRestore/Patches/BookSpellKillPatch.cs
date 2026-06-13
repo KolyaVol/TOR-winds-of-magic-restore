@@ -1,6 +1,7 @@
 using System.Reflection;
 using TaleWorlds.MountAndBlade;
-using WindsOfMagicRestore.Utilities;
+using WindsOfMagicRestore.Domain;
+using WindsOfMagicRestore.Integration;
 
 namespace WindsOfMagicRestore.Patches
 {
@@ -10,14 +11,11 @@ namespace WindsOfMagicRestore.Patches
 
         public static void Postfix(int castId, Agent victim, object __instance)
         {
-            ModGuard.Run("BookSpellKill", () =>
-            {
-                if (castId < 0 || victim == null || __instance == null)
-                    return;
+            if (castId < 0 || victim == null || __instance == null)
+                return;
 
-                var caster = SpellSessionResolver.ResolveCaster(__instance, castId, victim);
-                KillRewardService.TryGrantForSpellKill(victim, caster);
-            });
+            var caster = SpellSessionResolver.ResolveCaster(__instance, castId, victim);
+            KillRewardService.TryGrantForSpellKill(victim, caster);
         }
     }
 }

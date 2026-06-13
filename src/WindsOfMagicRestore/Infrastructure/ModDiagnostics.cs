@@ -6,15 +6,18 @@ using System.Reflection;
 using System.Text;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
+using WindsOfMagicRestore.Domain;
+using WindsOfMagicRestore.Integration;
 using WindsOfMagicRestore.Patches;
 using WindsOfMagicRestore.Settings;
 
-namespace WindsOfMagicRestore.Utilities
+namespace WindsOfMagicRestore.Infrastructure
 {
     internal static class ModDiagnostics
     {
         private static bool _startupLogged;
         private static bool _battleWarningShown;
+        private static List<string>? _cachedIntegrationIssues;
 
         public static void LogStartupReport()
         {
@@ -22,6 +25,7 @@ namespace WindsOfMagicRestore.Utilities
                 return;
 
             _startupLogged = true;
+            InvalidateIntegrationCache();
 
             ModLog.Info($"Loaded {DescribeAssembly(typeof(ModLog).Assembly)}");
             ModLog.Info($"TOR_Core: {DescribeLoadedAssembly("TOR_Core") ?? "NOT LOADED — enable The Old Realms above this mod"}");
@@ -30,6 +34,11 @@ namespace WindsOfMagicRestore.Utilities
 
             foreach (var issue in CollectIntegrationIssues())
                 ModLog.Warn(issue);
+        }
+
+        public static void InvalidateIntegrationCache()
+        {
+            _cachedIntegrationIssues = null;
         }
 
         public static void LogPatchResults(string scope, int applied, int total)
@@ -54,7 +63,7 @@ namespace WindsOfMagicRestore.Utilities
 
             var summary = $"{issues.Count} issue(s): {issues[0]}";
             if (issues.Count > 1)
-                summary += $" (+{issues.Count - 1} more — use Export report)";
+                summary += $" (+{issues.Count - 1} more — use wom.export)";
 
             return summary;
         }
@@ -91,7 +100,7 @@ namespace WindsOfMagicRestore.Utilities
 
                 ModLog.Info($"Diagnostics exported to {path}");
                 InformationManager.DisplayMessage(new InformationMessage(
-                    $"Winds of Magic Restore: diagnostics saved to Documents\\Mount and Blade II Bannerlord\\WindsOfMagicRestore_diagnostics.txt",
+                    "Winds of Magic Restore: diagnostics saved to Documents\\Mount and Blade II Bannerlord\\WindsOfMagicRestore_diagnostics.txt",
                     Colors.Green));
             });
         }
@@ -160,7 +169,7 @@ namespace WindsOfMagicRestore.Utilities
 
             sb.AppendLine("== Reward features ==");
             AppendFeature(sb, "Winds gain API", TorWindsApi.IsAvailable, "Kill/heal/damage/passive rewards cannot grant winds");
-            AppendFeature(sb, "BelongsToMainParty", AgentPartyHelper.IsBelongsToMainPartyAvailable, "Augment-kill party check falls back to team comparison");
+            AppendFeature(sb, "BelongsToMainParty", Battle.AgentPartyHelper.IsBelongsToMainPartyAvailable, "Augment-kill party check falls back to team comparison");
             AppendFeature(sb, "Augment buff tracking", AugmentBuffTracker.IsTrackingAvailable, "Buffed-unit kill rewards disabled");
             AppendFeature(sb, "MCM settings", WindsOfMagicRestoreSettings.Instance != null, "Settings unavailable — using defaults may fail");
             sb.AppendLine();
@@ -233,11 +242,15 @@ namespace WindsOfMagicRestore.Utilities
 
         private static List<string> CollectIntegrationIssues()
         {
+            if (_cachedIntegrationIssues != null)
+                return _cachedIntegrationIssues;
+
             var issues = new List<string>();
 
             if (DescribeLoadedAssembly("TOR_Core") == null)
             {
                 issues.Add("TOR_Core assembly is not loaded. Enable The Old Realms and place it above WindsOfMagicRestore.");
+                _cachedIntegrationIssues = issues;
                 return issues;
             }
 
@@ -268,6 +281,7 @@ namespace WindsOfMagicRestore.Utilities
             if (WindsOfMagicRestoreSettings.Instance == null)
                 issues.Add("MCM settings not loaded. Enable Bannerlord.MBOptionScreen above this mod.");
 
+            _cachedIntegrationIssues = issues;
             return issues;
         }
 
@@ -345,7 +359,7 @@ namespace WindsOfMagicRestore.Utilities
                 parts.Add($"info={infoVersion}");
 
             if (!string.IsNullOrEmpty(assembly.Location))
-                parts.Add(System.IO.Path.GetFileName(assembly.Location));
+                parts.Add(Path.GetFileName(assembly.Location));
 
             return $"{name.Name} ({string.Join(", ", parts)})";
         }

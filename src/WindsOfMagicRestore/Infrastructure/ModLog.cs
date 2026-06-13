@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using TaleWorlds.Library;
 
-namespace WindsOfMagicRestore.Utilities
+namespace WindsOfMagicRestore.Infrastructure
 {
     internal static class ModLog
     {

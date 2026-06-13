@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using TaleWorlds.MountAndBlade;
+using WindsOfMagicRestore.Integration;
 
-namespace WindsOfMagicRestore.Utilities
+namespace WindsOfMagicRestore.Battle
 {
     internal static class KillCreditHelper
     {

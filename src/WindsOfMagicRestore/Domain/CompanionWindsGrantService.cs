@@ -1,8 +1,10 @@
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.MountAndBlade;
+using WindsOfMagicRestore.Battle;
+using WindsOfMagicRestore.Integration;
 using WindsOfMagicRestore.Settings;
 
-namespace WindsOfMagicRestore.Utilities
+namespace WindsOfMagicRestore.Domain
 {
     internal static class CompanionWindsGrantService
     {

@@ -1,6 +1,8 @@
 using TaleWorlds.MountAndBlade;
+using WindsOfMagicRestore.Infrastructure;
+using WindsOfMagicRestore.Integration;
 
-namespace WindsOfMagicRestore.Utilities
+namespace WindsOfMagicRestore.Battle
 {
     internal static class AgentPartyHelper
     {

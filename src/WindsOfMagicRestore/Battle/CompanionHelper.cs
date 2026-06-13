@@ -2,7 +2,7 @@ using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.Party;
 using TaleWorlds.MountAndBlade;
 
-namespace WindsOfMagicRestore.Utilities
+namespace WindsOfMagicRestore.Battle
 {
     internal static class CompanionHelper
     {
@@ -33,11 +33,6 @@ namespace WindsOfMagicRestore.Utilities
                 return false;
 
             return IsCompanionHero(character.HeroObject);
-        }
-
-        public static bool IsMainHeroOrCompanionAgent(Agent? agent)
-        {
-            return KillCreditHelper.IsMainHeroAgent(agent) || IsCompanionAgent(agent);
         }
 
         public static Agent? ResolveAgentForHero(Hero? hero)

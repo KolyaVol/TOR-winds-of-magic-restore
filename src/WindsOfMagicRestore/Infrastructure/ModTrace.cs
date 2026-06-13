@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-namespace WindsOfMagicRestore.Utilities
+namespace WindsOfMagicRestore.Infrastructure
 {
     internal static class ModTrace
     {

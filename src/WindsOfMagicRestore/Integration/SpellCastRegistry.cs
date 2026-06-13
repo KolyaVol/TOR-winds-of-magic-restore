@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using TaleWorlds.MountAndBlade;
+using WindsOfMagicRestore.Battle;
 
-namespace WindsOfMagicRestore.Utilities
+namespace WindsOfMagicRestore.Integration
 {
     internal static class SpellCastRegistry
     {

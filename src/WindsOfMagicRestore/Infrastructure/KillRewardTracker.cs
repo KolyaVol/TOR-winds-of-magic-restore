@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace WindsOfMagicRestore.Utilities
+namespace WindsOfMagicRestore.Infrastructure
 {
     internal static class KillRewardTracker
     {

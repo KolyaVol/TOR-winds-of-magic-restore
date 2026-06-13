@@ -4,7 +4,7 @@ using HarmonyLib;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.MountAndBlade;
 
-namespace WindsOfMagicRestore.Utilities
+namespace WindsOfMagicRestore.Integration
 {
     internal static class TorTypes
     {
@@ -49,11 +49,6 @@ namespace WindsOfMagicRestore.Utilities
 
         public static readonly FieldInfo? StatusEffectCurrentEffectsField =
             StatusEffectComponent?.GetField("_currentEffects", BindingFlags.Instance | BindingFlags.NonPublic);
-
-        public static readonly FieldInfo? AttackAttackerAgent = AttackInformation?.GetField("AttackerAgent");
-        public static readonly FieldInfo? AttackVictimAgent = AttackInformation?.GetField("VictimAgent");
-        public static readonly FieldInfo? AttackIsAttackerMount = AttackInformation?.GetField("IsAttackerAgentMount");
-        public static readonly FieldInfo? AttackIsVictimMount = AttackInformation?.GetField("IsVictimAgentMount");
 
         public static MethodInfo? FinalizeSessionMethod()
         {

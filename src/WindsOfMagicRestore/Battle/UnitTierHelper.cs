@@ -1,7 +1,7 @@
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.MountAndBlade;
 
-namespace WindsOfMagicRestore.Utilities
+namespace WindsOfMagicRestore.Battle
 {
     internal static class UnitTierHelper
     {

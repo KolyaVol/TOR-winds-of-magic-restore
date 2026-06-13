@@ -1,39 +1,17 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
 using TaleWorlds.MountAndBlade;
+using WindsOfMagicRestore.Infrastructure;
 using WindsOfMagicRestore.Settings;
 
-namespace WindsOfMagicRestore.Utilities
+namespace WindsOfMagicRestore.Integration
 {
     internal static class AugmentBuffTracker
     {
-        private static readonly Func<object, object?>? ApplierAgentAccessor =
-            BuildMemberAccessor("ApplierAgent");
-
-        private static readonly Func<object, object?>? CastIdAccessor =
-            BuildMemberAccessor("CastId");
-
-        private static readonly Func<object, object?>? CurrentDurationAccessor =
-            BuildMemberAccessor("CurrentDuration");
-
-        private static readonly MethodInfo? GetStatusEffectComponent = typeof(Agent)
-            .GetMethods(BindingFlags.Public | BindingFlags.Instance)
-            .FirstOrDefault(m => m.Name == "GetComponent" && m.IsGenericMethodDefinition && m.GetGenericArguments().Length == 1);
-
         private static readonly HashSet<int> PlayerAugmentCastIds = new();
         private static readonly HashSet<int> PlayerHealCastIds = new();
 
-        public static bool IsTrackingAvailable =>
-            TorTypes.StatusEffectComponent != null
-            && TorTypes.StatusEffect != null
-            && TorTypes.StatusEffectCurrentEffectsField != null
-            && ApplierAgentAccessor != null
-            && CastIdAccessor != null
-            && CurrentDurationAccessor != null
-            && GetStatusEffectComponent != null;
+        public static bool IsTrackingAvailable => StatusEffectReflection.HasDurationTracking;
 
         public static void Reset()
         {
@@ -70,13 +48,11 @@ namespace WindsOfMagicRestore.Utilities
 
         private static bool HasActivePlayerBuffCore(Agent agent, bool countHealAsAugment)
         {
-            var component = GetStatusEffectComponent!
-                .MakeGenericMethod(TorTypes.StatusEffectComponent!)
-                .Invoke(agent, null);
+            var component = StatusEffectReflection.GetComponent(agent);
             if (component == null)
                 return false;
 
-            if (TorTypes.StatusEffectCurrentEffectsField!.GetValue(component) is not IDictionary effects)
+            if (StatusEffectReflection.GetCurrentEffects(component) is not IDictionary effects)
                 return false;
 
             foreach (DictionaryEntry entry in effects)
@@ -85,14 +61,14 @@ namespace WindsOfMagicRestore.Utilities
                     continue;
 
                 var effect = entry.Key;
-                if (ApplierAgentAccessor!(effect) as Agent != Agent.Main)
+                if (StatusEffectReflection.ApplierAgent!(effect) as Agent != Agent.Main)
                     continue;
 
-                var castId = (int)(CastIdAccessor!(effect) ?? -1);
+                var castId = (int)(StatusEffectReflection.CastId!(effect) ?? -1);
                 if (castId < 0)
                     continue;
 
-                var duration = (float)(CurrentDurationAccessor!(effect) ?? 0f);
+                var duration = (float)(StatusEffectReflection.CurrentDuration!(effect) ?? 0f);
                 if (duration <= 0f)
                     continue;
 
@@ -104,22 +80,6 @@ namespace WindsOfMagicRestore.Utilities
             }
 
             return false;
-        }
-
-        private static Func<object, object?>? BuildMemberAccessor(string memberName)
-        {
-            if (TorTypes.StatusEffect == null)
-                return null;
-
-            var property = TorTypes.StatusEffect.GetProperty(memberName, BindingFlags.Instance | BindingFlags.Public);
-            if (property != null)
-                return instance => property.GetValue(instance);
-
-            var field = TorTypes.StatusEffect.GetField(memberName, BindingFlags.Instance | BindingFlags.Public);
-            if (field != null)
-                return instance => field.GetValue(instance);
-
-            return null;
         }
     }
 }

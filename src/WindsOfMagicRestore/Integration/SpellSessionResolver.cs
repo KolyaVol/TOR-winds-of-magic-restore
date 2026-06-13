@@ -1,8 +1,10 @@
 using System.Collections;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.MountAndBlade;
+using WindsOfMagicRestore.Battle;
+using WindsOfMagicRestore.Infrastructure;
 
-namespace WindsOfMagicRestore.Utilities
+namespace WindsOfMagicRestore.Integration
 {
     internal static class SpellSessionResolver
     {

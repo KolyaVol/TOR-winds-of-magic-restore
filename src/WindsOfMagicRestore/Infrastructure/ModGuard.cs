@@ -1,6 +1,6 @@
 using System;
 
-namespace WindsOfMagicRestore.Utilities
+namespace WindsOfMagicRestore.Infrastructure
 {
     internal static class ModGuard
     {

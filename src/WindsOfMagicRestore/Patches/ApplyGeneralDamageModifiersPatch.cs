@@ -1,6 +1,8 @@
 using System.Reflection;
 using TaleWorlds.MountAndBlade;
-using WindsOfMagicRestore.Utilities;
+using WindsOfMagicRestore.Battle;
+using WindsOfMagicRestore.Domain;
+using WindsOfMagicRestore.Integration;
 
 namespace WindsOfMagicRestore.Patches
 {
@@ -10,32 +12,15 @@ namespace WindsOfMagicRestore.Patches
 
         public static void Postfix(AttackInformation attackInformation, ref float __result)
         {
-            var damage = __result;
-            ModGuard.Run("ApplyGeneralDamageModifiers", () => PostfixCore(attackInformation, damage));
-        }
-
-        private static void PostfixCore(AttackInformation attackInformation, float damage)
-        {
-            if (damage <= 0f)
+            if (__result <= 0f)
                 return;
 
-            var attacker = ResolveAgent(attackInformation, isAttacker: true);
-            var victim = ResolveAgent(attackInformation, isAttacker: false);
+            var attacker = KillCreditHelper.NormalizeAgent(attackInformation.AttackerAgent);
+            var victim = KillCreditHelper.NormalizeAgent(attackInformation.VictimAgent);
             if (victim == null)
                 return;
 
-            DamageRewardService.TryGrantForCombatDamage(victim, attacker, damage);
-        }
-
-        private static Agent? ResolveAgent(AttackInformation attackInformation, bool isAttacker)
-        {
-            var agent = isAttacker ? attackInformation.AttackerAgent : attackInformation.VictimAgent;
-            var isMount = isAttacker ? attackInformation.IsAttackerAgentMount : attackInformation.IsVictimAgentMount;
-
-            if (agent == null)
-                return null;
-
-            return isMount ? agent.RiderAgent : agent;
+            DamageRewardService.TryGrantForCombatDamage(victim, attacker, __result);
         }
     }
 }

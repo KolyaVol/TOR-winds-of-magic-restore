@@ -1,8 +1,10 @@
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
+using WindsOfMagicRestore.Domain;
+using WindsOfMagicRestore.Infrastructure;
+using WindsOfMagicRestore.Integration;
 using WindsOfMagicRestore.Settings;
-using WindsOfMagicRestore.Utilities;
 
 namespace WindsOfMagicRestore.Behaviors
 {

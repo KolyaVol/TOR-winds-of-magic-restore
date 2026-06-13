@@ -4,23 +4,30 @@ using HarmonyLib;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.MountAndBlade;
 using WindsOfMagicRestore.Behaviors;
+using WindsOfMagicRestore.Infrastructure;
 using WindsOfMagicRestore.Patches;
 using WindsOfMagicRestore.Settings;
-using WindsOfMagicRestore.Utilities;
 
 namespace WindsOfMagicRestore
 {
     public class SubModule : MBSubModuleBase
     {
         private const string HarmonyId = "com.windsofmagic.restore";
-        private const int PatchCount = 5;
         private static bool _patchesApplied;
+
+        private static readonly (string Name, Func<MethodInfo?> Target, Type PatchType, string Postfix)[] Patches =
+        {
+            ("FinalizeSession", FinalizeSessionPatch.TargetMethod, typeof(FinalizeSessionPatch), nameof(FinalizeSessionPatch.Postfix)),
+            ("CreateSpellSession", CreateSpellSessionPatch.TargetMethod, typeof(CreateSpellSessionPatch), nameof(CreateSpellSessionPatch.Postfix)),
+            ("BookSpellKill", BookSpellKillPatch.TargetMethod, typeof(BookSpellKillPatch), nameof(BookSpellKillPatch.Postfix)),
+            ("BookSpellDamage", BookSpellDamagePatch.TargetMethod, typeof(BookSpellDamagePatch), nameof(BookSpellDamagePatch.Postfix)),
+            ("ApplyGeneralDamageModifiers", ApplyGeneralDamageModifiersPatch.TargetMethod, typeof(ApplyGeneralDamageModifiersPatch), nameof(ApplyGeneralDamageModifiersPatch.Postfix)),
+        };
 
         protected override void OnSubModuleLoad()
         {
             ModTrace.Mark("OnSubModuleLoad:enter");
             base.OnSubModuleLoad();
-            ModGuard.Run("OnSubModuleLoad", WindsOfMagicRestoreSettings.Initialize);
             ModTrace.Mark("OnSubModuleLoad:exit");
         }
 
@@ -56,15 +63,15 @@ namespace WindsOfMagicRestore
             var harmony = new Harmony(HarmonyId);
             var applied = 0;
 
-            applied += TryPatch(harmony, "FinalizeSession", FinalizeSessionPatch.TargetMethod(), typeof(FinalizeSessionPatch), nameof(FinalizeSessionPatch.Postfix)) ? 1 : 0;
-            applied += TryPatch(harmony, "CreateSpellSession", CreateSpellSessionPatch.TargetMethod(), typeof(CreateSpellSessionPatch), nameof(CreateSpellSessionPatch.Postfix)) ? 1 : 0;
-            applied += TryPatch(harmony, "BookSpellKill", BookSpellKillPatch.TargetMethod(), typeof(BookSpellKillPatch), nameof(BookSpellKillPatch.Postfix)) ? 1 : 0;
-            applied += TryPatch(harmony, "BookSpellDamage", BookSpellDamagePatch.TargetMethod(), typeof(BookSpellDamagePatch), nameof(BookSpellDamagePatch.Postfix)) ? 1 : 0;
-            applied += TryPatch(harmony, "ApplyGeneralDamageModifiers", ApplyGeneralDamageModifiersPatch.TargetMethod(), typeof(ApplyGeneralDamageModifiersPatch), nameof(ApplyGeneralDamageModifiersPatch.Postfix)) ? 1 : 0;
+            foreach (var patch in Patches)
+            {
+                if (TryPatch(harmony, patch.Name, patch.Target(), patch.PatchType, patch.Postfix))
+                    applied++;
+            }
 
-            ModDiagnostics.LogPatchResults("harmony", applied, PatchCount);
+            ModDiagnostics.LogPatchResults("harmony", applied, Patches.Length);
             _patchesApplied = applied > 0;
-            ModTrace.Mark($"patches:done {applied}/{PatchCount}");
+            ModTrace.Mark($"patches:done {applied}/{Patches.Length}");
         }
 
         private static bool TryPatch(Harmony harmony, string patchName, MethodInfo? target, Type patchType, string postfixName)

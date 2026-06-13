@@ -3,7 +3,7 @@ using System.Globalization;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 
-namespace WindsOfMagicRestore.Utilities
+namespace WindsOfMagicRestore.Infrastructure
 {
     internal static class WindsRestoreMessages
     {

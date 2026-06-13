@@ -1,6 +1,6 @@
 using System;
 
-namespace WindsOfMagicRestore.Utilities
+namespace WindsOfMagicRestore.Integration
 {
     internal static class SpellEffectTypeHelper
     {
